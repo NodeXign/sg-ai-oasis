@@ -1,80 +1,63 @@
-export type Platform = 'luma' | 'eventbrite';
-export type Level = 'beginner' | 'practitioner' | 'builder';
-export type EventStatus = 'open' | 'full' | 'closed' | 'approval' | 'fast' | 'urgent';
-
-export interface MrtStation {
-  name: string;
-  code: string;
-  line: string;
-  lineColor: string;
-  lat: number;
-  lng: number;
-  walkMins?: number;
-}
-
-export interface Organizer {
-  id: string;
-  name: string;
-  lumaHandle?: string;
-  website?: string;
-  description: string;
-  score: number;        // 1–5
-  scoreNote: string;
-  tags: string[];
-  logoUrl?: string;
-  type: 'tech_company' | 'community' | 'academic' | 'individual' | 'startup';
-}
+export type Lang = 'zh' | 'en';
 
 export interface SgEvent {
   id: string;
-  title: string;
-  description?: string;
-  startAt: string;       // ISO 8601
-  endAt?: string;
+  title: string;            // original event name, never translated
+  startAt: string;          // ISO 8601 (UTC)
+  endAt?: string | null;
   venue: string;
-  venueLat?: number;
-  venueLng?: number;
-  mrtStations?: MrtStation[];  // pre-computed nearest stations
-  platform: Platform;
-  sourceUrl: string;
-  isFree: boolean;
-  price?: string;
-  coverImageUrl?: string;
-  externalId?: string;
-  attendeeCount?: number;
-  status?: EventStatus;
+  address: string;
+  lat?: number | null;
+  lng?: number | null;
+  url: string;              // registration page
+  coverImageUrl?: string | null;
+  organiser: string;
+  isFree: boolean | null;
+  price?: string | null;
+  status: 'open' | 'approval' | 'waitlist' | 'sold_out';
+  isOnline: boolean;
   tags: string[];
-  levels: Level[];
-  score: number;         // 1–5 curator score
-  scoreNote?: string;
-  isCuratorPick: boolean;
-  isNew: boolean;
-  organizers: Organizer[];
-  // ── Enrichment fields ──────────────────────────
-  oneLiner?: string;        // One-sentence intro for search / preview
-  targetAudience?: string;  // Who should attend
-  findPartner?: string;     // What kind of people to network with there
-  // ──────────────────────────────────────────────
-  scrapedAt: string;
-  createdAt: string;
+  sourceIds: string[];
+  companyIds: string[];     // companies in the watchlist linked to this event
+  firstSeen: string;
 }
 
-export interface EventStats {
-  total: number;
-  free: number;
-  topAttendance: number;
-  busiestDay: string;
-  newCount: number;
+export interface EventSource {
+  id: string;
+  name: string;
+  url: string;
+  aiFilter: boolean;
+  descEn: string;
+  descZh: string;
 }
 
-export interface DistributionByDay {
-  date: string;
-  label: string;
-  count: number;
+export type JobFunction =
+  | 'product' | 'design' | 'ai_ml' | 'data' | 'software' | 'infra'
+  | 'solutions' | 'strategy' | 'gtm' | 'corporate' | 'other';
+export type JobSeniority = 'intern' | 'junior' | 'mid' | 'senior' | 'lead';
+
+export interface Company {
+  id: string;
+  name: string;
+  sector: string;
+  aiFocus: string;
+  website?: string;
+  careersUrl?: string;
 }
 
-export interface DistributionByLevel {
-  level: string;
-  count: number;
-  fill: string;
+export interface Job {
+  id: string;
+  companyId: string;
+  title: string;            // original job title, never translated
+  roleFamily: string;       // normalised title, e.g. "Product Manager"
+  location: string;
+  applyUrl: string;
+  linkedinSearchUrl?: string;
+  postedAt?: string | null;
+  category: JobFunction;
+  seniority: JobSeniority;
+  isAiRelated: boolean;
+  status: 'open' | 'closed';
+  firstSeen: string;        // YYYY-MM-DD
+  lastVerified: string;     // YYYY-MM-DD
 }

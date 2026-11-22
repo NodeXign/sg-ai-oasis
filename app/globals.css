@@ -2,206 +2,106 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ─── Stay SG / Notion Design Tokens ─────────────────────────── */
+/* Neutral, shadcn-style tokens. One accent colour, used sparingly. */
 :root {
-  /* Backgrounds */
-  --ink-50:   #F7F6F3;
-  --ink-100:  #EEECEA;
-  --ink-200:  #D9D7D2;
-  --ink-300:  #B5B2AB;
-  --ink-400:  #8C8880;
-  --ink-500:  #636058;
-  --ink-600:  #4A4740;
-  --ink-700:  #353330;
-  --ink-800:  #222120;
-  --ink-900:  #141412;
-
-  /* Brand accent */
-  --violet-300: #AFA4FB;
-  --violet-400: #8F7FF9;
-  --violet-500: #7059F6;
-  --violet-600: #5543D4;
-
-  /* Semantic */
-  --bg:       var(--ink-50);
-  --surface:  #FFFFFF;
-  --border:   var(--ink-200);
-  --text:     var(--ink-800);
-  --muted:    var(--ink-400);
-  --accent:   var(--violet-500);
-
-  /* MRT line colours */
-  --mrt-ew: #009645;
-  --mrt-ns: #D42E12;
-  --mrt-cc: #FA9E0D;
-  --mrt-dt: #005EC4;
-  --mrt-ne: #9900AA;
-  --mrt-te: #9D5B25;
-
-  /* Typography scale */
-  --font-sans: 'Hanken Grotesk', 'Noto Sans SC', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-
-  /* Layout */
-  --radius-sm:  10px;
-  --radius-md:  18px;
-  --radius-lg:  24px;
-  --radius-xl:  28px;
-  --hairline:   1.5px;
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --muted: #f5f5f5;
+  --muted-foreground: #6b6b6b;
+  --border: #e5e5e5;
+  --primary: #1257fd;
+  --primary-hover: #0b45d6;
+  --primary-soft: #eef3ff;
+  --radius: 8px;
 }
 
-/* ─── Base Reset ──────────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-html { font-size: 16px; -webkit-font-smoothing: antialiased; }
-
+html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
 body {
-  font-family: var(--font-sans);
-  background: var(--bg);
-  color: var(--text);
-  min-height: 100dvh;
-}
-
-/* ─── Scrollbar ───────────────────────────────────────────────── */
-::-webkit-scrollbar       { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--ink-300); border-radius: 99px; }
-
-/* ─── Selection ───────────────────────────────────────────────── */
-::selection {
-  background: var(--violet-300);
-  color: var(--ink-900);
-}
-
-/* ─── Surface cards ───────────────────────────────────────────── */
-.card {
-  background: var(--surface);
-  border: var(--hairline) solid var(--border);
-  border-radius: var(--radius-lg);
-}
-
-/* ─── Star rating ─────────────────────────────────────────────── */
-.star-filled { fill: #F59E0B; stroke: none; }
-.star-empty  { fill: none; stroke: #C7C7CB; stroke-width: 1.5px; }
-
-/* ─── Badge ───────────────────────────────────────────────────── */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 2px 8px;
-  border-radius: 99px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), var(--font-noto-sc), system-ui, -apple-system, 'PingFang SC', sans-serif;
+  font-size: 15px;
   line-height: 1.6;
-  white-space: nowrap;
 }
-.badge-new     { background: #ECFDF5; color: #059669; border: 1px solid #A7F3D0; }
-.badge-pick    { background: #FEF3C7; color: #B45309; border: 1px solid #FDE68A; }
-.badge-free    { background: #EFF6FF; color: #2563EB; border: 1px solid #BFDBFE; }
-.badge-luma    { background: var(--ink-100); color: var(--ink-600); border: 1px solid var(--border); }
-.badge-eb      { background: #FFF1F2; color: #E11D48; border: 1px solid #FFC8D0; }
-.badge-open    { background: #ECFDF5; color: #059669; }
-.badge-full    { background: #FEF2F2; color: #DC2626; }
-.badge-fast    { background: #FFFBEB; color: #D97706; }
-.badge-urgent  { background: #FFF7ED; color: #EA580C; }
+::selection { background: var(--primary-soft); }
 
-/* ─── MRT pill ────────────────────────────────────────────────── */
-.mrt-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 2px 8px 2px 4px;
-  border-radius: 99px;
-  font-size: 11px;
-  font-weight: 600;
-  white-space: nowrap;
-  color: #fff;
-}
-.mrt-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #fff;
-  flex-shrink: 0;
-}
+@layer components {
+  .container-page { @apply mx-auto w-full max-w-6xl px-4 sm:px-6; }
+  .h-display { @apply text-[32px] sm:text-[44px] font-semibold leading-[1.12] tracking-[-0.03em]; }
+  .h-section { @apply text-xl sm:text-2xl font-semibold leading-tight tracking-[-0.02em]; }
+  .text-muted { color: var(--muted-foreground); }
+  .eyebrow { @apply text-xs font-medium tracking-wide; color: var(--muted-foreground); }
 
-/* ─── Leaflet overrides ───────────────────────────────────────── */
-.leaflet-container {
-  font-family: var(--font-sans) !important;
-  border-radius: var(--radius-md);
-}
-.leaflet-popup-content-wrapper {
-  border-radius: var(--radius-md) !important;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.12) !important;
-  border: var(--hairline) solid var(--border) !important;
-}
-.leaflet-popup-tip { background: var(--surface) !important; }
+  .card { @apply rounded-lg border bg-white; border-color: var(--border); }
 
-/* ─── Recharts text ───────────────────────────────────────────── */
-.recharts-text { font-family: var(--font-sans) !important; }
+  .btn {
+    @apply inline-flex h-9 items-center justify-center gap-1.5 whitespace-nowrap rounded-md border px-3.5 text-sm font-medium transition-colors duration-150;
+    border-color: var(--border); background: #fff; color: var(--foreground);
+  }
+  .btn:hover { background: var(--muted); }
+  .btn:active { transform: translateY(0.5px); }
+  .btn-primary { border-color: var(--primary); background: var(--primary); color: #fff; }
+  .btn-primary:hover { border-color: var(--primary-hover); background: var(--primary-hover); }
+  .btn-sm { @apply h-8 px-3 text-[13px]; }
+  .btn-lg { @apply h-10 px-5; }
 
-/* ─── Section label ───────────────────────────────────────────── */
-.section-label {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
+  .badge {
+    @apply inline-flex h-[22px] items-center whitespace-nowrap rounded-md border px-2 text-xs font-medium;
+    border-color: var(--border); color: var(--muted-foreground); background: #fff;
+  }
+  .badge-primary { border-color: transparent; background: var(--primary-soft); color: var(--primary); }
+  .badge-muted { border-color: transparent; background: var(--muted); color: #404040; }
+
+  .input {
+    @apply h-9 w-full rounded-md border bg-white px-3 text-sm outline-none transition-shadow duration-150;
+    border-color: var(--border);
+  }
+  .input::placeholder { color: #a3a3a3; }
+
+  .tabs { @apply inline-flex h-9 items-center rounded-lg p-[3px]; background: var(--muted); }
+  .tab { @apply inline-flex h-full items-center rounded-md px-3 text-sm font-medium transition-colors duration-150; color: var(--muted-foreground); }
+  .tab:hover { color: var(--foreground); }
+  .tab[aria-current='page'], .tab[aria-pressed='true'] { background: #fff; color: var(--foreground); box-shadow: 0 1px 2px rgb(0 0 0 / 0.06); }
+
+  .nav-link { @apply rounded-md px-2.5 py-1.5 text-sm transition-colors duration-150; color: var(--muted-foreground); }
+  .nav-link:hover { color: var(--foreground); background: var(--muted); }
+  .nav-link[aria-current='page'] { color: var(--foreground); font-weight: 500; }
+
+  .link { color: var(--primary); text-underline-offset: 3px; }
+  .link:hover { text-decoration: underline; }
+
+  .hover-card { @apply transition-shadow duration-200; }
+  .hover-card:hover { box-shadow: 0 4px 16px rgb(0 0 0 / 0.06); border-color: #d4d4d4; }
 }
 
-/* ─── Page nav (本周 / 本月) ──────────────────────────────────── */
-.page-nav-tab {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 5px 12px;
-  border-radius: 9px;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.15s, background 0.15s;
-  white-space: nowrap;
-}
-.page-nav-tab:hover {
-  color: var(--text);
-  background: rgba(255,255,255,0.5);
-}
-.page-nav-tab--active {
-  background: var(--surface);
-  color: var(--text);
-  font-weight: 600;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+.btn:focus-visible, .input:focus-visible, .tab:focus-visible, .nav-link:focus-visible,
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 
-/* ─── View switcher (本周版 / 完全版 / 地图版) ─────────────────── */
-.view-switcher {
-  display: inline-flex;
-  align-items: center;
-  gap: 2px;
-  background: var(--ink-100);
-  border-radius: 12px;
-  padding: 3px;
+/* Map markers and popups */
+.map-dot {
+  width: 16px; height: 16px; border-radius: 999px; cursor: pointer; padding: 0;
+  border: 2.5px solid var(--primary); background: #fff;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.25);
 }
-.view-tab {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 5px 12px;
-  border-radius: 9px;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--muted);
-  text-decoration: none;
-  transition: color 0.15s, background 0.15s, box-shadow 0.15s;
-  white-space: nowrap;
-}
-.view-tab:hover { color: var(--text); }
-.view-tab--active {
-  background: var(--surface);
-  color: var(--text);
-  font-weight: 600;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+.map-dot--hiring { width: 20px; height: 20px; background: var(--primary); border-color: #fff; box-shadow: 0 0 0 2px var(--primary), 0 2px 6px rgb(18 87 253 / 0.4); }
+.maplibregl-popup-content { border-radius: var(--radius) !important; padding: 12px 14px !important; box-shadow: 0 6px 24px rgb(0 0 0 / 0.12) !important; font-family: inherit; }
+.map-popup { font-size: 13px; line-height: 1.5; color: var(--muted-foreground); }
+.map-popup-title { font-weight: 600; color: var(--foreground); margin-bottom: 2px; padding-right: 12px; }
+.map-popup-hiring { color: var(--primary); font-weight: 500; margin-top: 4px; }
+.map-popup a { display: inline-block; margin-top: 6px; color: var(--primary); font-weight: 500; }
+.maplibregl-map { font-family: inherit !important; }
+
+/* Job graph */
+.graph-node { cursor: pointer; }
+.graph-node text { transition: fill 0.15s; }
+.graph-node rect, .graph-node circle { transition: fill 0.15s, stroke 0.15s; }
+.graph-node:hover rect { stroke: var(--primary); }
+.graph-node:focus-visible { outline: none; }
+.graph-node:focus-visible rect, .graph-node:focus-visible circle { stroke: var(--primary); stroke-width: 2; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
 }

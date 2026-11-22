@@ -6,6 +6,10 @@ ALTER TABLE events
   ADD COLUMN IF NOT EXISTS target_audience TEXT,
   ADD COLUMN IF NOT EXISTS find_partner    TEXT;
 
+-- The view below orders organizers by sort_order, which 001 did not create.
+ALTER TABLE event_organizers
+  ADD COLUMN IF NOT EXISTS sort_order INTEGER NOT NULL DEFAULT 0;
+
 -- Update the events_full view to include new fields
 DROP VIEW IF EXISTS events_full;
 
