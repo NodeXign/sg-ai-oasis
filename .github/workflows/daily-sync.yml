@@ -33,6 +33,9 @@ jobs:
         run: python scripts/jobs_sync.py
 
       - name: Sync events from open Luma listings
+        env:
+          SUPABASE_URL:              ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: python scripts/events_sync.py
 
       - name: Commit refreshed data

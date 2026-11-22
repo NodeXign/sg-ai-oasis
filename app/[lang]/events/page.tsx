@@ -20,9 +20,10 @@ export default async function EventsPage({
   const t = getDict(lang).events;
   const isMonth = searchParams.range === 'month';
 
-  const events = getUpcomingEvents(isMonth ? 30 : 7);
-  const all = getUpcomingEvents(45);
-  const { jobs, companies } = await getJobsData();
+  const all = await getUpcomingEvents(45);
+  const horizon = Date.now() + (isMonth ? 30 : 7) * 24 * 60 * 60 * 1000;
+  const events = all.filter((e) => new Date(e.startAt).getTime() <= horizon);
+    const { jobs, companies } = await getJobsData();
   const openRoles = openRolesByCompany(jobs);
   const companyById: Record<string, Company> = Object.fromEntries(companies.map((c) => [c.id, c]));
   const days = groupByDay(events);

@@ -20,6 +20,7 @@ Usage: python3 scripts/events_sync.py [--dry-run]
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 import urllib.request
@@ -114,6 +115,29 @@ def normalise(entry: dict, source: dict) -> dict | None:
     }
 
 
+def supabase_upsert(table: str, rows: list[dict], on_conflict: str):
+    if not rows:
+        return
+    base = os.environ['SUPABASE_URL'].rstrip('/')
+    key = os.environ['SUPABASE_SERVICE_ROLE_KEY']
+    req = urllib.request.Request(
+        f'{base}/rest/v1/{table}?on_conflict={on_conflict}',
+        data=json.dumps(rows).encode(), method='POST',
+        headers={**UA, 'apikey': key, 'Authorization': f'Bearer {key}', 'Content-Type': 'application/json',
+                 'Prefer': 'resolution=merge-duplicates,return=minimal'})
+    urllib.request.urlopen(req, timeout=60).read()
+
+
+def to_event_row(e: dict) -> dict:
+    return {
+        'id': e['id'], 'title': e['title'], 'start_at': e['startAt'], 'end_at': e['endAt'],
+        'venue': e['venue'], 'address': e['address'], 'venue_lat': e['lat'], 'venue_lng': e['lng'],
+        'source_url': e['url'], 'cover_image_url': e['coverImageUrl'], 'organiser': e['organiser'],
+        'is_free': e['isFree'], 'price': e['price'], 'reg_status': e['status'], 'is_online': e['isOnline'],
+        'tags': e['tags'], 'source_ids': e['sourceIds'], 'first_seen': e['firstSeen'],
+    }
+
+
 def link_companies(event: dict, companies: list[dict]) -> list[str]:
     haystack = f"{event['title']} {event['organiser']}"
     return [
@@ -184,6 +208,15 @@ def main():
         sys.exit(1)  # nothing reachable: keep yesterday's file
     EVENTS_PATH.write_text(json.dumps(events, indent=1, ensure_ascii=False) + '\n')
     META_PATH.write_text(json.dumps(meta, indent=2, ensure_ascii=False) + '\n')
+
+    if os.environ.get('SUPABASE_URL') and os.environ.get('SUPABASE_SERVICE_ROLE_KEY'):
+        # Companies must already exist (jobs_sync.py runs first) for the links to insert.
+        supabase_upsert('events', [to_event_row(e) for e in events], 'id')
+        links = [{'event_id': e['id'], 'company_id': c, 'role': 'host'} for e in events for c in e['companyIds']]
+        supabase_upsert('event_companies', links, 'event_id,company_id')
+        print(f'Supabase: upserted {len(events)} events, {len(links)} event-company links')
+    else:
+        print('Supabase env not set: wrote JSON files only')
 
 
 if __name__ == '__main__':

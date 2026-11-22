@@ -41,7 +41,7 @@ export default async function HomePage({ params }: { params: { lang: Lang } }) {
   const dict = getDict(lang);
   const t = dict.home;
 
-  const events = getUpcomingEvents(7);
+  const events = await getUpcomingEvents(7);
   const { jobs, companies } = await getJobsData();
   const openRoles = openRolesByCompany(jobs);
   const companyById: Record<string, Company> = Object.fromEntries(companies.map((c) => [c.id, c]));

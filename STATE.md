@@ -6,7 +6,7 @@
 
 - 用户看过重构版后给反馈；确认后提交、合并到默认分支（定时任务只在默认分支运行）。
 - 部署：用户先 `npx vercel login`，再发预览版。
-- Supabase：在真实项目上执行 001–003，配置密钥。活动表（001）的字段和新的 `data/events.json` 不一致，活动写库前需要一个 004 迁移。
+- Supabase：在真实项目上按顺序执行 001–004，配置密钥（本机 `.env.local`、Vercel、GitHub Secrets）。四个迁移和两条写库路径都还没在真实项目上跑过，第一次跑要看报错。
 - 种子公司与大会名单核对：`data/companies.json` 的 `conferences` 字段仍是空的。
 - 活动来源只有两个 Luma 列表，可继续加 Lorong AI、SGInnovate、Eventbrite 等。
 - 下一阶段：按简历和目标岗位做私有的个人匹配。
@@ -27,6 +27,8 @@
   - 活动页：默认本周，可切到 30 天；去掉统计和分布图；底部列出开放来源。`scripts/events_sync.py` 每日从 Luma 两个开放列表同步，当前 19 场。
   - 岗位页：按职能的图谱、按公司的词云、总表；职能细分为 11 类并加了岗位名称归一（roleFamily）。
   - 删除了旧页面、旧组件、旧采集脚本和 recharts / leaflet 依赖。
+
+- 2026-11-22：重构版已提交（e779e60）。补了 `004_events_open_sources.sql`，活动同步可写入 Supabase，网站读活动也支持 Supabase，未配置时回落到 JSON。
 
 ## 未决问题
 
