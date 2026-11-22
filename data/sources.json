@@ -1,0 +1,22 @@
+[
+  {
+    "id": "ai-at-singapore",
+    "name": "AI @ Singapore",
+    "kind": "luma-calendar",
+    "apiId": "cal-ERy95HHmvQK7Twg",
+    "url": "https://luma.com/sg-ai",
+    "aiFilter": false,
+    "descEn": "A community calendar on Luma. Anyone can submit an AI event in Singapore; we list every upcoming entry.",
+    "descZh": "Luma 上的社区日历，任何人都可以提交新加坡的 AI 活动。这里收录它的全部近期活动。"
+  },
+  {
+    "id": "luma-singapore",
+    "name": "Luma · Singapore",
+    "kind": "luma-place",
+    "apiId": "discplace-mUbtdfNjfWaLQ72",
+    "url": "https://luma.com/singapore",
+    "aiFilter": true,
+    "descEn": "Luma's public city listing for Singapore. We keep only events whose title mentions AI topics.",
+    "descZh": "Luma 的新加坡城市公开列表。这里只保留标题里提到 AI 相关主题的活动。"
+  }
+]

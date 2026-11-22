@@ -1,4 +1,4 @@
-name: Sync SG Jobs
+name: Daily sync (events + jobs)
 
 on:
   schedule:
@@ -32,10 +32,13 @@ jobs:
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: python scripts/jobs_sync.py
 
+      - name: Sync events from open Luma listings
+        run: python scripts/events_sync.py
+
       - name: Commit refreshed data
         run: |
           git config user.name  "sg-ai-oasis-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/jobs.json data/jobs_meta.json
-          git diff --cached --quiet || git commit -m "data: daily jobs sync"
+          git add data/jobs.json data/jobs_meta.json data/events.json data/events_meta.json
+          git diff --cached --quiet || git commit -m "data: daily sync"
           git push

@@ -99,20 +99,28 @@ READERS = {'greenhouse': read_greenhouse, 'lever': read_lever, 'ashby': read_ash
 
 
 # ─── Rule-based labels (zero LLM tokens) ──────────────────────
-# Order matters: the first category whose pattern matches wins.
-CATEGORY_RULES = [
-    ('product',     r'product (manager|lead|owner|director|operations|strategist)|head of product|\bpm\b|product management'),
-    ('gtm',         r'account (executive|manager|associate|director)|business development|'
-                    r'\bsales (manager|director|development|specialist|representative|lead)'),
-    ('solutions',   r'solution|forward deployed|deployed engineer|field (engineer|cto)|sales engineer|implementation|'
-                    r'consultant|consulting|customer success|deployment strategist|engagement manager|adoption|'
-                    r'legal engineer|professional services|technical account|developer (success|advoca)|agent development'),
-    ('strategy',    r'strateg|transformation|enablement|chief of staff|business operations|program manager|'
-                    r'project (manager|director)|policy|innovation|operations manager|bizops'),
-    ('data',        r'data scien|machine learning|\bml\b|research|analyst|analytics|quant|business intelligence'),
-    ('engineering', r'engineer|developer|architect|\bsre\b|devops|security|infrastructure|technician'),
-    ('gtm',         r'account (executive|manager|associate|director)|sales|business development|partner|marketing|'
-                    r'renewal|revenue|\bgtm\b|\bpr\b|communications|growth'),
+# Order matters: the first function whose pattern matches wins.
+FUNCTION_RULES = [
+    ('product',   r'product (manager|lead|owner|director|operations|strategist|management)|head of product|\bpm\b'),
+    ('design',    r'designer|\bux\b|\bui\b|design (lead|manager|director)|creative|content design'),
+    ('gtm',       r'account (executive|manager|associate|director)|business development|partner(ship)?s? (manager|sales|specialist|lead)|'
+                  r'\bsales (manager|director|development|specialist|representative|lead|enablement)|renewal|'
+                  r'marketing|\bpr\b|communications|\bgtm\b|revenue|growth|brand|events manager'),
+    ('solutions', r'solution|forward deployed|deployed engineer|field (engineer|cto)|sales engineer|implementation|'
+                  r'consultant|consulting|customer success|deployment strategist|engagement manager|adoption|'
+                  r'legal engineer|professional services|technical account|developer (success|advoca)|agent development|'
+                  r'support engineer|customer (support|experience)|onboarding'),
+    ('ai_ml',     r'\bai\b|machine learning|\bml\b|\bllm|research (scientist|engineer)|applied (scientist|ai|research)|'
+                  r'\bnlp\b|deep learning|\bagent'),
+    ('data',      r'data (scien|engineer|analyst|platform|infra|architect)|analytics|analyst|business intelligence|quant|\bbi\b'),
+    ('infra',     r'infrastructure|\bsre\b|reliability|devops|security|network|cloud|platform engineer|performance engineer|'
+                  r'database|production engineer|technician|\bbms\b|data cent(re|er)|mechanical|electrical|facilities'),
+    ('software',  r'full ?stack|backend|back-end|frontend|front-end|software|developer|mobile|\bios\b|android|\bqa\b|'
+                  r'engineer|architect'),
+    ('strategy',  r'strateg|transformation|enablement|chief of staff|business operations|program manager|'
+                  r'project (manager|director)|policy|innovation|operations manager|bizops|\bpmo\b'),
+    ('corporate', r'finance|financ|accountant|accounting|tax|legal|counsel|compliance|\baml\b|risk|recruit|talent|people|'
+                  r'\bhr\b|payroll|procurement|sourcing|treasury|audit|workplace|office|administrative|fp&a|fraud|fincrime'),
 ]
 AI_PATTERN = re.compile(
     r'\bai\b|a\.i\.|artificial intelligence|machine learning|\bml\b|\bllm|genai|generative|\bagent|aigc|'
@@ -122,13 +130,33 @@ AI_NATIVE_SECTORS = {'AI Lab', 'AI Product'}
 
 def categorize(title: str) -> str:
     t = title.lower()
-    for name, pattern in CATEGORY_RULES:
+    for name, pattern in FUNCTION_RULES:
         if re.search(pattern, t):
-            # "Data Platform Engineer, AI Enablement" is an engineering role, not a strategy one.
-            if name == 'strategy' and re.search(r'engineer|developer', t):
-                return 'engineering'
             return name
     return 'other'
+
+
+SENIORITY_WORDS = (r'\b(senior|sr\.?|staff|principal|lead|junior|jr\.?|associate|intern(ship)?|graduate|'
+                   r'i{1,3}|iv|manager ii|\d+)\b')
+GENERIC_HEADS = {'manager', 'director', 'head', 'lead', 'vp', 'vice president', 'specialist', 'analyst',
+                 'engineer', 'associate director', 'senior manager', 'senior director', 'expert', ''}
+
+
+def role_family(title: str) -> str:
+    """'Senior Product Manager, AI Risk (APAC)' -> 'Product Manager'. Used as a graph node label."""
+    t = re.sub(r'[\(\[（【].*?[\)\]）】]', ' ', title)
+    parts = [p.strip() for p in re.split(r'\s[-–—|/]\s|,|:| – | — ', t) if p.strip()]
+
+    def clean(p: str) -> str:
+        p = re.sub(SENIORITY_WORDS, ' ', p, flags=re.I)
+        return re.sub(r'\s+', ' ', p).strip(' -–—&/.')
+
+    head = clean(parts[0]) if parts else ''
+    if head.lower() in GENERIC_HEADS and len(parts) > 1:
+        tail = clean(parts[1])
+        if tail:
+            head = f'{tail} {head}'.strip() if head.lower() in ('engineer', 'analyst', 'specialist', 'manager', 'director', 'lead') else tail
+    return (head or title.strip())[:48]
 
 
 def seniority(title: str) -> str:
@@ -190,6 +218,7 @@ def merge(existing: list[dict], results, today: str) -> tuple[list[dict], dict]:
                 'linkedinSearchUrl': linkedin_search_url(company['name'], r['title']),
                 'postedAt': r['postedAt'],
                 'category': categorize(r['title']),
+                'roleFamily': role_family(r['title']),
                 'seniority': seniority(r['title']),
                 'isAiRelated': ai,
                 'verification': 'official',     # confirmed on the company's own careers board
@@ -238,7 +267,7 @@ def to_job_row(j: dict) -> dict:
         'id': j['id'], 'company_id': j['companyId'], 'title': j['title'], 'location': j['location'],
         'department': j['department'], 'apply_url': j['applyUrl'], 'source_url': j['sourceUrl'],
         'linkedin_search_url': j['linkedinSearchUrl'], 'posted_at': j['postedAt'],
-        'category': j['category'], 'seniority': j['seniority'], 'is_ai_related': j['isAiRelated'],
+        'category': j['category'], 'role_family': j['roleFamily'], 'seniority': j['seniority'], 'is_ai_related': j['isAiRelated'],
         'verification': j['verification'], 'status': j['status'], 'first_seen': j['firstSeen'],
         'last_verified': j['lastVerified'], 'miss_count': j['missCount'], 'closed_at': j['closedAt'],
     }

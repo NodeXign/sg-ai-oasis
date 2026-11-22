@@ -84,15 +84,14 @@ def main():
         lines.append('')
 
     lines += ['## 04 Meet the Industry 招人且有活动的公司', '']
-    org_to_company = {o: c for c in companies.values() for o in c.get('organizerIds', [])}
     rows = []
     for e in events:
-        if datetime.fromisoformat(e['startAt']) < now:
+        if datetime.fromisoformat(e['startAt'].replace('Z', '+00:00')) < now:
             continue
-        for org in e.get('organizers', []):
-            c = org_to_company.get(org)
-            if c and by_company.get(c['id']):
-                rows.append(f"- **{c['name']}**（{by_company[c['id']]} 个在招）· {e['startAt'][:10]} · [{e['title']}]({e['sourceUrl']})")
+        for cid in e.get('companyIds', []):
+            if by_company.get(cid):
+                day = datetime.fromisoformat(e['startAt'].replace('Z', '+00:00')).astimezone(SGT)
+                rows.append(f"- **{companies[cid]['name']}**（{by_company[cid]} 个在招）· {day:%m-%d} · [{e['title']}]({e['url']})")
     lines += rows or ['本周没有同时满足“在招”和“有近期活动”的公司。活动数据更新后这里会自动出现。']
     lines += ['', '---', '数据来源：各公司官方招聘页。参加活动不代表能获得内推或面试。', '']
 

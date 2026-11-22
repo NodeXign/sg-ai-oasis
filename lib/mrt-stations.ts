@@ -124,7 +124,7 @@ export function getNearestMrt(lat: number, lng: number, topN = 2) {
   return MRT_STATIONS
     .map((s) => {
       const distKm = haversine(lat, lng, s.lat, s.lng);
-      const walkMins = Math.round((distKm / 1.2) * 60); // ~1.2 km/h walking speed indoors with lifts
+      const walkMins = Math.round((distKm / 4.8) * 60); // 4.8 km/h walking speed
       return { ...s, distKm, walkMins };
     })
     .sort((a, b) => a.distKm - b.distKm)

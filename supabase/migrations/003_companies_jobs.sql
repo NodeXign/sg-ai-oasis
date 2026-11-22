@@ -33,7 +33,8 @@ CREATE TABLE IF NOT EXISTS jobs (
   linkedin_search_url  TEXT,
   posted_at            TIMESTAMPTZ,
   category             TEXT NOT NULL DEFAULT 'other'
-                         CHECK (category IN ('product','solutions','strategy','data','engineering','gtm','other')),
+                         CHECK (category IN ('product','design','ai_ml','data','software','infra','solutions','strategy','gtm','corporate','other')),
+  role_family          TEXT NOT NULL DEFAULT '',            -- normalised title, e.g. "Product Manager"
   seniority            TEXT NOT NULL DEFAULT 'mid'
                          CHECK (seniority IN ('intern','junior','mid','senior','lead')),
   is_ai_related        BOOLEAN NOT NULL DEFAULT FALSE,

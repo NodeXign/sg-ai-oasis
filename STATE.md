@@ -4,11 +4,12 @@
 
 ## 下一步
 
-- 用户在 Supabase SQL 编辑器执行 `supabase/migrations/003_companies_jobs.sql`（001、002 未执行过的话先执行），把地址和密钥放进本机 `.env.local`、Vercel 环境变量和 GitHub Secrets，然后跑一次 `python3 scripts/jobs_sync.py` 写库。
-- 更新活动数据：`data/events.json` 仍是 6 月的 12 场，首页显示“0 场活动”。把周报自动化的活动结果写进同一份数据（Supabase `events`），停用各期目录里单独的 `event_data.py`。
-- 种子公司与大会名单核对：`data/companies.json` 的 `conferences` 字段现在是空的，27 家是按“公开招聘接口可读且当前在新加坡有岗位”选的。
-- 提交并合并分支 `feat/jobs-companies-week1`；定时任务只在默认分支上运行。
-- 下一阶段：按简历和目标岗位做私有的个人匹配（Direct / Adjacent / Stretch）。
+- 用户看过重构版后给反馈；确认后提交、合并到默认分支（定时任务只在默认分支运行）。
+- 部署：用户先 `npx vercel login`，再发预览版。
+- Supabase：在真实项目上执行 001–003，配置密钥。活动表（001）的字段和新的 `data/events.json` 不一致，活动写库前需要一个 004 迁移。
+- 种子公司与大会名单核对：`data/companies.json` 的 `conferences` 字段仍是空的。
+- 活动来源只有两个 Luma 列表，可继续加 Lorong AI、SGInnovate、Eventbrite 等。
+- 下一阶段：按简历和目标岗位做私有的个人匹配。
 
 ## 已完成
 
@@ -18,6 +19,14 @@
   - `supabase/migrations/003_companies_jobs.sql`：companies、jobs、event_companies 三张表，公开只读，外加 `hiring_and_showing_up` 视图。顺带修了 002 里缺失的 `sort_order` 列。尚未在真实 Supabase 项目上执行过。
   - 网站：新增 `/jobs` 页（类别、公司、资历、AI 相关、近 7 天筛选），首页加招聘摘要，活动卡片显示主办公司在招岗位数，三页共用 `SiteHeader`。`npm run build` 通过，本地浏览器检查过桌面和手机宽度。
   - `.github/workflows/jobs.yml` 每日同步；`scripts/weekly_jobs_report.py` 生成固定模板周报，样刊在 `reports/JOB_REPORT_2026-11-22.md`。
+
+- 2026-11-22：按用户反馈整体重构（未提交，上一版已存为检查点提交 1029502）：
+  - 中英文两个版本 `/zh`、`/en`；shadcn 风格新设计，强调色 #1257FD。
+  - 首页：本周活动地图 + 活动按日期分布 + 岗位按职能分布 +“这周能遇到的招聘公司”+ Tech for Good 说明。
+  - 地图原来不显示是因为 CARTO 底图返回占位图，已换成 MapLibre + OpenFreeMap。
+  - 活动页：默认本周，可切到 30 天；去掉统计和分布图；底部列出开放来源。`scripts/events_sync.py` 每日从 Luma 两个开放列表同步，当前 19 场。
+  - 岗位页：按职能的图谱、按公司的词云、总表；职能细分为 11 类并加了岗位名称归一（roleFamily）。
+  - 删除了旧页面、旧组件、旧采集脚本和 recharts / leaflet 依赖。
 
 ## 未决问题
 
