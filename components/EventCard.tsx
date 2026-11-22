@@ -2,7 +2,17 @@
 
 import Image from 'next/image';
 import type { SgEvent } from '@/lib/types';
+import {
+  getBestFor,
+  getCuratorTake,
+  getEventType,
+  getExpectedTakeaway,
+  getHubLabel,
+  getNotIdealFor,
+  getOpportunityPath,
+} from '@/lib/event-insights';
 import StarRating from './StarRating';
+import type { HiringLink } from '@/lib/jobs';
 
 const LEVEL_LABEL: Record<string, string> = {
   beginner: 'Beginner',
@@ -40,10 +50,21 @@ function formatTime(iso: string) {
   });
 }
 
-interface Props { event: SgEvent }
+interface Props { event: SgEvent; hiring?: Record<string, HiringLink> }
 
-export default function EventCard({ event }: Props) {
+export default function EventCard({ event, hiring }: Props) {
+  // Organisers of this event whose company has open Singapore roles.
+  const hiringLinks = (event.organizers ?? [])
+    .map((o) => hiring?.[o.id])
+    .filter((h): h is HiringLink => Boolean(h));
   const hasCover = Boolean(event.coverImageUrl);
+  const eventType = getEventType(event);
+  const hubLabel = getHubLabel(event);
+  const bestFor = getBestFor(event);
+  const takeaway = getExpectedTakeaway(event);
+  const curatorTake = getCuratorTake(event);
+  const notIdealFor = getNotIdealFor(event);
+  const opportunityPath = getOpportunityPath(event);
 
   return (
     <article className="card group flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-200">
@@ -82,6 +103,10 @@ export default function EventCard({ event }: Props) {
 
         {/* Title + oneLiner */}
         <div>
+          <div className="flex flex-wrap gap-1.5 mb-2">
+            <span className="badge border bg-sky-50 text-sky-700 border-sky-200">{eventType}</span>
+            <span className="badge border bg-[var(--ink-50)] text-[var(--ink-600)] border-[var(--border)]">{hubLabel}</span>
+          </div>
           <h3 className="font-semibold text-[15px] leading-snug text-[var(--text)] line-clamp-2">
             {event.title}
           </h3>
@@ -153,21 +178,19 @@ export default function EventCard({ event }: Props) {
         )}
 
         {/* Audience + Partner info */}
-        {(event.targetAudience || event.findPartner) && (
+        {(bestFor || event.findPartner) && (
           <div className="rounded-[10px] bg-[var(--ink-50)] border border-[var(--border)] p-2.5 flex flex-col gap-1.5 text-[11px]">
-            {event.targetAudience && (
-              <div className="flex items-start gap-2">
-                <span className="flex-shrink-0 w-[18px] h-[18px] rounded-full bg-blue-100 flex items-center justify-center">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
-                  </svg>
-                </span>
-                <div>
-                  <span className="font-semibold text-[var(--ink-600)]">适合 </span>
-                  <span className="text-[var(--muted)] leading-relaxed">{event.targetAudience}</span>
-                </div>
+            <div className="flex items-start gap-2">
+              <span className="flex-shrink-0 w-[18px] h-[18px] rounded-full bg-blue-100 flex items-center justify-center">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                </svg>
+              </span>
+              <div>
+                <span className="font-semibold text-[var(--ink-600)]">适合 </span>
+                <span className="text-[var(--muted)] leading-relaxed">{bestFor}</span>
               </div>
-            )}
+            </div>
             {event.findPartner && (
               <div className="flex items-start gap-2">
                 <span className="flex-shrink-0 w-[18px] h-[18px] rounded-full bg-violet-100 flex items-center justify-center">
@@ -184,6 +207,27 @@ export default function EventCard({ event }: Props) {
             )}
           </div>
         )}
+
+        <div className="rounded-[10px] border border-[var(--border)] p-2.5 text-[11px] space-y-1.5">
+          <p><span className="font-semibold text-[var(--ink-600)]">可带走 </span><span className="text-[var(--muted)] leading-relaxed">{takeaway}</span></p>
+          <p><span className="font-semibold text-[var(--accent)]">主理人判断 </span><span className="text-[var(--muted)] leading-relaxed">{curatorTake}</span></p>
+          <p><span className="font-semibold text-[var(--ink-600)]">不适合 </span><span className="text-[var(--muted)] leading-relaxed">{notIdealFor}</span></p>
+        </div>
+
+        <div className="text-[11px] leading-relaxed text-[var(--ink-500)] border-l-2 border-[var(--accent)] pl-2">
+          <span className="font-semibold text-[var(--ink-700)]">机会路径：</span>{opportunityPath}
+        </div>
+
+        {hiringLinks.map((h) => (
+          <a
+            key={h.companyId}
+            href={`/jobs?company=${h.companyId}`}
+            className="flex items-center justify-between gap-2 rounded-[10px] bg-emerald-50 border border-emerald-200 px-2.5 py-2 text-[11px] text-emerald-800 hover:bg-emerald-100 transition-colors"
+          >
+            <span><span className="font-semibold">{h.companyName}</span> 正在新加坡招人</span>
+            <span className="font-semibold whitespace-nowrap">{h.openRoles} 个岗位 →</span>
+          </a>
+        ))}
 
         {/* Spacer */}
         <div className="flex-1" />

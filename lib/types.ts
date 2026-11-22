@@ -54,6 +54,12 @@ export interface SgEvent {
   oneLiner?: string;        // One-sentence intro for search / preview
   targetAudience?: string;  // Who should attend
   findPartner?: string;     // What kind of people to network with there
+  eventType?: string;       // Standardised format label
+  expectedTakeaway?: string;
+  curatorTake?: string;
+  notIdealFor?: string;
+  opportunityPath?: string;
+  careerSignal?: string;
   // ──────────────────────────────────────────────
   scrapedAt: string;
   createdAt: string;
@@ -77,4 +83,36 @@ export interface DistributionByLevel {
   level: string;
   count: number;
   fill: string;
+}
+
+// ── Companies × Jobs ─────────────────────────────
+export type JobCategory = 'product' | 'solutions' | 'strategy' | 'data' | 'engineering' | 'gtm' | 'other';
+export type JobSeniority = 'intern' | 'junior' | 'mid' | 'senior' | 'lead';
+
+export interface Company {
+  id: string;
+  name: string;
+  sector: string;
+  aiFocus: string;
+  website?: string;
+  careersUrl?: string;
+  organizerIds: string[];   // links a company to event organizers
+}
+
+export interface Job {
+  id: string;
+  companyId: string;
+  title: string;
+  location: string;
+  department: string;
+  applyUrl: string;
+  linkedinSearchUrl?: string;
+  postedAt?: string | null;
+  category: JobCategory;
+  seniority: JobSeniority;
+  isAiRelated: boolean;
+  verification: 'dual' | 'official' | 'pending' | 'unknown';
+  status: 'open' | 'closed';
+  firstSeen: string;        // YYYY-MM-DD
+  lastVerified: string;     // YYYY-MM-DD
 }

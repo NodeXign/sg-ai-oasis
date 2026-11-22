@@ -40,7 +40,7 @@ const VIEWS = [
 export default function ViewSwitcher() {
   const pathname    = usePathname();
   const searchParams = useSearchParams();
-  const current     = searchParams.get('view') || 'cards';
+  const current     = searchParams.get('view') || (pathname === '/' ? 'map' : 'list');
 
   return (
     <div className="view-switcher" role="tablist" aria-label="View mode">

@@ -80,6 +80,54 @@ body {
   border-radius: var(--radius-lg);
 }
 
+.playbook-panel {
+  background: var(--surface);
+  border: var(--hairline) solid var(--border);
+  border-radius: 8px;
+}
+
+.metric-tile,
+.signal-tile {
+  min-height: 70px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--ink-50);
+  padding: 10px;
+}
+
+.metric-tile span,
+.signal-tile span {
+  display: block;
+  color: var(--text);
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.metric-tile p,
+.signal-tile p {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.goal-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #F0FDF4;
+  color: #047857;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
 /* ─── Star rating ─────────────────────────────────────────────── */
 .star-filled { fill: #F59E0B; stroke: none; }
 .star-empty  { fill: none; stroke: #C7C7CB; stroke-width: 1.5px; }
@@ -204,4 +252,71 @@ body {
   color: var(--text);
   font-weight: 600;
   box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+/* ─── Jobs board ─────────────────────────────────────────────── */
+.job-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: var(--hairline) solid var(--border);
+  background: var(--surface);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-600);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.job-chip:hover { border-color: var(--violet-300); }
+.job-chip[aria-pressed='true'] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+.job-chip-count { font-variant-numeric: tabular-nums; opacity: 0.7; }
+.job-input {
+  height: 36px;
+  padding: 0 12px;
+  border-radius: var(--radius-sm);
+  border: var(--hairline) solid var(--border);
+  background: var(--surface);
+  font-size: 13px;
+  color: var(--text);
+}
+.job-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 4px;
+  font-size: 13px;
+  color: var(--ink-600);
+  cursor: pointer;
+}
+.job-toggle input { accent-color: var(--accent); width: 15px; height: 15px; }
+.job-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+  padding: 0 14px;
+  border-radius: var(--radius-sm);
+  background: var(--accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  border: var(--hairline) solid var(--accent);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.job-btn:hover { background: var(--violet-600); }
+.job-btn--ghost { background: var(--surface); color: var(--ink-700); border-color: var(--border); }
+.job-btn--ghost:hover { background: var(--ink-100); }
+.job-chip:focus-visible, .job-input:focus-visible, .job-btn:focus-visible {
+  outline: 2px solid var(--violet-400);
+  outline-offset: 2px;
 }

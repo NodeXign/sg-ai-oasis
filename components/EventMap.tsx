@@ -15,9 +15,12 @@ export default function EventMap({ events }: Props) {
 
   useEffect(() => {
     if (typeof window === 'undefined' || !mapRef.current || mapInstanceRef.current) return;
+    let cancelled = false;
+    let localMap: any = null;
 
     const initMap = async () => {
       const L = (await import('leaflet')).default;
+      if (cancelled || !mapRef.current) return;
 
       // Inject Leaflet CSS from CDN (avoids SSR bundler issues)
       if (!document.querySelector('#leaflet-css')) {
@@ -36,12 +39,19 @@ export default function EventMap({ events }: Props) {
         shadowUrl:     'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
       });
 
+      if ((mapRef.current as any)._leaflet_id) {
+        mapInstanceRef.current?.remove();
+        mapInstanceRef.current = null;
+        delete (mapRef.current as any)._leaflet_id;
+      }
+
       const map = L.map(mapRef.current!, {
         center: [1.3010, 103.8400],
         zoom:   12,
         scrollWheelZoom: false,
         zoomControl: true,
       });
+      localMap = map;
 
       L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/">CARTO</a>',
@@ -129,7 +139,9 @@ export default function EventMap({ events }: Props) {
         (event.mrtStations ?? []).forEach((s) => {
           // Find the station coords from the event's stored MRT data
           // We need lat/lng — if not stored, skip
-          const nearbyStation = findMrtCoords(s.name);
+          const nearbyStation = s.lat != null && s.lng != null
+            ? { lat: s.lat, lng: s.lng }
+            : findMrtCoords(s.name);
           if (!nearbyStation) return;
 
           const icon = L.divIcon({
@@ -163,11 +175,26 @@ export default function EventMap({ events }: Props) {
 
       mrtLayer.addTo(map);
 
+      if (cancelled) {
+        map.remove();
+        return;
+      }
+
       mapInstanceRef.current = map;
       setLoaded(true);
     };
 
     initMap();
+
+    return () => {
+      cancelled = true;
+      if (localMap) {
+        localMap.remove();
+      }
+      if (mapInstanceRef.current === localMap) {
+        mapInstanceRef.current = null;
+      }
+    };
   }, [events]);
 
   return (
@@ -175,13 +202,13 @@ export default function EventMap({ events }: Props) {
       <p className="section-label">活动地图 · MRT Proximity</p>
       <div className="card overflow-hidden">
         {!loaded && (
-          <div className="flex items-center justify-center h-[420px] text-xs text-[var(--muted)]">
+          <div className="flex items-center justify-center h-[560px] text-xs text-[var(--muted)]">
             Loading map…
           </div>
         )}
         <div
           ref={mapRef}
-          style={{ height: '420px', width: '100%', display: loaded ? 'block' : 'none' }}
+          style={{ height: '560px', width: '100%', display: loaded ? 'block' : 'none' }}
         />
       </div>
       <p className="text-xs text-[var(--muted)] px-1">
@@ -201,7 +228,6 @@ const STATION_COORDS: Record<string, { lat: number; lng: number }> = {
   'Bayfront':         { lat: 1.2822, lng: 103.8596 },
   'Downtown':         { lat: 1.2793, lng: 103.8527 },
   'Bugis':            { lat: 1.3009, lng: 103.8559 },
-  'Bras Basah':       { lat: 1.2964, lng: 103.8514 },
   'Bencoolen':        { lat: 1.2980, lng: 103.8495 },
   'Eunos':            { lat: 1.3195, lng: 103.9025 },
   'Paya Lebar':       { lat: 1.3178, lng: 103.8920 },
@@ -210,6 +236,8 @@ const STATION_COORDS: Record<string, { lat: number; lng: number }> = {
   'Promenade':        { lat: 1.2935, lng: 103.8610 },
   'City Hall':        { lat: 1.2930, lng: 103.8520 },
   'Outram Park':      { lat: 1.2801, lng: 103.8395 },
+  'Queenstown':       { lat: 1.2944, lng: 103.8056 },
+  'Bras Basah':       { lat: 1.2964, lng: 103.8514 },
   'Marina Bay':       { lat: 1.2765, lng: 103.8545 },
 };
 

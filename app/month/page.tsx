@@ -9,6 +9,7 @@ import DistributionPanel from '@/components/DistributionPanel';
 import OrganizerCard    from '@/components/OrganizerCard';
 import ViewSwitcher     from '@/components/ViewSwitcher';
 import EventListView    from '@/components/EventListView';
+import SiteHeader       from '@/components/SiteHeader';
 
 const EventMap = dynamic(() => import('@/components/EventMap'), { ssr: false });
 
@@ -117,34 +118,7 @@ export default async function MonthPage({
   return (
     <div className="min-h-dvh bg-[var(--bg)]">
 
-      {/* ── Sticky header ────────────────────────────────────── */}
-      <header className="sticky top-0 z-50 backdrop-blur-md border-b border-[var(--border)] bg-[var(--bg)]/90">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3 flex-shrink-0">
-            <div className="w-7 h-7 rounded-[8px] bg-[var(--accent)] flex items-center justify-center">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-              </svg>
-            </div>
-            <span className="font-bold text-[15px] tracking-tight hidden sm:block">SG AI Oasis</span>
-            <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-[11px] font-semibold">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              Live
-            </span>
-          </div>
-
-          {/* Page nav tabs */}
-          <nav className="flex items-center gap-1 bg-[var(--ink-100)] p-1 rounded-[12px]" aria-label="Page">
-            <a href="/"      className="page-nav-tab">本周活动</a>
-            <a href="/month" className="page-nav-tab page-nav-tab--active">本月活动</a>
-          </nav>
-
-          <p className="text-[11px] text-[var(--muted)] hidden md:block flex-shrink-0">
-            Last scan: {lastScan}
-          </p>
-        </div>
-      </header>
+      <SiteHeader active="month" note={`Last scan: ${lastScan}`} />
 
       {/* ── Main ─────────────────────────────────────────────── */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-10">
