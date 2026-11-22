@@ -4,7 +4,7 @@
 
 ## 下一步
 
-- 用户看预览版（需登录 Vercel 才能打开）：https://sgaievent-a61zw6jgx-xuj6020-2354s-projects.vercel.app 。确认后发正式环境，并合并 PR https://github.com/NodeXign/sg-ai-oasis/pull/1 （默认分支是 master，定时任务合并后才运行）。
+- 正式环境已上线：https://sgaievent.vercel.app （2026-11-22，由本地 `vercel deploy --prod` 发布）。合并 PR https://github.com/NodeXign/sg-ai-oasis/pull/1 后每日定时任务才运行；线上数据在此之前不会自动更新。
 - Supabase：在真实项目上按顺序执行 001–004，配置密钥（本机 `.env.local`、Vercel、GitHub Secrets）。四个迁移和两条写库路径都还没在真实项目上跑过，第一次跑要看报错。
 - 种子公司与大会名单核对：`data/companies.json` 的 `conferences` 字段仍是空的。
 - 活动来源只有两个 Luma 列表，可继续加 Lorong AI、SGInnovate、Eventbrite 等。
@@ -30,6 +30,8 @@
 - 2026-11-22：重构版已提交（e779e60）。补了 `004_events_open_sources.sql`，活动同步可写入 Supabase，网站读活动也支持 Supabase，未配置时回落到 JSON。
 
 - 2026-11-22：分支已推到 NodeXign/sg-ai-oasis 并开 PR #1；Vercel 预览版构建成功。正式环境未发布。
+
+- 2026-11-22：修复生产构建下地图高度为 0（maplibre 自带样式覆盖了定位类，改用内联样式），已发布正式环境并在线上确认地图显示。
 
 ## 未决问题
 
