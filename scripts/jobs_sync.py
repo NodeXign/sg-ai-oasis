@@ -35,7 +35,7 @@ META_PATH = ROOT / 'data' / 'jobs_meta.json'
 
 SGT = timezone(timedelta(hours=8))
 CLOSE_AFTER_MISSES = 2
-UA = {'User-Agent': 'sg-ai-oasis/1.0 (+https://github.com/Gukki2021/sg-ai-oasis)'}
+UA = {'User-Agent': 'sg-ai-oasis/1.0 (+https://github.com/NodeXign/sg-ai-oasis)'}
 
 
 def http_json(url: str, method: str = 'GET', body=None, headers=None, timeout: int = 25):

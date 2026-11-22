@@ -10,7 +10,7 @@ export default function SiteFooter({ lang }: { lang: Lang }) {
           <p>{t.footer.line}</p>
           <p>{t.footer.disclaimer}</p>
         </div>
-        <a className="link shrink-0" href="https://github.com/Gukki2021/sg-ai-oasis" target="_blank" rel="noopener noreferrer">
+        <a className="link shrink-0" href="https://github.com/NodeXign/sg-ai-oasis" target="_blank" rel="noopener noreferrer">
           {t.footer.github}
         </a>
       </div>

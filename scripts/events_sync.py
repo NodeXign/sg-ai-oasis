@@ -34,7 +34,7 @@ COMPANIES_PATH = ROOT / 'data' / 'companies.json'
 SOURCES_PATH = ROOT / 'data' / 'sources.json'
 
 SGT = timezone(timedelta(hours=8))
-UA = {'User-Agent': 'Mozilla/5.0 (compatible; sg-ai-oasis/1.0; +https://github.com/Gukki2021/sg-ai-oasis)'}
+UA = {'User-Agent': 'Mozilla/5.0 (compatible; sg-ai-oasis/1.0; +https://github.com/NodeXign/sg-ai-oasis)'}
 WINDOW_DAYS = 45
 
 AI_PATTERN = re.compile(
