@@ -83,7 +83,9 @@ export default function EventMap({ points, registerLabel }: { points: MapPoint[]
 
   return (
     <div className="relative min-h-[360px] flex-1 sm:min-h-[460px]">
-      <div ref={ref} className="absolute inset-0" />
+      {/* Inline style on purpose: maplibre-gl.css sets `.maplibregl-map { position: relative }`,
+          which beats a utility class in the production CSS order and collapses the map to 0px. */}
+      <div ref={ref} style={{ position: 'absolute', inset: 0 }} />
     </div>
   );
 }
