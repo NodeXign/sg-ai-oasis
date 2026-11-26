@@ -16,7 +16,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null
  },
@@ -36,7 +36,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Global People Experience Specialist"
@@ -57,7 +57,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Data Scientist"
@@ -78,7 +78,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Data Scientist"
@@ -99,7 +99,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Flight Supply Manager"
@@ -121,7 +121,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null
  },
@@ -141,7 +141,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "AI Security Analyst"
@@ -162,7 +162,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "AI Security Engineer"
@@ -184,7 +184,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null
  },
@@ -204,7 +204,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -225,7 +225,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Data Scientist"
@@ -246,7 +246,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Public Policy Director"
@@ -267,7 +267,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Commercial"
@@ -288,7 +288,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "BMS Service Engineer"
@@ -309,7 +309,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Contracts Manager"
@@ -330,7 +330,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Water Infrastructure Strategy Director"
@@ -351,7 +351,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Global Travel Experience Manager"
@@ -372,31 +372,10 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Legal Counsel"
- },
- {
-  "id": "airtrunk-8018065003",
-  "companyId": "airtrunk",
-  "firstSeen": "2026-11-22",
-  "title": "Senior Design Manager",
-  "location": "Singapore HQ",
-  "department": "",
-  "applyUrl": "https://job-boards.greenhouse.io/airtrunk/jobs/8018065003",
-  "sourceUrl": "https://job-boards.greenhouse.io/airtrunk/jobs/8018065003",
-  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=AirTrunk+Senior+Design+Manager&location=Singapore",
-  "postedAt": "2026-10-27T06:39:41-04:00",
-  "category": "design",
-  "seniority": "senior",
-  "isAiRelated": false,
-  "verification": "official",
-  "status": "open",
-  "lastVerified": "2026-11-24",
-  "missCount": 1,
-  "closedAt": null,
-  "roleFamily": "Design Manager"
  },
  {
   "id": "airtrunk-7538582003",
@@ -414,7 +393,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Customer Governance & Transaction Director"
@@ -435,7 +414,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Customer Success Manager"
@@ -456,7 +435,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Tax Manager"
@@ -477,7 +456,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "iOS Engineer"
@@ -498,7 +477,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account Executive"
@@ -519,7 +498,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account Executive"
@@ -540,7 +519,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account Executive"
@@ -561,7 +540,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account Executive"
@@ -582,7 +561,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account Manager"
@@ -603,10 +582,31 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account Manager"
+ },
+ {
+  "id": "airwallex-f35d1a33-3cb8-41b4-82d7-78777f703114",
+  "companyId": "airwallex",
+  "firstSeen": "2026-11-26",
+  "title": "Analyst, Product Finance",
+  "location": "SG - Singapore",
+  "department": "Finance & Corporate Development",
+  "applyUrl": "https://jobs.ashbyhq.com/airwallex/f35d1a33-3cb8-41b4-82d7-78777f703114",
+  "sourceUrl": "https://jobs.ashbyhq.com/airwallex/f35d1a33-3cb8-41b4-82d7-78777f703114",
+  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=Airwallex+Analyst%2C+Product+Finance&location=Singapore",
+  "postedAt": "2026-11-25T11:44:56.287+00:00",
+  "category": "data",
+  "roleFamily": "Product Finance Analyst",
+  "seniority": "mid",
+  "isAiRelated": false,
+  "verification": "official",
+  "status": "open",
+  "lastVerified": "2026-11-26",
+  "missCount": 0,
+  "closedAt": null
  },
  {
   "id": "airwallex-5f86d8ab-9b0c-4bd9-ab6e-efa0cda538ab",
@@ -624,7 +624,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Strategic Partnerships Director"
@@ -646,7 +646,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null
  },
@@ -666,7 +666,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Customer Success Manager"
@@ -687,7 +687,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Engineering Director"
@@ -708,7 +708,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Engineering Director"
@@ -729,7 +729,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Engineering"
@@ -750,7 +750,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Engineering"
@@ -771,7 +771,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Engineering"
@@ -792,7 +792,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Engineering"
@@ -813,7 +813,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Engineering Manager"
@@ -834,7 +834,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Engineering Manager"
@@ -855,7 +855,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Engineering Manager"
@@ -876,7 +876,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "FP&A Manager"
@@ -897,7 +897,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "GTM Partnerships Manager"
@@ -918,7 +918,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "GTM Partnerships Manager"
@@ -939,7 +939,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "GTM Partnerships Manager"
@@ -960,7 +960,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Head of Engineering"
@@ -981,7 +981,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Head of Onboarding & FinCrime Operations"
@@ -1002,7 +1002,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Head of Risk Operations"
@@ -1023,7 +1023,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Inbound Sales Representative"
@@ -1044,7 +1044,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "AI Engineer"
@@ -1065,7 +1065,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Payments/Scheme Economics"
@@ -1086,7 +1086,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "FCC Monitoring & Testing Manager"
@@ -1107,7 +1107,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Operations Strategy Manager"
@@ -1128,7 +1128,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Operations Strategy Manager"
@@ -1149,7 +1149,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Payments/Scheme Economics Manager"
@@ -1170,7 +1170,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Performance Marketing Manager"
@@ -1191,7 +1191,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Revenue Operations Manager"
@@ -1212,7 +1212,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Sales Development Manager"
@@ -1233,7 +1233,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Sales Manager"
@@ -1254,7 +1254,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Strategy & Operations Manager"
@@ -1275,7 +1275,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Operations Quality Assurance"
@@ -1296,7 +1296,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Director"
@@ -1317,7 +1317,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product"
@@ -1338,7 +1338,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Sales Development Representative"
@@ -1359,7 +1359,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Sales Development Representative"
@@ -1380,7 +1380,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "AI Engineer"
@@ -1401,7 +1401,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "AI Engineer"
@@ -1422,7 +1422,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Finance Shared Services Analyst"
@@ -1443,7 +1443,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Consumer Fraud Risk Operations"
@@ -1464,7 +1464,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Backend Engineer"
@@ -1485,7 +1485,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Corporate Secretary"
@@ -1506,7 +1506,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Counsel"
@@ -1527,7 +1527,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Counsel"
@@ -1548,7 +1548,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Customer Success Manager"
@@ -1569,7 +1569,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Data Engineer"
@@ -1590,7 +1590,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Data Engineer"
@@ -1611,7 +1611,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Data Platform Engineer"
@@ -1632,7 +1632,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Data Scientist"
@@ -1653,7 +1653,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Data Scientist"
@@ -1674,7 +1674,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Data Scientist"
@@ -1695,7 +1695,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Data Scientist"
@@ -1716,7 +1716,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Data Scientist"
@@ -1737,7 +1737,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Engineering Manager"
@@ -1758,7 +1758,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Solution Engineering Manager"
@@ -1779,7 +1779,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Financial Crime Compliance Manager"
@@ -1800,7 +1800,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Financial Crime Investigations & Intelligence Ma"
@@ -1821,7 +1821,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Financial Crime Operations Manager"
@@ -1842,10 +1842,31 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Financial Partnerships Manager"
+ },
+ {
+  "id": "airwallex-dee7e0e0-b719-4871-94f6-222756c28342",
+  "companyId": "airwallex",
+  "firstSeen": "2026-11-26",
+  "title": "Senior Manager, Global Onboarding Operations",
+  "location": "SG - Singapore",
+  "department": "Operations",
+  "applyUrl": "https://jobs.ashbyhq.com/airwallex/dee7e0e0-b719-4871-94f6-222756c28342",
+  "sourceUrl": "https://jobs.ashbyhq.com/airwallex/dee7e0e0-b719-4871-94f6-222756c28342",
+  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=Airwallex+Senior+Manager%2C+Global+Onboarding+Operations&location=Singapore",
+  "postedAt": "2026-11-25T09:46:58.742+00:00",
+  "category": "solutions",
+  "roleFamily": "Global Onboarding Operations Manager",
+  "seniority": "senior",
+  "isAiRelated": false,
+  "verification": "official",
+  "status": "open",
+  "lastVerified": "2026-11-26",
+  "missCount": 0,
+  "closedAt": null
  },
  {
   "id": "airwallex-f895f4ce-a2af-4bc5-94b4-ebc4efddc510",
@@ -1863,10 +1884,31 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Merchant Risk Operations Manager"
+ },
+ {
+  "id": "airwallex-c7f7d733-1c53-4202-ac2f-db00cceae6c5",
+  "companyId": "airwallex",
+  "firstSeen": "2026-11-26",
+  "title": "Senior Manager, Operational Risk Management",
+  "location": "SG - Singapore",
+  "department": "Regulatory & Compliance",
+  "applyUrl": "https://jobs.ashbyhq.com/airwallex/c7f7d733-1c53-4202-ac2f-db00cceae6c5",
+  "sourceUrl": "https://jobs.ashbyhq.com/airwallex/c7f7d733-1c53-4202-ac2f-db00cceae6c5",
+  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=Airwallex+Senior+Manager%2C+Operational+Risk+Management&location=Singapore",
+  "postedAt": "2026-11-25T15:31:09.874+00:00",
+  "category": "corporate",
+  "roleFamily": "Operational Risk Management Manager",
+  "seniority": "senior",
+  "isAiRelated": false,
+  "verification": "official",
+  "status": "open",
+  "lastVerified": "2026-11-26",
+  "missCount": 0,
+  "closedAt": null
  },
  {
   "id": "airwallex-0c466f77-19ee-47d5-bc88-7200f27fbe02",
@@ -1884,7 +1926,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Operations Global Quality Assurance Manager"
@@ -1905,7 +1947,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Revenue Strategy & Operations Manager"
@@ -1926,7 +1968,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Sanctions Regulatory Analysis Manager"
@@ -1947,7 +1989,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Strategic Sourcing Manager"
@@ -1968,7 +2010,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Strategy & Operations Manager"
@@ -1989,7 +2031,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Mobile Engineer"
@@ -2010,7 +2052,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -2031,7 +2073,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -2052,7 +2094,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -2073,7 +2115,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -2094,7 +2136,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Salesforce Engineer"
@@ -2115,7 +2157,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Site Reliability Engineer"
@@ -2137,7 +2179,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null
  },
@@ -2157,10 +2199,31 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer Backend"
+ },
+ {
+  "id": "airwallex-0a383ae1-654d-4537-a1de-3151e50a35da",
+  "companyId": "airwallex",
+  "firstSeen": "2026-11-26",
+  "title": "Senior Software Engineer, Backend - Org & Identity, SG",
+  "location": "SG - Singapore",
+  "department": "Engineering",
+  "applyUrl": "https://jobs.ashbyhq.com/airwallex/0a383ae1-654d-4537-a1de-3151e50a35da",
+  "sourceUrl": "https://jobs.ashbyhq.com/airwallex/0a383ae1-654d-4537-a1de-3151e50a35da",
+  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=Airwallex+Senior+Software+Engineer%2C+Backend+-+Org+%26+Identity%2C+SG&location=Singapore",
+  "postedAt": "2026-11-25T06:37:13.774+00:00",
+  "category": "software",
+  "roleFamily": "Software Engineer",
+  "seniority": "senior",
+  "isAiRelated": false,
+  "verification": "official",
+  "status": "open",
+  "lastVerified": "2026-11-26",
+  "missCount": 0,
+  "closedAt": null
  },
  {
   "id": "airwallex-dcd0eab6-0f75-432c-87a6-0f7fe9c4d34c",
@@ -2179,7 +2242,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null
  },
@@ -2199,7 +2262,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -2220,10 +2283,31 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
+ },
+ {
+  "id": "airwallex-d2770857-8f59-487e-9622-5c7ea64a54be",
+  "companyId": "airwallex",
+  "firstSeen": "2026-11-26",
+  "title": "Senior Software Engineer, Global Payments",
+  "location": "SG - Singapore",
+  "department": "Engineering",
+  "applyUrl": "https://jobs.ashbyhq.com/airwallex/d2770857-8f59-487e-9622-5c7ea64a54be",
+  "sourceUrl": "https://jobs.ashbyhq.com/airwallex/d2770857-8f59-487e-9622-5c7ea64a54be",
+  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=Airwallex+Senior+Software+Engineer%2C+Global+Payments&location=Singapore",
+  "postedAt": "2026-11-25T07:02:19.517+00:00",
+  "category": "software",
+  "roleFamily": "Software Engineer",
+  "seniority": "senior",
+  "isAiRelated": false,
+  "verification": "official",
+  "status": "open",
+  "lastVerified": "2026-11-26",
+  "missCount": 0,
+  "closedAt": null
  },
  {
   "id": "airwallex-9d770432-8a34-44d4-9273-6dbce7d93aeb",
@@ -2241,7 +2325,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -2262,7 +2346,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -2283,7 +2367,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -2304,7 +2388,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -2325,7 +2409,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -2346,7 +2430,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -2367,7 +2451,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -2388,7 +2472,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -2409,7 +2493,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -2430,7 +2514,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Site Reliability Engineer"
@@ -2451,7 +2535,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer Backend"
@@ -2473,51 +2557,9 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null
- },
- {
-  "id": "airwallex-39651124-122a-4033-91a2-af2687b83441",
-  "companyId": "airwallex",
-  "firstSeen": "2026-11-22",
-  "title": "Software Engineer Intern (Jan to Jun 2027)",
-  "location": "SG - Singapore",
-  "department": "Engineering",
-  "applyUrl": "https://jobs.ashbyhq.com/airwallex/39651124-122a-4033-91a2-af2687b83441",
-  "sourceUrl": "https://jobs.ashbyhq.com/airwallex/39651124-122a-4033-91a2-af2687b83441",
-  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=Airwallex+Software+Engineer+Intern+%28Jan+to+Jun+2027%29&location=Singapore",
-  "postedAt": "2026-11-12T03:03:15.857+00:00",
-  "category": "software",
-  "seniority": "intern",
-  "isAiRelated": false,
-  "verification": "official",
-  "status": "open",
-  "lastVerified": "2026-11-24",
-  "missCount": 1,
-  "closedAt": null,
-  "roleFamily": "Software Engineer"
- },
- {
-  "id": "airwallex-6cdb0f39-234a-4234-b1f1-cb48a1fa2795",
-  "companyId": "airwallex",
-  "firstSeen": "2026-11-22",
-  "title": "Software Engineer Intern (Summer 2027)",
-  "location": "SG - Singapore",
-  "department": "Engineering",
-  "applyUrl": "https://jobs.ashbyhq.com/airwallex/6cdb0f39-234a-4234-b1f1-cb48a1fa2795",
-  "sourceUrl": "https://jobs.ashbyhq.com/airwallex/6cdb0f39-234a-4234-b1f1-cb48a1fa2795",
-  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=Airwallex+Software+Engineer+Intern+%28Summer+2027%29&location=Singapore",
-  "postedAt": "2026-11-12T03:03:06.747+00:00",
-  "category": "software",
-  "seniority": "intern",
-  "isAiRelated": false,
-  "verification": "official",
-  "status": "open",
-  "lastVerified": "2026-11-24",
-  "missCount": 1,
-  "closedAt": null,
-  "roleFamily": "Software Engineer"
  },
  {
   "id": "airwallex-3c5176fb-6eee-4bf4-8031-36f0528c71a3",
@@ -2535,7 +2577,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -2556,7 +2598,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -2577,7 +2619,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -2598,7 +2640,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "AI Engineer"
@@ -2619,7 +2661,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Corporate Security Engineer"
@@ -2640,7 +2682,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Data Engineer"
@@ -2661,7 +2703,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Data Platform Engineer"
@@ -2682,7 +2724,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Data Scientist"
@@ -2703,7 +2745,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Data Scientist"
@@ -2724,7 +2766,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Data Scientist"
@@ -2745,7 +2787,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Designer"
@@ -2766,7 +2808,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Designer"
@@ -2787,7 +2829,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Designer"
@@ -2808,7 +2850,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Security Engineer"
@@ -2829,7 +2871,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -2851,7 +2893,7 @@
   "verification": "official",
   "status": "open",
   "lastVerified": "2026-11-25",
-  "missCount": 0,
+  "missCount": 1,
   "closedAt": null,
   "roleFamily": "Software Engineer"
  },
@@ -2871,7 +2913,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -2892,7 +2934,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -2913,7 +2955,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -2934,7 +2976,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -2955,7 +2997,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Technical Support"
@@ -2976,7 +3018,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "APAC Recruiting Coordinator"
@@ -2997,7 +3039,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "APAC Tax"
@@ -3018,7 +3060,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account Executive"
@@ -3039,7 +3081,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Director of Payroll"
@@ -3060,7 +3102,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Enterprise Account Executive"
@@ -3081,7 +3123,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Enterprise Account Executive"
@@ -3102,7 +3144,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "External Affairs"
@@ -3123,7 +3165,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Head of ASEAN"
@@ -3144,7 +3186,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Regional Research Economist"
@@ -3165,7 +3207,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Cloud Security Engineer"
@@ -3186,7 +3228,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Database Reliability Engineer"
@@ -3207,7 +3249,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Engagement Manager"
@@ -3228,7 +3270,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Enterprise Account Executive-ASEAN"
@@ -3249,7 +3291,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Enterprise Solutions Architect-Greater China Reg"
@@ -3270,7 +3312,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Partner Sales Director-India/ASEAN"
@@ -3291,7 +3333,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Release Engineer"
@@ -3312,7 +3354,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Cloud Data Infrastructure Engineer"
@@ -3333,7 +3375,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Cloud Performance Engineer"
@@ -3354,7 +3396,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Cloud Performance Engineer"
@@ -3375,7 +3417,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Cloud Performance Engineer"
@@ -3396,7 +3438,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Cloud Performance Engineer"
@@ -3417,7 +3459,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Consulting Engineer"
@@ -3439,7 +3481,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null
  },
@@ -3459,31 +3501,10 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Site Reliability Engineer"
- },
- {
-  "id": "clickhouse-f0495f4d-fcc2-4a55-b9d5-5e7dbf20df1d",
-  "companyId": "clickhouse",
-  "firstSeen": "2026-11-22",
-  "title": "Senior Software Engineer - Identity & Authorization Platform",
-  "location": "India / Singapore / Australia",
-  "department": "Security",
-  "applyUrl": "https://jobs.ashbyhq.com/clickhouse/f0495f4d-fcc2-4a55-b9d5-5e7dbf20df1d",
-  "sourceUrl": "https://jobs.ashbyhq.com/clickhouse/f0495f4d-fcc2-4a55-b9d5-5e7dbf20df1d",
-  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=ClickHouse+Senior+Software+Engineer+-+Identity+%26+Authorization+Platform&location=Singapore",
-  "postedAt": "2026-06-22T14:23:40.489+00:00",
-  "category": "software",
-  "seniority": "senior",
-  "isAiRelated": false,
-  "verification": "official",
-  "status": "open",
-  "lastVerified": "2026-11-24",
-  "missCount": 1,
-  "closedAt": null,
-  "roleFamily": "Software Engineer"
  },
  {
   "id": "clickhouse-b14a26ad-26e6-4d8b-be1a-b00517da3b41",
@@ -3501,7 +3522,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Technical Customer Support Engineer"
@@ -3522,7 +3543,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Technical Account Manager Architect"
@@ -3543,7 +3564,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "PR Director"
@@ -3564,7 +3585,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Revenue Enablement Manager"
@@ -3585,7 +3606,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Solutions Architecture Director"
@@ -3606,7 +3627,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account Executive"
@@ -3627,7 +3648,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Field Engineer"
@@ -3648,7 +3669,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Forward Deployed Engineer"
@@ -3669,7 +3690,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Head of APJ Field Marketing"
@@ -3690,7 +3711,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Head of Deal Desk"
@@ -3711,7 +3732,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Partner Account Manager"
@@ -3732,7 +3753,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Regional Director"
@@ -3753,7 +3774,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Strategic Account Executive"
@@ -3774,7 +3795,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Technical Support Engineering Manager"
@@ -3795,7 +3816,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "APJ Manufacturing & Automotive Industry GTM Lead"
@@ -3816,7 +3837,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account Executive"
@@ -3837,7 +3858,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Core Account Executive"
@@ -3858,7 +3879,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Digital Native Account Executive"
@@ -3879,7 +3900,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Digital Native Hunter Account Executive"
@@ -3900,7 +3921,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Enterprise Director"
@@ -3921,7 +3942,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Enterprise Account Executive"
@@ -3942,7 +3963,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "GTM Talent Sourcer"
@@ -3963,7 +3984,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Hunter Account Executive"
@@ -3984,7 +4005,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Hunter Account Executive"
@@ -4005,7 +4026,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Lakebase Sales Specialist"
@@ -4026,10 +4047,31 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Lakebase Sales Specialist"
+ },
+ {
+  "id": "databricks-8963204002",
+  "companyId": "databricks",
+  "firstSeen": "2026-11-26",
+  "title": "Manager, Field Engineering (Greater China)",
+  "location": "Singapore",
+  "department": "",
+  "applyUrl": "https://databricks.com/company/careers/open-positions/job?gh_jid=8963204002",
+  "sourceUrl": "https://databricks.com/company/careers/open-positions/job?gh_jid=8963204002",
+  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=Databricks+Manager%2C+Field+Engineering+%28Greater+China%29&location=Singapore",
+  "postedAt": "2026-11-25T23:32:12-05:00",
+  "category": "solutions",
+  "roleFamily": "Field Engineering Manager",
+  "seniority": "mid",
+  "isAiRelated": false,
+  "verification": "official",
+  "status": "open",
+  "lastVerified": "2026-11-26",
+  "missCount": 0,
+  "closedAt": null
  },
  {
   "id": "databricks-8857696002",
@@ -4047,7 +4089,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Field Engineering Manager"
@@ -4068,7 +4110,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Named Core Account Executive"
@@ -4089,7 +4131,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Named Hunter Account Executive"
@@ -4110,7 +4152,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Recruiter"
@@ -4131,10 +4173,31 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Solutions Architect"
+ },
+ {
+  "id": "databricks-8937350002",
+  "companyId": "databricks",
+  "firstSeen": "2026-11-26",
+  "title": "Solutions Architect",
+  "location": "Singapore",
+  "department": "",
+  "applyUrl": "https://databricks.com/company/careers/open-positions/job?gh_jid=8937350002",
+  "sourceUrl": "https://databricks.com/company/careers/open-positions/job?gh_jid=8937350002",
+  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=Databricks+Solutions+Architect&location=Singapore",
+  "postedAt": "2026-11-25T22:44:49-05:00",
+  "category": "solutions",
+  "roleFamily": "Solutions Architect",
+  "seniority": "mid",
+  "isAiRelated": false,
+  "verification": "official",
+  "status": "open",
+  "lastVerified": "2026-11-26",
+  "missCount": 0,
+  "closedAt": null
  },
  {
   "id": "databricks-8567985002",
@@ -4152,7 +4215,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Solutions Architect"
@@ -4173,29 +4236,8 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
-  "closedAt": null,
-  "roleFamily": "Delivery Solutions Architect"
- },
- {
-  "id": "databricks-8735828002",
-  "companyId": "databricks",
-  "firstSeen": "2026-11-22",
-  "title": "Sr. Delivery Solutions Architect (Greater China Region)",
-  "location": "Singapore",
-  "department": "",
-  "applyUrl": "https://databricks.com/company/careers/open-positions/job?gh_jid=8735828002",
-  "sourceUrl": "https://databricks.com/company/careers/open-positions/job?gh_jid=8735828002",
-  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=Databricks+Sr.+Delivery+Solutions+Architect+%28Greater+China+Region%29&location=Singapore",
-  "postedAt": "2026-09-27T23:55:17-04:00",
-  "category": "solutions",
-  "seniority": "senior",
-  "isAiRelated": false,
-  "verification": "official",
-  "status": "open",
-  "lastVerified": "2026-11-24",
-  "missCount": 1,
   "closedAt": null,
   "roleFamily": "Delivery Solutions Architect"
  },
@@ -4215,7 +4257,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Deployment Strategist"
@@ -4236,7 +4278,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Designated Support Engineer"
@@ -4257,7 +4299,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Engagement Manager"
@@ -4278,7 +4320,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Solutions Architect"
@@ -4299,7 +4341,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Solutions Architect"
@@ -4320,10 +4362,31 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Solutions Engineer"
+ },
+ {
+  "id": "databricks-8910834002",
+  "companyId": "databricks",
+  "firstSeen": "2026-11-26",
+  "title": "Sr. Solutions Engineer",
+  "location": "Singapore",
+  "department": "",
+  "applyUrl": "https://databricks.com/company/careers/open-positions/job?gh_jid=8910834002",
+  "sourceUrl": "https://databricks.com/company/careers/open-positions/job?gh_jid=8910834002",
+  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=Databricks+Sr.+Solutions+Engineer&location=Singapore",
+  "postedAt": "2026-11-25T22:49:02-05:00",
+  "category": "solutions",
+  "roleFamily": "Solutions Engineer",
+  "seniority": "senior",
+  "isAiRelated": false,
+  "verification": "official",
+  "status": "open",
+  "lastVerified": "2026-11-26",
+  "missCount": 0,
+  "closedAt": null
  },
  {
   "id": "databricks-8762362002",
@@ -4341,7 +4404,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Specialist Solutions Architect"
@@ -4362,7 +4425,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Forward Deployed Engineer"
@@ -4383,7 +4446,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Strategic Core Account Executive"
@@ -4404,7 +4467,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Strategic Core Account Executive"
@@ -4425,7 +4488,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Strategic Core Account Executive"
@@ -4446,7 +4509,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Strategic DNB Hunter Account Executive"
@@ -4467,7 +4530,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Strategy & Operations Manager"
@@ -4488,7 +4551,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Commercial Account Executive"
@@ -4509,7 +4572,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Commercial Account Executive"
@@ -4530,7 +4593,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Customer Success Manager"
@@ -4551,7 +4614,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Deal Desk Analyst"
@@ -4572,7 +4635,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Sales Engineering Director"
@@ -4593,7 +4656,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Field Enablement Manager"
@@ -4614,7 +4677,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Services Architect"
@@ -4635,7 +4698,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Technical Enablement Management"
@@ -4656,7 +4719,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Sales Field Enablement Manager"
@@ -4678,7 +4741,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null
  },
@@ -4699,7 +4762,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null
  },
@@ -4719,7 +4782,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Commercial Counsel"
@@ -4740,7 +4803,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Business Recruiting Manager"
@@ -4761,7 +4824,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Partner Manager"
@@ -4782,31 +4845,10 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Payroll Specialist"
- },
- {
-  "id": "datadog-8237240",
-  "companyId": "datadog",
-  "firstSeen": "2026-11-22",
-  "title": "Senior Sourcer, Enterprise Sales",
-  "location": "Singapore, Singapore",
-  "department": "",
-  "applyUrl": "https://careers.datadoghq.com/detail/8237240/?gh_jid=8237240",
-  "sourceUrl": "https://careers.datadoghq.com/detail/8237240/?gh_jid=8237240",
-  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=Datadog+Senior+Sourcer%2C+Enterprise+Sales&location=Singapore",
-  "postedAt": "2026-10-01T02:09:01-04:00",
-  "category": "other",
-  "seniority": "senior",
-  "isAiRelated": false,
-  "verification": "official",
-  "status": "open",
-  "lastVerified": "2026-11-24",
-  "missCount": 1,
-  "closedAt": null,
-  "roleFamily": "Sourcer"
  },
  {
   "id": "datadog-8398414",
@@ -4825,7 +4867,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null
  },
@@ -4845,7 +4887,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Strategic Account Executive"
@@ -4866,7 +4908,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Strategic Account Executive"
@@ -4887,7 +4929,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Strategic Account Executive"
@@ -4908,7 +4950,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Strategic Account Executive"
@@ -4929,7 +4971,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Distributor Business Development Manager"
@@ -4950,7 +4992,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Enterprise Account Executive"
@@ -4971,7 +5013,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Sales Development Representative"
@@ -4993,7 +5035,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null
  },
@@ -5013,7 +5055,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Solutions Architect"
@@ -5034,7 +5076,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Support Engineer"
@@ -5055,7 +5097,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account Executive"
@@ -5076,7 +5118,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Adoption Strategist"
@@ -5097,7 +5139,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "GTM Systems Architect"
@@ -5118,7 +5160,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Offline Media Buyer"
@@ -5139,7 +5181,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Strategic Account Executive"
@@ -5160,7 +5202,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Contract Talent Acquisition Sourcer"
@@ -5181,7 +5223,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Customer Success Engineer"
@@ -5202,7 +5244,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Director of Success Architects"
@@ -5223,7 +5265,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Enterprise Account Executive"
@@ -5244,7 +5286,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Field CTO"
@@ -5265,7 +5307,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Customer Advocacy Manager"
@@ -5286,7 +5328,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Sales Recruiting Manager"
@@ -5307,7 +5349,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Recruiter"
@@ -5328,7 +5370,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Solutions Architect"
@@ -5349,7 +5391,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Solutions Architect"
@@ -5370,7 +5412,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Strategic Account Executive"
@@ -5391,7 +5433,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "GTM Enablement Partner"
@@ -5412,7 +5454,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "GTM Enablement Partner"
@@ -5433,7 +5475,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "GTM Strategy and Operations"
@@ -5454,7 +5496,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Head of Legal Engineering"
@@ -5475,10 +5517,31 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Head of Legal Engineering"
+ },
+ {
+  "id": "harvey-acfe78ba-48f7-4668-b990-44c39f95a8c0",
+  "companyId": "harvey",
+  "firstSeen": "2026-11-26",
+  "title": "Legal Engineer, Custom Solutions",
+  "location": "Singapore",
+  "department": "Go to Market",
+  "applyUrl": "https://jobs.ashbyhq.com/harvey/acfe78ba-48f7-4668-b990-44c39f95a8c0",
+  "sourceUrl": "https://jobs.ashbyhq.com/harvey/acfe78ba-48f7-4668-b990-44c39f95a8c0",
+  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=Harvey+Legal+Engineer%2C+Custom+Solutions&location=Singapore",
+  "postedAt": "2026-11-26T04:02:29.131+00:00",
+  "category": "solutions",
+  "roleFamily": "Legal Engineer",
+  "seniority": "mid",
+  "isAiRelated": true,
+  "verification": "official",
+  "status": "open",
+  "lastVerified": "2026-11-26",
+  "missCount": 0,
+  "closedAt": null
  },
  {
   "id": "harvey-389a98fb-f2d5-4b68-a550-4000bdb502de",
@@ -5496,7 +5559,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Legal Engineer"
@@ -5517,7 +5580,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Sales Manager"
@@ -5538,7 +5601,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Deployed Engineer"
@@ -5559,7 +5622,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Deployed Engineer"
@@ -5580,7 +5643,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Regional Vice President"
@@ -5601,7 +5664,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account Executive"
@@ -5622,7 +5685,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account Executive"
@@ -5643,7 +5706,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Customer Success Manager"
@@ -5664,7 +5727,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Support Specialist"
@@ -5685,7 +5748,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Support Specialist"
@@ -5706,7 +5769,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Solutions Engineer"
@@ -5727,7 +5790,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Advisory Solutions Architect"
@@ -5748,7 +5811,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Solutions Architecture Manager"
@@ -5769,7 +5832,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Partner Specialist"
@@ -5791,7 +5854,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null
  },
@@ -5811,7 +5874,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Solutions Architect"
@@ -5832,7 +5895,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Solutions Architect"
@@ -5853,7 +5916,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Solutions Architect"
@@ -5874,7 +5937,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Solutions Architect"
@@ -5895,7 +5958,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Card Program Manager"
@@ -5916,7 +5979,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Regulatory Compliance & Deputy MLRO Director"
@@ -5937,7 +6000,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Global Head of Financial Crime Strategy"
@@ -5958,7 +6021,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Global Vertical Head of Regulatory Compliance"
@@ -5979,7 +6042,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Compliance Analytics Analyst"
@@ -6000,7 +6063,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product and Regulatory Counsel"
@@ -6022,9 +6085,30 @@
   "verification": "official",
   "status": "open",
   "lastVerified": "2026-11-25",
-  "missCount": 0,
+  "missCount": 1,
   "closedAt": null,
   "roleFamily": "Product Manager"
+ },
+ {
+  "id": "nium-6d5cf620-5a69-4a0b-a7df-8ad112513c6a",
+  "companyId": "nium",
+  "firstSeen": "2026-11-26",
+  "title": "Staff Product Manager  – Digital Assets (copy)",
+  "location": "Singapore",
+  "department": "Product Management",
+  "applyUrl": "https://jobs.lever.co/nium/6d5cf620-5a69-4a0b-a7df-8ad112513c6a",
+  "sourceUrl": "https://jobs.lever.co/nium/6d5cf620-5a69-4a0b-a7df-8ad112513c6a",
+  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=Nium+Staff+Product+Manager++%E2%80%93+Digital+Assets+%28copy%29&location=Singapore",
+  "postedAt": "2026-11-25T08:48:59.921000+00:00",
+  "category": "product",
+  "roleFamily": "Product Manager",
+  "seniority": "lead",
+  "isAiRelated": false,
+  "verification": "official",
+  "status": "open",
+  "lastVerified": "2026-11-26",
+  "missCount": 0,
+  "closedAt": null
  },
  {
   "id": "notion-a9b33d2b-cfef-435f-8fff-5b79aad19d3b",
@@ -6042,7 +6126,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Business Development Representative"
@@ -6063,7 +6147,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Commercial Solutions Consultant"
@@ -6084,7 +6168,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "GTM Recruiter"
@@ -6105,10 +6189,31 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Mid-Market Solutions Consultant"
+ },
+ {
+  "id": "notion-63f3e6dc-d03b-4c7d-a016-e7909e3466a0",
+  "companyId": "notion",
+  "firstSeen": "2026-11-26",
+  "title": "Outcomes Architect",
+  "location": "Singapore",
+  "department": "Outcomes Architect",
+  "applyUrl": "https://jobs.ashbyhq.com/notion/63f3e6dc-d03b-4c7d-a016-e7909e3466a0",
+  "sourceUrl": "https://jobs.ashbyhq.com/notion/63f3e6dc-d03b-4c7d-a016-e7909e3466a0",
+  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=Notion+Outcomes+Architect&location=Singapore",
+  "postedAt": "2026-11-25T05:44:54.294+00:00",
+  "category": "software",
+  "roleFamily": "Outcomes Architect",
+  "seniority": "mid",
+  "isAiRelated": true,
+  "verification": "official",
+  "status": "open",
+  "lastVerified": "2026-11-26",
+  "missCount": 0,
+  "closedAt": null
  },
  {
   "id": "notion-461e0496-306a-400d-9359-d26c62b51b87",
@@ -6126,7 +6231,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Outcomes Architect Manager"
@@ -6147,7 +6252,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Solutions Consultant Manager"
@@ -6168,7 +6273,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Data Infra Product Manager"
@@ -6189,7 +6294,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Data Infra Product Manager"
@@ -6210,7 +6315,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Director"
@@ -6231,7 +6336,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -6252,7 +6357,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "AI Application Architect"
@@ -6273,7 +6378,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "AI Enablement Project Director"
@@ -6294,7 +6399,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Ad Creative Strategist"
@@ -6315,7 +6420,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Application Architect"
@@ -6336,7 +6441,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Assistant Relationship Manager"
@@ -6357,7 +6462,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Big Data Engineer"
@@ -6378,7 +6483,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Business Assistant 业务助理"
@@ -6399,7 +6504,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Chief of"
@@ -6420,7 +6525,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Compliance Analyst"
@@ -6441,7 +6546,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Compliance Analyst"
@@ -6463,9 +6568,30 @@
   "verification": "official",
   "status": "open",
   "lastVerified": "2026-11-25",
-  "missCount": 0,
+  "missCount": 1,
   "closedAt": null,
   "roleFamily": "Controls & Governance Manager"
+ },
+ {
+  "id": "okx-8217448003",
+  "companyId": "okx",
+  "firstSeen": "2026-11-26",
+  "title": "Controls & Governance Manager - OKX SG",
+  "location": "Singapore, Singapore",
+  "department": "",
+  "applyUrl": "https://job-boards.greenhouse.io/okx/jobs/8217448003",
+  "sourceUrl": "https://job-boards.greenhouse.io/okx/jobs/8217448003",
+  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=OKX+Controls+%26+Governance+Manager+-+OKX+SG&location=Singapore",
+  "postedAt": "2026-11-25T21:41:40-05:00",
+  "category": "other",
+  "roleFamily": "Controls & Governance Manager",
+  "seniority": "mid",
+  "isAiRelated": false,
+  "verification": "official",
+  "status": "open",
+  "lastVerified": "2026-11-26",
+  "missCount": 0,
+  "closedAt": null
  },
  {
   "id": "okx-7601723003",
@@ -6483,7 +6609,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Data Engineer"
@@ -6504,7 +6630,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Database Administrator"
@@ -6525,7 +6651,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Deputy General Counsel"
@@ -6546,7 +6672,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Deputy General Counsel"
@@ -6567,7 +6693,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Design System Designer"
@@ -6588,7 +6714,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "DevOps"
@@ -6609,7 +6735,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Global Treasury Services Director"
@@ -6630,7 +6756,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Engineering Director"
@@ -6651,7 +6777,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Engineering Director"
@@ -6672,7 +6798,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Engineering Director"
@@ -6693,7 +6819,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Engineering Director"
@@ -6714,7 +6840,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Engineering Director"
@@ -6735,7 +6861,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Engineering Director"
@@ -6756,7 +6882,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Engineering VP"
@@ -6777,7 +6903,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Executive Assistant to Executive VP"
@@ -6798,7 +6924,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Finance Operations Manager"
@@ -6819,7 +6945,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Fraud Risk Strategy Expert"
@@ -6840,7 +6966,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Global Financial Operations Platform Director"
@@ -6862,7 +6988,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null
  },
@@ -6882,7 +7008,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Group Tax Director"
@@ -6903,7 +7029,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Growth & AI Initiatives Manager"
@@ -6924,7 +7050,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Growth & AI Initiatives Manager 增长与 AI 专项经理"
@@ -6945,7 +7071,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Growth Product Manager"
@@ -6966,7 +7092,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Head of Communications and PR"
@@ -6987,7 +7113,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Head of Product"
@@ -7008,7 +7134,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Head of Total Rewards"
@@ -7029,7 +7155,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Head of Wholesale"
@@ -7050,7 +7176,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Infrastructure Architect"
@@ -7071,7 +7197,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Infrastructure Stability Architect"
@@ -7092,7 +7218,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -7113,7 +7239,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -7134,7 +7260,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -7155,7 +7281,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Engineer"
@@ -7176,7 +7302,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "AI Engineer"
@@ -7197,7 +7323,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "AI Engineer"
@@ -7218,7 +7344,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Agent Infrastructure & Memory Architecture Engin"
@@ -7239,7 +7365,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Mobile Engineer"
@@ -7260,7 +7386,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -7281,7 +7407,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -7302,7 +7428,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -7323,7 +7449,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -7344,7 +7470,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -7365,7 +7491,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -7386,7 +7512,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "VIP Product Manager"
@@ -7407,7 +7533,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Director"
@@ -7428,7 +7554,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Director"
@@ -7449,7 +7575,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Director"
@@ -7470,7 +7596,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product"
@@ -7491,7 +7617,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -7512,7 +7638,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -7533,7 +7659,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -7554,29 +7680,8 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
-  "closedAt": null,
-  "roleFamily": "Product Manager"
- },
- {
-  "id": "okx-7552817003",
-  "companyId": "okx",
-  "firstSeen": "2026-11-22",
-  "title": "Product Manager / Director, Fiat",
-  "location": "Singapore, Singapore",
-  "department": "",
-  "applyUrl": "https://job-boards.greenhouse.io/okx/jobs/7552817003",
-  "sourceUrl": "https://job-boards.greenhouse.io/okx/jobs/7552817003",
-  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=OKX+Product+Manager+%2F+Director%2C+Fiat&location=Singapore",
-  "postedAt": "2025-12-10T01:49:19-05:00",
-  "category": "product",
-  "seniority": "lead",
-  "isAiRelated": false,
-  "verification": "official",
-  "status": "open",
-  "lastVerified": "2026-11-24",
-  "missCount": 1,
   "closedAt": null,
   "roleFamily": "Product Manager"
  },
@@ -7596,7 +7701,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -7617,7 +7722,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -7638,7 +7743,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -7659,7 +7764,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -7680,7 +7785,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -7701,7 +7806,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -7722,7 +7827,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -7743,7 +7848,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -7764,7 +7869,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -7785,7 +7890,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -7806,7 +7911,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -7827,7 +7932,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Owner"
@@ -7848,7 +7953,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Regulatory Compliance Officer"
@@ -7869,7 +7974,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Rust Developer"
@@ -7890,7 +7995,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Engineer"
@@ -7911,7 +8016,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "AI Engineer"
@@ -7932,7 +8037,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Audit Manager"
@@ -7953,7 +8058,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Business Intelligence Project Manager"
@@ -7974,7 +8079,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Business Operations Manager"
@@ -7995,7 +8100,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Data Engineer"
@@ -8016,7 +8121,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Data Scientist"
@@ -8037,7 +8142,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Executive Assistant"
@@ -8058,7 +8163,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Executive Assistant"
@@ -8079,7 +8184,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Finance Transformation & Strategy PMO"
@@ -8100,7 +8205,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Growth Product Manager"
@@ -8121,7 +8226,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Java Backend Engineer"
@@ -8142,7 +8247,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Java Engineer"
@@ -8163,7 +8268,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Management"
@@ -8184,7 +8289,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Manager /Director"
@@ -8205,7 +8310,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Manager PR and Communications APAC"
@@ -8226,7 +8331,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Risk Operations Strategy Manager"
@@ -8247,7 +8352,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Compliance Manager"
@@ -8268,7 +8373,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Designer"
@@ -8289,7 +8394,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Designer"
@@ -8310,7 +8415,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Designer"
@@ -8331,7 +8436,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Designer"
@@ -8352,7 +8457,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Designer"
@@ -8373,7 +8478,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Director"
@@ -8395,7 +8500,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null
  },
@@ -8415,7 +8520,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -8436,7 +8541,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -8457,7 +8562,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -8478,7 +8583,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -8499,7 +8604,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -8520,7 +8625,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -8541,7 +8646,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -8563,7 +8668,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null
  },
@@ -8583,7 +8688,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -8604,7 +8709,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Risk Manager"
@@ -8625,7 +8730,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -8646,7 +8751,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Payment Engineer"
@@ -8667,7 +8772,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -8688,7 +8793,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -8709,7 +8814,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -8730,7 +8835,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -8751,7 +8856,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -8772,7 +8877,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Strategy PMO"
@@ -8793,7 +8898,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Strategy Project Manager"
@@ -8814,7 +8919,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Support Operations Manager"
@@ -8835,7 +8940,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Talent Acquisition Partner"
@@ -8856,7 +8961,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Visual Designer"
@@ -8877,7 +8982,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Visual Designer"
@@ -8899,7 +9004,7 @@
   "verification": "official",
   "status": "open",
   "lastVerified": "2026-11-25",
-  "missCount": 0,
+  "missCount": 1,
   "closedAt": null,
   "roleFamily": "Product Manager"
  },
@@ -8919,7 +9024,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Data Engineer"
@@ -8940,7 +9045,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Data Engineer"
@@ -8961,7 +9066,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Trading Exchange Middle Platform- Market Analysi"
@@ -8982,7 +9087,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Web3 Engineer"
@@ -9003,7 +9108,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "AI Agent Development Engineer"
@@ -9024,7 +9129,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Core Infrastructure Engineer"
@@ -9046,7 +9151,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null
  },
@@ -9066,7 +9171,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Data Platform Development Engineer"
@@ -9087,7 +9192,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Decentralize Exchange Engineer"
@@ -9108,7 +9213,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Growth Engineer"
@@ -9129,7 +9234,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "R&D Efficiency Platform Engineer"
@@ -9150,7 +9255,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Security Platform Development Engineer"
@@ -9171,7 +9276,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Java Engineer"
@@ -9192,7 +9297,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -9213,7 +9318,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software"
@@ -9234,7 +9339,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -9255,7 +9360,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -9276,7 +9381,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -9297,7 +9402,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -9318,7 +9423,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Engineer"
@@ -9339,7 +9444,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -9360,7 +9465,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Data Engineer"
@@ -9381,7 +9486,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Machine Learning & Data Infrastructure Engineer"
@@ -9402,7 +9507,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Middleware Engineer"
@@ -9423,7 +9528,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Public Cloud Operations Engineer"
@@ -9444,7 +9549,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Security Platform Development Engineer"
@@ -9465,7 +9570,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -9486,7 +9591,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Java Engineer"
@@ -9507,7 +9612,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Kubernetes Engineer"
@@ -9528,7 +9633,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Public Cloud Operations Engineer"
@@ -9549,7 +9654,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Frontend Engineer"
@@ -9570,7 +9675,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Frontend Engineer"
@@ -9591,7 +9696,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Tax Reporting Manager"
@@ -9612,7 +9717,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Tech Governance"
@@ -9633,7 +9738,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Technical Account Director"
@@ -9654,7 +9759,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Technology and Security Risk Director"
@@ -9675,7 +9780,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "VIP Growth Manager"
@@ -9696,7 +9801,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "VP/ Engineering Director"
@@ -9717,7 +9822,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "AI Strategy & Transformation"
@@ -9738,7 +9843,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "AI Deployment Manager"
@@ -9759,7 +9864,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "AI Support Engineer"
@@ -9780,7 +9885,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "AI Support Engineer"
@@ -9801,7 +9906,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "AI Support Engineer"
@@ -9822,7 +9927,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "APAC Vendor"
@@ -9843,7 +9948,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "APAC Vendor"
@@ -9864,7 +9969,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account"
@@ -9885,7 +9990,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account"
@@ -9906,7 +10011,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account"
@@ -9927,7 +10032,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account Director"
@@ -9948,7 +10053,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account Director"
@@ -9969,7 +10074,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account Director"
@@ -9990,7 +10095,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Applied AI Architect"
@@ -10011,7 +10116,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Applied AI Engineer"
@@ -10032,7 +10137,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Applied AI Engineer"
@@ -10053,7 +10158,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Applied AI Engineer"
@@ -10074,7 +10179,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Applied AI Engineer"
@@ -10095,7 +10200,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Business Recruiter"
@@ -10117,7 +10222,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null
  },
@@ -10137,7 +10242,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Dedicated Support Engineer"
@@ -10159,7 +10264,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null
  },
@@ -10179,7 +10284,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Forward Deployed Engineer"
@@ -10201,7 +10306,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null
  },
@@ -10221,7 +10326,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Hardware Exploratory"
@@ -10242,7 +10347,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Incident Commander"
@@ -10264,7 +10369,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null
  },
@@ -10284,7 +10389,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Applied AI Engineering Manager"
@@ -10305,7 +10410,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Deployment Manager"
@@ -10326,7 +10431,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Manufacturing Test Engineer"
@@ -10347,31 +10452,10 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Marketing Science"
- },
- {
-  "id": "openai-a57bb806-0d67-48ba-96cc-695667eae41a",
-  "companyId": "openai",
-  "firstSeen": "2026-11-22",
-  "title": "Marketing Technology & Operations Lead, APAC",
-  "location": "Singapore",
-  "department": "Marketing",
-  "applyUrl": "https://jobs.ashbyhq.com/openai/a57bb806-0d67-48ba-96cc-695667eae41a",
-  "sourceUrl": "https://jobs.ashbyhq.com/openai/a57bb806-0d67-48ba-96cc-695667eae41a",
-  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=OpenAI+Marketing+Technology+%26+Operations+Lead%2C+APAC&location=Singapore",
-  "postedAt": "2026-10-27T22:42:07.055+00:00",
-  "category": "gtm",
-  "seniority": "lead",
-  "isAiRelated": true,
-  "verification": "official",
-  "status": "open",
-  "lastVerified": "2026-11-24",
-  "missCount": 1,
-  "closedAt": null,
-  "roleFamily": "Marketing Technology & Operations"
  },
  {
   "id": "openai-70eba6e4-73e0-4cf9-a0d5-e49caeca9d7b",
@@ -10389,7 +10473,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Onboarding Program Manager"
@@ -10410,7 +10494,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Operations Exploratory"
@@ -10431,7 +10515,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "PCBA Manufacturing Engineer"
@@ -10452,7 +10536,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manufacturing Engineer"
@@ -10473,7 +10557,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Quality Engineer"
@@ -10494,7 +10578,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Regional Manager"
@@ -10515,7 +10599,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Sales Development Leader"
@@ -10536,7 +10620,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Sales Enablement"
@@ -10557,7 +10641,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Support Engineer"
@@ -10579,30 +10663,9 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null
- },
- {
-  "id": "openai-b1a5980d-1c52-4af5-8596-5951b584ca37",
-  "companyId": "openai",
-  "firstSeen": "2026-11-22",
-  "title": "Strategy & Operations Lead — SEA & ANZ",
-  "location": "Singapore",
-  "department": "Business Operations",
-  "applyUrl": "https://jobs.ashbyhq.com/openai/b1a5980d-1c52-4af5-8596-5951b584ca37",
-  "sourceUrl": "https://jobs.ashbyhq.com/openai/b1a5980d-1c52-4af5-8596-5951b584ca37",
-  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=OpenAI+Strategy+%26+Operations+Lead+%E2%80%94+SEA+%26+ANZ&location=Singapore",
-  "postedAt": "2026-11-13T07:31:29.236+00:00",
-  "category": "strategy",
-  "seniority": "lead",
-  "isAiRelated": true,
-  "verification": "official",
-  "status": "open",
-  "lastVerified": "2026-11-24",
-  "missCount": 1,
-  "closedAt": null,
-  "roleFamily": "Strategy & Operations"
  },
  {
   "id": "openai-d4fed8a0-cf2a-49b1-b216-80d710827e16",
@@ -10620,7 +10683,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Support Vendor Manager"
@@ -10641,7 +10704,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Total Rewards Business Partner"
@@ -10662,7 +10725,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Administrative Business Partner"
@@ -10683,7 +10746,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Deployment Strategist"
@@ -10704,7 +10767,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Production Engineer"
@@ -10725,7 +10788,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -10746,10 +10809,31 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
+ },
+ {
+  "id": "sierra-d23ef00b-4089-4e11-90da-1214e6b363fa",
+  "companyId": "sierra",
+  "firstSeen": "2026-11-26",
+  "title": "Deal Operations",
+  "location": "Singapore",
+  "department": "Operations",
+  "applyUrl": "https://jobs.ashbyhq.com/Sierra/d23ef00b-4089-4e11-90da-1214e6b363fa",
+  "sourceUrl": "https://jobs.ashbyhq.com/Sierra/d23ef00b-4089-4e11-90da-1214e6b363fa",
+  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=Sierra+Deal+Operations&location=Singapore",
+  "postedAt": "2026-11-25T14:15:55.208+00:00",
+  "category": "other",
+  "roleFamily": "Deal Operations",
+  "seniority": "mid",
+  "isAiRelated": true,
+  "verification": "official",
+  "status": "open",
+  "lastVerified": "2026-11-26",
+  "missCount": 0,
+  "closedAt": null
  },
  {
   "id": "sierra-b514c750-efde-46ca-b9d3-6e76e64eb6c7",
@@ -10767,7 +10851,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Enterprise Sales Director"
@@ -10788,7 +10872,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Enterprise Sales Engineer"
@@ -10809,7 +10893,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Marketing Manager"
@@ -10831,7 +10915,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null
  },
@@ -10851,7 +10935,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Sales Engineering Manager"
@@ -10872,7 +10956,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -10893,7 +10977,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -10914,7 +10998,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -10935,7 +11019,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -10956,7 +11040,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Strategist"
@@ -10977,7 +11061,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Activation Solution Engineer"
@@ -10998,7 +11082,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "AI/ML Architect"
@@ -11019,7 +11103,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Marketing Manager and Evangelist"
@@ -11041,7 +11125,7 @@
   "verification": "official",
   "status": "open",
   "lastVerified": "2026-11-25",
-  "missCount": 0,
+  "missCount": 1,
   "closedAt": null,
   "roleFamily": "RVP"
  },
@@ -11061,7 +11145,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Solution Engineer"
@@ -11082,7 +11166,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Solution Engineer"
@@ -11103,7 +11187,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Engagement Manager"
@@ -11124,7 +11208,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Technical Architect"
@@ -11145,7 +11229,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account Executive"
@@ -11166,7 +11250,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account Executive"
@@ -11187,7 +11271,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account Executive"
@@ -11208,7 +11292,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account Executive Enterprise"
@@ -11229,7 +11313,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account Executive"
@@ -11250,7 +11334,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account Executive"
@@ -11271,7 +11355,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account Executive"
@@ -11292,7 +11376,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account Executive"
@@ -11313,7 +11397,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account Executive"
@@ -11334,7 +11418,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account Executive"
@@ -11355,7 +11439,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account Executive"
@@ -11376,7 +11460,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Account Executive"
@@ -11397,31 +11481,10 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Communications Manager"
- },
- {
-  "id": "stripe-8287916",
-  "companyId": "stripe",
-  "firstSeen": "2026-11-22",
-  "title": "Credit Risk Analyst Commercial Underwriter",
-  "location": "Singapore",
-  "department": "",
-  "applyUrl": "https://stripe.com/jobs/search?gh_jid=8287916",
-  "sourceUrl": "https://stripe.com/jobs/search?gh_jid=8287916",
-  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=Stripe+Credit+Risk+Analyst+Commercial+Underwriter&location=Singapore",
-  "postedAt": "2026-10-22T01:05:56-04:00",
-  "category": "data",
-  "seniority": "mid",
-  "isAiRelated": false,
-  "verification": "official",
-  "status": "open",
-  "lastVerified": "2026-11-24",
-  "missCount": 1,
-  "closedAt": null,
-  "roleFamily": "Credit Risk Analyst Commercial Underwriter"
  },
  {
   "id": "stripe-8355371",
@@ -11439,7 +11502,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Customer Success Manager"
@@ -11460,7 +11523,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Customer Success Manager"
@@ -11482,7 +11545,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null
  },
@@ -11502,7 +11565,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Deal Pricing Strategist"
@@ -11523,7 +11586,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Deal Strategist"
@@ -11544,7 +11607,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Demand Generation Manager"
@@ -11565,7 +11628,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Engineering Manager"
@@ -11586,7 +11649,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Engineering Manager"
@@ -11607,7 +11670,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Enterprise Services Manager"
@@ -11628,7 +11691,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Enterprise Support Specialist"
@@ -11649,7 +11712,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Financial Data Analyst"
@@ -11670,7 +11733,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Fraud Strategist"
@@ -11691,7 +11754,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Global Partnerships"
@@ -11712,7 +11775,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Growth Marketing Manager"
@@ -11733,7 +11796,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Head of Customer Success Management"
@@ -11754,7 +11817,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Head of Risk Programs"
@@ -11775,7 +11838,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Integration Reliability Engineer"
@@ -11796,7 +11859,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Integration Reliability Engineer"
@@ -11817,7 +11880,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Integration Reliability Engineer"
@@ -11838,7 +11901,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Sales Development Manager"
@@ -11859,7 +11922,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Marketing Operations Manager"
@@ -11880,7 +11943,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Partner Development Manager"
@@ -11901,7 +11964,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product"
@@ -11922,7 +11985,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -11943,7 +12006,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Manager"
@@ -11964,7 +12027,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Product Sales Development Representative"
@@ -11985,7 +12048,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Recruiting Coordinator"
@@ -12006,7 +12069,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Sales Development Representative"
@@ -12027,7 +12090,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Sales Development Representative"
@@ -12048,7 +12111,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Sales Manager"
@@ -12069,7 +12132,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Sales Program Manager"
@@ -12090,7 +12153,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -12112,7 +12175,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null
  },
@@ -12132,7 +12195,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Solutions Architect"
@@ -12153,7 +12216,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Solutions Architect"
@@ -12174,7 +12237,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Solutions Architect Manager"
@@ -12195,7 +12258,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Solutions Architect"
@@ -12216,7 +12279,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Specialist Solutions Architect"
@@ -12237,7 +12300,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Specialist Solutions Architect"
@@ -12258,7 +12321,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Technical Recruiter"
@@ -12279,7 +12342,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Technical Solutions Engineer"
@@ -12300,7 +12363,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Technical Support Engineer"
@@ -12321,7 +12384,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "ASEAN Partnerships Manager"
@@ -12342,7 +12405,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Business Development Representative"
@@ -12364,7 +12427,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null
  },
@@ -12384,7 +12447,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Business Development Manager"
@@ -12405,7 +12468,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Developer Success Engineer"
@@ -12426,7 +12489,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Solutions Architect"
@@ -12846,7 +12909,7 @@
   "isAiRelated": true,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "AI Engineer"
@@ -12867,7 +12930,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Business Intelligence Analyst"
@@ -12888,7 +12951,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "IT Security Specialist"
@@ -12909,7 +12972,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -12930,7 +12993,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -12951,7 +13014,7 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineer"
@@ -12972,10 +13035,31 @@
   "isAiRelated": false,
   "verification": "official",
   "status": "open",
-  "lastVerified": "2026-11-25",
+  "lastVerified": "2026-11-26",
   "missCount": 0,
   "closedAt": null,
   "roleFamily": "Software Engineering"
+ },
+ {
+  "id": "airtrunk-8018065003",
+  "companyId": "airtrunk",
+  "firstSeen": "2026-11-22",
+  "title": "Senior Design Manager",
+  "location": "Singapore HQ",
+  "department": "",
+  "applyUrl": "https://job-boards.greenhouse.io/airtrunk/jobs/8018065003",
+  "sourceUrl": "https://job-boards.greenhouse.io/airtrunk/jobs/8018065003",
+  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=AirTrunk+Senior+Design+Manager&location=Singapore",
+  "postedAt": "2026-10-27T06:39:41-04:00",
+  "category": "design",
+  "seniority": "senior",
+  "isAiRelated": false,
+  "verification": "official",
+  "status": "closed",
+  "lastVerified": "2026-11-24",
+  "missCount": 2,
+  "closedAt": "2026-11-26",
+  "roleFamily": "Design Manager"
  },
  {
   "id": "airwallex-7fda4857-060d-41c6-900e-c72f451f8ce3",
@@ -13020,6 +13104,48 @@
   "roleFamily": "Product Manager"
  },
  {
+  "id": "airwallex-39651124-122a-4033-91a2-af2687b83441",
+  "companyId": "airwallex",
+  "firstSeen": "2026-11-22",
+  "title": "Software Engineer Intern (Jan to Jun 2027)",
+  "location": "SG - Singapore",
+  "department": "Engineering",
+  "applyUrl": "https://jobs.ashbyhq.com/airwallex/39651124-122a-4033-91a2-af2687b83441",
+  "sourceUrl": "https://jobs.ashbyhq.com/airwallex/39651124-122a-4033-91a2-af2687b83441",
+  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=Airwallex+Software+Engineer+Intern+%28Jan+to+Jun+2027%29&location=Singapore",
+  "postedAt": "2026-11-12T03:03:15.857+00:00",
+  "category": "software",
+  "seniority": "intern",
+  "isAiRelated": false,
+  "verification": "official",
+  "status": "closed",
+  "lastVerified": "2026-11-24",
+  "missCount": 2,
+  "closedAt": "2026-11-26",
+  "roleFamily": "Software Engineer"
+ },
+ {
+  "id": "airwallex-6cdb0f39-234a-4234-b1f1-cb48a1fa2795",
+  "companyId": "airwallex",
+  "firstSeen": "2026-11-22",
+  "title": "Software Engineer Intern (Summer 2027)",
+  "location": "SG - Singapore",
+  "department": "Engineering",
+  "applyUrl": "https://jobs.ashbyhq.com/airwallex/6cdb0f39-234a-4234-b1f1-cb48a1fa2795",
+  "sourceUrl": "https://jobs.ashbyhq.com/airwallex/6cdb0f39-234a-4234-b1f1-cb48a1fa2795",
+  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=Airwallex+Software+Engineer+Intern+%28Summer+2027%29&location=Singapore",
+  "postedAt": "2026-11-12T03:03:06.747+00:00",
+  "category": "software",
+  "seniority": "intern",
+  "isAiRelated": false,
+  "verification": "official",
+  "status": "closed",
+  "lastVerified": "2026-11-24",
+  "missCount": 2,
+  "closedAt": "2026-11-26",
+  "roleFamily": "Software Engineer"
+ },
+ {
   "id": "anthropic-5440812008",
   "companyId": "anthropic",
   "firstSeen": "2026-11-22",
@@ -13041,6 +13167,48 @@
   "roleFamily": "International Accounting"
  },
  {
+  "id": "clickhouse-f0495f4d-fcc2-4a55-b9d5-5e7dbf20df1d",
+  "companyId": "clickhouse",
+  "firstSeen": "2026-11-22",
+  "title": "Senior Software Engineer - Identity & Authorization Platform",
+  "location": "India / Singapore / Australia",
+  "department": "Security",
+  "applyUrl": "https://jobs.ashbyhq.com/clickhouse/f0495f4d-fcc2-4a55-b9d5-5e7dbf20df1d",
+  "sourceUrl": "https://jobs.ashbyhq.com/clickhouse/f0495f4d-fcc2-4a55-b9d5-5e7dbf20df1d",
+  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=ClickHouse+Senior+Software+Engineer+-+Identity+%26+Authorization+Platform&location=Singapore",
+  "postedAt": "2026-06-22T14:23:40.489+00:00",
+  "category": "software",
+  "seniority": "senior",
+  "isAiRelated": false,
+  "verification": "official",
+  "status": "closed",
+  "lastVerified": "2026-11-24",
+  "missCount": 2,
+  "closedAt": "2026-11-26",
+  "roleFamily": "Software Engineer"
+ },
+ {
+  "id": "databricks-8735828002",
+  "companyId": "databricks",
+  "firstSeen": "2026-11-22",
+  "title": "Sr. Delivery Solutions Architect (Greater China Region)",
+  "location": "Singapore",
+  "department": "",
+  "applyUrl": "https://databricks.com/company/careers/open-positions/job?gh_jid=8735828002",
+  "sourceUrl": "https://databricks.com/company/careers/open-positions/job?gh_jid=8735828002",
+  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=Databricks+Sr.+Delivery+Solutions+Architect+%28Greater+China+Region%29&location=Singapore",
+  "postedAt": "2026-09-27T23:55:17-04:00",
+  "category": "solutions",
+  "seniority": "senior",
+  "isAiRelated": false,
+  "verification": "official",
+  "status": "closed",
+  "lastVerified": "2026-11-24",
+  "missCount": 2,
+  "closedAt": "2026-11-26",
+  "roleFamily": "Delivery Solutions Architect"
+ },
+ {
   "id": "datadog-8236080",
   "companyId": "datadog",
   "firstSeen": "2026-11-22",
@@ -13060,6 +13228,48 @@
   "missCount": 2,
   "closedAt": "2026-11-24",
   "roleFamily": "Recruiter"
+ },
+ {
+  "id": "datadog-8237240",
+  "companyId": "datadog",
+  "firstSeen": "2026-11-22",
+  "title": "Senior Sourcer, Enterprise Sales",
+  "location": "Singapore, Singapore",
+  "department": "",
+  "applyUrl": "https://careers.datadoghq.com/detail/8237240/?gh_jid=8237240",
+  "sourceUrl": "https://careers.datadoghq.com/detail/8237240/?gh_jid=8237240",
+  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=Datadog+Senior+Sourcer%2C+Enterprise+Sales&location=Singapore",
+  "postedAt": "2026-10-01T02:09:01-04:00",
+  "category": "other",
+  "seniority": "senior",
+  "isAiRelated": false,
+  "verification": "official",
+  "status": "closed",
+  "lastVerified": "2026-11-24",
+  "missCount": 2,
+  "closedAt": "2026-11-26",
+  "roleFamily": "Sourcer"
+ },
+ {
+  "id": "okx-7552817003",
+  "companyId": "okx",
+  "firstSeen": "2026-11-22",
+  "title": "Product Manager / Director, Fiat",
+  "location": "Singapore, Singapore",
+  "department": "",
+  "applyUrl": "https://job-boards.greenhouse.io/okx/jobs/7552817003",
+  "sourceUrl": "https://job-boards.greenhouse.io/okx/jobs/7552817003",
+  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=OKX+Product+Manager+%2F+Director%2C+Fiat&location=Singapore",
+  "postedAt": "2025-12-10T01:49:19-05:00",
+  "category": "product",
+  "seniority": "lead",
+  "isAiRelated": false,
+  "verification": "official",
+  "status": "closed",
+  "lastVerified": "2026-11-24",
+  "missCount": 2,
+  "closedAt": "2026-11-26",
+  "roleFamily": "Product Manager"
  },
  {
   "id": "okx-6642975003",
@@ -13102,6 +13312,69 @@
   "missCount": 2,
   "closedAt": "2026-11-25",
   "roleFamily": "Product Manager"
+ },
+ {
+  "id": "openai-a57bb806-0d67-48ba-96cc-695667eae41a",
+  "companyId": "openai",
+  "firstSeen": "2026-11-22",
+  "title": "Marketing Technology & Operations Lead, APAC",
+  "location": "Singapore",
+  "department": "Marketing",
+  "applyUrl": "https://jobs.ashbyhq.com/openai/a57bb806-0d67-48ba-96cc-695667eae41a",
+  "sourceUrl": "https://jobs.ashbyhq.com/openai/a57bb806-0d67-48ba-96cc-695667eae41a",
+  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=OpenAI+Marketing+Technology+%26+Operations+Lead%2C+APAC&location=Singapore",
+  "postedAt": "2026-10-27T22:42:07.055+00:00",
+  "category": "gtm",
+  "seniority": "lead",
+  "isAiRelated": true,
+  "verification": "official",
+  "status": "closed",
+  "lastVerified": "2026-11-24",
+  "missCount": 2,
+  "closedAt": "2026-11-26",
+  "roleFamily": "Marketing Technology & Operations"
+ },
+ {
+  "id": "openai-b1a5980d-1c52-4af5-8596-5951b584ca37",
+  "companyId": "openai",
+  "firstSeen": "2026-11-22",
+  "title": "Strategy & Operations Lead — SEA & ANZ",
+  "location": "Singapore",
+  "department": "Business Operations",
+  "applyUrl": "https://jobs.ashbyhq.com/openai/b1a5980d-1c52-4af5-8596-5951b584ca37",
+  "sourceUrl": "https://jobs.ashbyhq.com/openai/b1a5980d-1c52-4af5-8596-5951b584ca37",
+  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=OpenAI+Strategy+%26+Operations+Lead+%E2%80%94+SEA+%26+ANZ&location=Singapore",
+  "postedAt": "2026-11-13T07:31:29.236+00:00",
+  "category": "strategy",
+  "seniority": "lead",
+  "isAiRelated": true,
+  "verification": "official",
+  "status": "closed",
+  "lastVerified": "2026-11-24",
+  "missCount": 2,
+  "closedAt": "2026-11-26",
+  "roleFamily": "Strategy & Operations"
+ },
+ {
+  "id": "stripe-8287916",
+  "companyId": "stripe",
+  "firstSeen": "2026-11-22",
+  "title": "Credit Risk Analyst Commercial Underwriter",
+  "location": "Singapore",
+  "department": "",
+  "applyUrl": "https://stripe.com/jobs/search?gh_jid=8287916",
+  "sourceUrl": "https://stripe.com/jobs/search?gh_jid=8287916",
+  "linkedinSearchUrl": "https://www.linkedin.com/jobs/search/?keywords=Stripe+Credit+Risk+Analyst+Commercial+Underwriter&location=Singapore",
+  "postedAt": "2026-10-22T01:05:56-04:00",
+  "category": "data",
+  "seniority": "mid",
+  "isAiRelated": false,
+  "verification": "official",
+  "status": "closed",
+  "lastVerified": "2026-11-24",
+  "missCount": 2,
+  "closedAt": "2026-11-26",
+  "roleFamily": "Credit Risk Analyst Commercial Underwriter"
  },
  {
   "id": "stripe-8230296",

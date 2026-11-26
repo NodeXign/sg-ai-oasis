@@ -1,28 +1,5 @@
 [
  {
-  "id": "evt-ptsQx2BSFjr4PCW",
-  "title": "The One About Forward Deployed Engineering",
-  "startAt": "2026-11-25T07:00:00.000Z",
-  "endAt": "2026-11-25T09:00:00.000Z",
-  "venue": "Lorong AI @ One-North",
-  "address": "Lorong AI @ One-North, 69 Ayer Rajah Cres., Singapore 139961",
-  "lat": 1.296139,
-  "lng": 103.786991,
-  "url": "https://luma.com/vrtguwjt",
-  "coverImageUrl": "https://images.lumacdn.com/event-covers/z3/b79dda64-61b1-40d5-a865-490604434a7b.png",
-  "organiser": "Lorong AI",
-  "isFree": true,
-  "price": null,
-  "status": "approval",
-  "isOnline": false,
-  "tags": [],
-  "sourceIds": [
-   "ai-at-singapore"
-  ],
-  "companyIds": [],
-  "firstSeen": "2026-11-24"
- },
- {
   "id": "evt-Q2Ha3PC0mv2yn1y",
   "title": "Nerd Out №02 · Physical AI, Unpacked",
   "startAt": "2026-11-26T10:00:00.000Z",
@@ -224,7 +201,7 @@
   "organiser": "",
   "isFree": true,
   "price": null,
-  "status": "approval",
+  "status": "sold_out",
   "isOnline": false,
   "tags": [],
   "sourceIds": [
@@ -420,6 +397,29 @@
   ],
   "companyIds": [],
   "firstSeen": "2026-11-22"
+ },
+ {
+  "id": "evt-S98lv9sCenF6SQw",
+  "title": "Women who AI: Show & Tell over Snacks & Stories",
+  "startAt": "2026-12-11T11:00:00.000Z",
+  "endAt": "2026-12-11T13:00:00.000Z",
+  "venue": "Chapters @ Maxwell",
+  "address": "Chapters @ Maxwell, 35 Kreta Ayer Rd, #02-01, Singapore 089000",
+  "lat": 1.2807476,
+  "lng": 103.8422744,
+  "url": "https://luma.com/oeg9u81i",
+  "coverImageUrl": "https://images.lumacdn.com/uploads/kc/34be7c92-30b3-467f-bac5-18317c64c9a7.jpg",
+  "organiser": "",
+  "isFree": false,
+  "price": "SGD 20",
+  "status": "approval",
+  "isOnline": false,
+  "tags": [],
+  "sourceIds": [
+   "luma-singapore"
+  ],
+  "companyIds": [],
+  "firstSeen": "2026-11-26"
  },
  {
   "id": "evt-7KrdLibm9384q2k",
