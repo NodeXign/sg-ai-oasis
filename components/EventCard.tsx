@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import type { Company, Lang, SgEvent } from '@/lib/types';
-import { fmtTime, getDict } from '@/lib/i18n';
+import { fmtDay, fmtTime, getDict } from '@/lib/i18n';
 import { getNearestMrt } from '@/lib/mrt-stations';
+import type { EventEvalContext } from '@/lib/go-decision';
+import EventCardActions from './EventCardActions';
 
 export default function EventCard({
   event,
@@ -16,11 +18,37 @@ export default function EventCard({
 }) {
   const t = getDict(lang).events;
   const mrt = event.lat != null && event.lng != null ? getNearestMrt(event.lat, event.lng, 1)[0] : undefined;
+  const nearMrt = mrt && mrt.walkMins <= 15 ? { name: mrt.name, walkMins: Math.max(mrt.walkMins, 1) } : undefined;
   const hiring = event.companyIds.filter((id) => openRoles[id] && companies[id]);
   const time = event.endAt
     ? `${fmtTime(event.startAt, lang)} – ${fmtTime(event.endAt, lang)}`
     : fmtTime(event.startAt, lang);
   const place = event.isOnline ? t.online : event.venue || t.addressHidden;
+
+  const evalContext: EventEvalContext = {
+    id: event.id,
+    title: event.title,
+    startAt: event.startAt,
+    endAt: event.endAt,
+    whenLabel: `${fmtDay(event.startAt, lang)} · ${time}`,
+    venue: place,
+    isOnline: event.isOnline,
+    mrtName: nearMrt?.name,
+    mrtWalkMins: nearMrt?.walkMins,
+    organiser: event.organiser,
+    tags: event.tags,
+    isFree: event.isFree,
+    price: event.price,
+    status: event.status,
+    url: event.url,
+    hiringCompanies: hiring.map((id) => ({
+      id,
+      name: companies[id].name,
+      sector: companies[id].sector,
+      aiFocus: companies[id].aiFocus,
+      openRoles: openRoles[id],
+    })),
+  };
 
   return (
     <article className="card hover-card flex flex-col gap-3 p-4">
@@ -38,7 +66,7 @@ export default function EventCard({
 
       <div className="space-y-0.5 text-[13px] text-muted">
         <p>{place}</p>
-        {mrt && mrt.walkMins <= 15 && <p>{t.walk(mrt.name, Math.max(mrt.walkMins, 1))}</p>}
+        {nearMrt && <p>{t.walk(nearMrt.name, nearMrt.walkMins)}</p>}
         {event.organiser && <p>{t.by} {event.organiser}</p>}
       </div>
 
@@ -50,11 +78,7 @@ export default function EventCard({
         </Link>
       ))}
 
-      <div className="mt-auto pt-1">
-        <a href={event.url} target="_blank" rel="noopener noreferrer" className="btn btn-sm w-full">
-          {t.register} <span aria-hidden>↗</span>
-        </a>
-      </div>
+      <EventCardActions event={evalContext} lang={lang} registerLabel={t.register} />
     </article>
   );
 }

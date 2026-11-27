@@ -79,6 +79,7 @@ export default async function HomePage({ params }: { params: { lang: Lang } }) {
       hiring: h.length > 0,
       hiringText: h.length ? dict.events.hiring(companyById[h[0]].name, openRoles[h[0]]) : undefined,
       hiringHref: h.length ? `/${lang}/jobs?company=${h[0]}` : undefined,
+      evaluateHref: `/${lang}/gonogo?event=${encodeURIComponent(e.id)}`,
     });
   });
   const offMap = events.filter((e) => !e.isOnline).length - points.length;
@@ -97,6 +98,7 @@ export default async function HomePage({ params }: { params: { lang: Lang } }) {
     legendEvent: t.legendEvent,
     hiringBadge: t.hiringBadge,
     viewRoles: t.viewRoles,
+    evaluate: dict.gonogo.evaluateBtn,
     close: t.close,
   };
 

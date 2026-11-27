@@ -25,6 +25,7 @@ export interface MapPoint {
   hiring: boolean;        // organiser has open roles in Singapore
   hiringText?: string;
   hiringHref?: string;
+  evaluateHref: string;
 }
 
 export interface MapCopy {
@@ -41,6 +42,7 @@ export interface MapCopy {
   legendEvent: string;
   hiringBadge: string;
   viewRoles: string;
+  evaluate: string;
   close: string;
 }
 
@@ -1182,6 +1184,9 @@ export default function EventMap({ points, copy }: { points: MapPoint[]; copy: M
             )}
 
             <div className="mt-3 flex flex-wrap gap-2">
+              <Link href={selectedPoint.evaluateHref} className="btn btn-sm">
+                {copy.evaluate}
+              </Link>
               <a
                 href={selectedPoint.url}
                 target="_blank"
