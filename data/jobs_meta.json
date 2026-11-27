@@ -1,15 +1,10 @@
 {
-  "lastRun": "2026-11-27T12:43:30+08:00",
-  "companies": 27,
-  "openJobs": 621,
-  "aiRelatedOpenJobs": 161,
-  "new": 5,
-  "verified": 589,
-  "closed": 5,
-  "failedCompanies": [
-    {
-      "id": "thoughtworks",
-      "error": "HTTPError: HTTP Error 404: Not Found"
-    }
-  ]
+  "lastRun": "2026-11-27T15:25:23+08:00",
+  "companies": 36,
+  "openJobs": 2105,
+  "aiRelatedOpenJobs": 460,
+  "new": 1492,
+  "verified": 593,
+  "closed": 8,
+  "failedCompanies": []
 }

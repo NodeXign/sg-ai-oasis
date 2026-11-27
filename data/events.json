@@ -17,7 +17,8 @@
   "isOnline": false,
   "tags": [],
   "sourceIds": [
-   "ai-at-singapore"
+   "ai-at-singapore",
+   "lorong-ai"
   ],
   "companyIds": [],
   "firstSeen": "2026-11-24"
@@ -69,6 +70,68 @@
   "firstSeen": "2026-11-24"
  },
  {
+  "id": "bevy-132036",
+  "title": "DevFest Singapore 2026: Architecting for the Agentic Era",
+  "startAt": "2026-11-28T01:00:00.000Z",
+  "endAt": "2026-11-28T04:30:00.000Z",
+  "venue": "Google Developers Space, Singapore",
+  "address": "Google Developers Space, Singapore, 80 Pasir Panjang Road, Singapore 117372",
+  "lat": null,
+  "lng": null,
+  "url": "https://gdg.community.dev/events/details/google-gdg-singapore-presents-devfest-singapore-2026-architecting-for-the-agentic-era/",
+  "coverImageUrl": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_CmoV8fz",
+  "organiser": "GDG Singapore",
+  "isFree": null,
+  "price": null,
+  "status": "open",
+  "isOnline": false,
+  "tags": [
+   "AI",
+   "AI - Gemini",
+   "Conference",
+   "DevFest",
+   "Workshop / hands-on session"
+  ],
+  "sourceIds": [
+   "gdg-singapore"
+  ],
+  "companyIds": [
+   "google"
+  ],
+  "firstSeen": "2026-11-27"
+ },
+ {
+  "id": "bevy-132037",
+  "title": "DevFest Singapore 2026: Prototyping from Scratch",
+  "startAt": "2026-11-28T05:30:00.000Z",
+  "endAt": "2026-11-28T10:00:00.000Z",
+  "venue": "Google Developers Space, Singapore",
+  "address": "Google Developers Space, Singapore, 80 Pasir Panjang Road, Singapore 117372",
+  "lat": null,
+  "lng": null,
+  "url": "https://gdg.community.dev/events/details/google-gdg-singapore-presents-devfest-singapore-2026-prototyping-from-scratch/",
+  "coverImageUrl": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_zUsX2rf",
+  "organiser": "GDG Singapore",
+  "isFree": null,
+  "price": null,
+  "status": "open",
+  "isOnline": false,
+  "tags": [
+   "AI - Gemini",
+   "AI - Gemma",
+   "Conference",
+   "DevFest",
+   "Workshop / hands-on session"
+  ],
+  "sourceIds": [
+   "gdg-singapore"
+  ],
+  "companyIds": [
+   "google"
+  ],
+  "firstSeen": "2026-11-27"
+ },
+ {
   "id": "evt-uvWfw0VIHAEzg9k",
   "title": "Hebbian x Gemini Robotics and Physical AI Hackathon 2026",
   "startAt": "2026-11-29T01:00:00.000Z",
@@ -86,10 +149,95 @@
   "isOnline": false,
   "tags": [],
   "sourceIds": [
-   "ai-at-singapore"
+   "ai-at-singapore",
+   "lorong-ai"
+  ],
+  "companyIds": [
+   "google"
+  ],
+  "firstSeen": "2026-11-24"
+ },
+ {
+  "id": "evt-sGJ8EMPXA8hpGsX",
+  "title": "Claude for Enterprise: Scaling AI in Your Organisation",
+  "startAt": "2026-11-30T10:30:00.000Z",
+  "endAt": "2026-11-30T13:00:00.000Z",
+  "venue": "",
+  "address": "",
+  "lat": null,
+  "lng": null,
+  "url": "https://luma.com/ClaudesgXAws",
+  "coverImageUrl": "https://images.lumacdn.com/uploads/9e/ec926c91-c418-4d08-bbe6-2b600546c00f.png",
+  "organiser": "Claude SG Community",
+  "isFree": true,
+  "price": null,
+  "status": "sold_out",
+  "isOnline": false,
+  "tags": [
+   "business",
+   "Claude Singapore",
+   "enterprise",
+   "networking"
+  ],
+  "sourceIds": [
+   "claude-sg"
+  ],
+  "companyIds": [
+   "anthropic"
+  ],
+  "firstSeen": "2026-11-27"
+ },
+ {
+  "id": "sginnovate-cybersg-connect-securing-connected-critical-infrastructure",
+  "title": "CyberSG Connect: Securing Connected Critical Infrastructure",
+  "startAt": "2026-12-01T06:30:00.000Z",
+  "endAt": null,
+  "venue": "32 Carpenter Street",
+  "address": "32 Carpenter Street, 059911",
+  "lat": null,
+  "lng": null,
+  "url": "https://www.sginnovate.com/event/cybersg-connect-securing-connected-critical-infrastructure",
+  "coverImageUrl": "https://central.sginnovate.com/assets/eventBanner/event-banner-2a6609ed-d267-4df5-84aa-33662ab57590.png",
+  "organiser": "SGInnovate",
+  "isFree": null,
+  "price": null,
+  "status": "open",
+  "isOnline": false,
+  "tags": [
+   "Artificial Intelligence",
+   "Cybersecurity",
+   "Internet-of-Things"
+  ],
+  "sourceIds": [
+   "sginnovate"
   ],
   "companyIds": [],
-  "firstSeen": "2026-11-24"
+  "firstSeen": "2026-11-27"
+ },
+ {
+  "id": "evt-9UaAQsNCyFTUR2l",
+  "title": "Do Different Models Learn the Same World?",
+  "startAt": "2026-12-01T07:00:00.000Z",
+  "endAt": "2026-12-01T09:00:00.000Z",
+  "venue": "Lorong AI @ One-North",
+  "address": "Lorong AI @ One-North, 69 Ayer Rajah Cres., Singapore 139961",
+  "lat": 1.296139,
+  "lng": 103.786991,
+  "url": "https://luma.com/4l1jvkqn",
+  "coverImageUrl": "https://images.lumacdn.com/event-covers/se/6129ae39-5ee5-4a95-9321-109438c55044.jpg",
+  "organiser": "Lorong AI",
+  "isFree": true,
+  "price": null,
+  "status": "approval",
+  "isOnline": false,
+  "tags": [
+   "Paper Club"
+  ],
+  "sourceIds": [
+   "lorong-ai"
+  ],
+  "companyIds": [],
+  "firstSeen": "2026-11-27"
  },
  {
   "id": "evt-EGEvaHkVFiuEKv3",
@@ -113,6 +261,53 @@
   ],
   "companyIds": [],
   "firstSeen": "2026-11-22"
+ },
+ {
+  "id": "evt-YbcwgbdhkqK0vf9",
+  "title": "The One About Knowing When Not to Use AI",
+  "startAt": "2026-12-02T07:00:00.000Z",
+  "endAt": "2026-12-02T09:00:00.000Z",
+  "venue": "Lorong AI @ One-North",
+  "address": "Lorong AI @ One-North, 69 Ayer Rajah Cres., Singapore 139961",
+  "lat": 1.296139,
+  "lng": 103.786991,
+  "url": "https://luma.com/ovr73db6",
+  "coverImageUrl": "https://images.lumacdn.com/event-covers/z3/b79dda64-61b1-40d5-a865-490604434a7b.png",
+  "organiser": "Lorong AI",
+  "isFree": true,
+  "price": null,
+  "status": "approval",
+  "isOnline": false,
+  "tags": [],
+  "sourceIds": [
+   "lorong-ai"
+  ],
+  "companyIds": [],
+  "firstSeen": "2026-11-27"
+ },
+ {
+  "id": "evt-XUjOgEoZwWaFGi3",
+  "title": "Devin Community Meetup — Singapore",
+  "startAt": "2026-12-02T10:00:00.000Z",
+  "endAt": "2026-12-02T13:00:00.000Z",
+  "venue": "",
+  "address": "",
+  "lat": null,
+  "lng": null,
+  "url": "https://luma.com/hpytnjb1",
+  "coverImageUrl": "https://images.lumacdn.com/uploads/zg/4c892f2b-fb6f-454f-b991-cfc978a75c6a.png",
+  "organiser": "",
+  "isFree": true,
+  "price": null,
+  "status": "approval",
+  "isOnline": false,
+  "tags": [],
+  "sourceIds": [
+   "luma-singapore",
+   "sginnovate"
+  ],
+  "companyIds": [],
+  "firstSeen": "2026-11-27"
  },
  {
   "id": "evt-AFNQqbyGCMn4zHF",
@@ -163,6 +358,32 @@
   "firstSeen": "2026-11-22"
  },
  {
+  "id": "sginnovate-morning-pitch-asia-special-edition-collaboration-1982-ventures",
+  "title": "Morning Pitch Asia – Special Edition in collaboration with 1982 Ventures",
+  "startAt": "2026-12-03T02:00:00.000Z",
+  "endAt": null,
+  "venue": "32 Carpenter Street",
+  "address": "32 Carpenter Street, 059911 and Online",
+  "lat": null,
+  "lng": null,
+  "url": "https://www.sginnovate.com/event/morning-pitch-asia-special-edition-collaboration-1982-ventures",
+  "coverImageUrl": "https://central.sginnovate.com/assets/eventBanner/event-banner-facd3ddd-a353-417d-8498-5878820be215.png",
+  "organiser": "SGInnovate",
+  "isFree": null,
+  "price": null,
+  "status": "open",
+  "isOnline": false,
+  "tags": [
+   "Artificial Intelligence",
+   "Data Analytics"
+  ],
+  "sourceIds": [
+   "sginnovate"
+  ],
+  "companyIds": [],
+  "firstSeen": "2026-11-27"
+ },
+ {
   "id": "evt-cjslzSGyL9JgLol",
   "title": "Singapore AI Safety Research Symposium",
   "startAt": "2026-12-03T04:00:00.000Z",
@@ -181,6 +402,7 @@
   "tags": [],
   "sourceIds": [
    "ai-at-singapore",
+   "lorong-ai",
    "luma-singapore"
   ],
   "companyIds": [],
@@ -229,7 +451,9 @@
   "sourceIds": [
    "luma-singapore"
   ],
-  "companyIds": [],
+  "companyIds": [
+   "google"
+  ],
   "firstSeen": "2026-11-22"
  },
  {
@@ -250,7 +474,8 @@
   "isOnline": false,
   "tags": [],
   "sourceIds": [
-   "ai-at-singapore"
+   "ai-at-singapore",
+   "lorong-ai"
   ],
   "companyIds": [],
   "firstSeen": "2026-11-24"
@@ -276,8 +501,42 @@
    "ai-at-singapore",
    "luma-singapore"
   ],
-  "companyIds": [],
+  "companyIds": [
+   "google"
+  ],
   "firstSeen": "2026-11-22"
+ },
+ {
+  "id": "evt-GVGgTzF2xmBQris",
+  "title": "Claude Code Setup & 101 Workshop",
+  "startAt": "2026-12-09T10:30:00.000Z",
+  "endAt": "2026-12-09T13:30:00.000Z",
+  "venue": "",
+  "address": "",
+  "lat": null,
+  "lng": null,
+  "url": "https://luma.com/Claudecode101xLifelonglearning",
+  "coverImageUrl": "https://images.lumacdn.com/uploads/yd/4d6ddc77-1fc5-43db-b93a-0f68ce87a821.png",
+  "organiser": "Claude SG Community",
+  "isFree": true,
+  "price": null,
+  "status": "approval",
+  "isOnline": false,
+  "tags": [
+   "AI",
+   "Ai apps",
+   "Claude Code",
+   "Claude Singapore",
+   "Vibe coding",
+   "workshop"
+  ],
+  "sourceIds": [
+   "claude-sg"
+  ],
+  "companyIds": [
+   "anthropic"
+  ],
+  "firstSeen": "2026-11-27"
  },
  {
   "id": "evt-S98lv9sCenF6SQw",
@@ -326,6 +585,33 @@
   "firstSeen": "2026-11-24"
  },
  {
+  "id": "sginnovate-div0-eoy-meetup",
+  "title": "Div0 EOY Meetup",
+  "startAt": "2026-12-14T11:00:00.000Z",
+  "endAt": null,
+  "venue": "Red Hat Asia Pacific Pte Ltd",
+  "address": "Red Hat Asia Pacific Pte Ltd, 88 Market St, Level 45 CapitaSpring, Singapore, 048948",
+  "lat": null,
+  "lng": null,
+  "url": "https://www.sginnovate.com/event/div0-eoy-meetup",
+  "coverImageUrl": "https://central.sginnovate.com/assets/eventBanner/event-banner-e9d99ce5-b2b1-41e7-a8a6-5c94c26c9d60.png",
+  "organiser": "SGInnovate",
+  "isFree": null,
+  "price": null,
+  "status": "open",
+  "isOnline": false,
+  "tags": [
+   "Artificial Intelligence",
+   "Cybersecurity",
+   "Internet-of-Things"
+  ],
+  "sourceIds": [
+   "sginnovate"
+  ],
+  "companyIds": [],
+  "firstSeen": "2026-11-27"
+ },
+ {
   "id": "evt-U1SPHvLTSEq060y",
   "title": "Hermes AI Agent Night - OpenBuilder & Amazon Web Services",
   "startAt": "2026-12-16T10:00:00.000Z",
@@ -346,7 +632,9 @@
    "ai-at-singapore",
    "luma-singapore"
   ],
-  "companyIds": [],
+  "companyIds": [
+   "aws"
+  ],
   "firstSeen": "2026-11-22"
  },
  {

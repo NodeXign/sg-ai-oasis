@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-11-27T12:43:30+08:00",
-  "events": 16,
-  "linkedToCompanies": 1,
+  "lastRun": "2026-11-27T15:24:14+08:00",
+  "events": 26,
+  "linkedToCompanies": 9,
   "sources": {
     "ai-at-singapore": {
       "listed": 17,
@@ -9,7 +9,31 @@
     },
     "luma-singapore": {
       "listed": 29,
+      "kept": 3
+    },
+    "gdg-singapore": {
+      "listed": 2,
       "kept": 2
+    },
+    "gdg-cloud-singapore": {
+      "listed": 0,
+      "kept": 0
+    },
+    "notion-singapore": {
+      "listed": 0,
+      "kept": 0
+    },
+    "lorong-ai": {
+      "listed": 6,
+      "kept": 2
+    },
+    "claude-sg": {
+      "listed": 2,
+      "kept": 2
+    },
+    "sginnovate": {
+      "listed": 8,
+      "kept": 3
     }
   },
   "failedSources": []
