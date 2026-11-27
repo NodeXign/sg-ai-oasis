@@ -55,8 +55,10 @@ export interface XhsDeckConfig {
   card4Point2Title?: string;
   card4Point2Body?: string;
   card4ScreenshotDataUrl?: string | null;
-  // Optional extra full directory pages if > 8 events
+  // Optional extra full directory pages if > 8 events (default true so ALL selected dates & events appear)
   includeOverflowChecklist: boolean;
+  // Route external https poster URLs through /api/admin/image-proxy for browser-side PNG export (CORS-safe)
+  proxyExternalImages?: boolean;
   exceptionReason?: string;
   cardHtmlOverrides?: Record<string, string>; // key = "01", "02", ...
 }
@@ -1165,11 +1167,23 @@ export function generateXhsLifePack(
     districtCounts.other_online ? `其他/线上/待公布 ${districtCounts.other_online}` : '',
   ].filter(Boolean);
 
-  // Overview cap = 8 (1-8 all fit on Card 02 dynamically; > 8 uses date-balanced sampling + optional overflow pages)
-  const overviewCap = 8;
-  const overviewSelection = selectBalancedOverview(selectedEvents, overviewCap);
-  const extraEvents = config.includeOverflowChecklist ? overviewSelection.rest : [];
-  const extraPagesCount = Math.ceil(extraEvents.length / 8);
+  // Paginate Card 02 so ALL selected dates & events appear on posters when includeOverflowChecklist is enabled.
+  // 1-8 events -> 1 page (exact 5-card 40/20/40 deck). > 8 events -> chronological 7-per-page overview cards!
+  const overviewPagesData: XhsEventItem[][] = [];
+  let overviewHiddenCount = 0;
+
+  if (selectedEvents.length <= 8) {
+    overviewPagesData.push(selectedEvents);
+  } else if (config.includeOverflowChecklist) {
+    const perPage = 7;
+    for (let i = 0; i < selectedEvents.length; i += perPage) {
+      overviewPagesData.push(selectedEvents.slice(i, i + perPage));
+    }
+  } else {
+    const balanced = selectBalancedOverview(selectedEvents, 8);
+    overviewPagesData.push(balanced.shown);
+    overviewHiddenCount = balanced.rest.length;
+  }
 
   type DraftPage = {
     role: string;
@@ -1201,8 +1215,8 @@ export function generateXhsLifePack(
            <span>SG AI Oasis · 2D 活动联动实景地图（${esc(dateRangeText)}）</span>
            <span style="color:#616161;">已定位 ${linkedMap.mappedCount} 场 · 另 ${linkedMap.offMapCount} 场线上/待公布</span>
          </div>
-         <div style="flex:1;min-height:0;background:#e3e7ec;display:flex;align-items:center;justify-content:center;overflow:hidden;">
-           <img src="${esc(config.coverMapSnapshotDataUrl)}" alt="SG AI Oasis 首页实景地图" style="width:100%;height:100%;object-fit:contain;display:block;"/>
+         <div style="flex:1;min-height:0;background:#dce5ed;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+           <img src="${esc(config.coverMapSnapshotDataUrl)}" alt="SG AI Oasis 首页实景地图" style="width:100%;height:100%;object-fit:cover;display:block;"/>
          </div>
        </div>`
     : `<div class="frame-box" style="flex:1;display:flex;flex-direction:column;">
@@ -1246,79 +1260,102 @@ export function generateXhsLifePack(
   });
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // PAGE 02 — EVENT OVERVIEW BY AUDIENCE & INTEREST + NOTIONALY ART (Notionaly · 1/2)
+  // PAGE 02 (+ auto-paginated continuations) — ALL SELECTED EVENTS BY AUDIENCE & INTEREST
   // Dynamic 3-tier density: 1-5 spacious, 6 standard, 7-8 compact (zero footer overlap)
   // ═══════════════════════════════════════════════════════════════════════════
-  const overviewList = overviewSelection.shown;
-  const overviewRemaining = overviewSelection.rest.length;
-  const ovCount = overviewList.length;
-  const isCompactOv = ovCount >= 7;
-  const isUltraCompactOv = ovCount >= 8;
+  let globalOvIndex = 0;
+  overviewPagesData.forEach((pageEvents, pageIdx) => {
+    const isMultiOv = overviewPagesData.length > 1;
+    const ovCount = pageEvents.length;
+    const isCompactOv = ovCount >= 7;
+    const isUltraCompactOv = ovCount >= 8;
 
-  const ovRowStyle = isUltraCompactOv
-    ? 'padding:8px 14px;gap:2px;border-radius:8px;'
-    : isCompactOv
-      ? 'padding:9px 15px;gap:3px;border-radius:9px;'
-      : ovCount <= 5
-        ? 'padding:15px 18px;gap:6px;'
-        : 'padding:11px 16px;gap:4px;';
-  const ovTitleSize = isUltraCompactOv ? 19 : isCompactOv ? 20 : ovCount <= 5 ? 23 : 21;
-  const ovMetaSize = isUltraCompactOv ? 15.5 : isCompactOv ? 16 : 17.5;
-  const ovPillPad = isCompactOv ? 'padding:2px 8px;font-size:13.5px;' : '';
-  const ovListGap = isUltraCompactOv ? 6 : isCompactOv ? 7 : 10;
+    const ovRowStyle = isUltraCompactOv
+      ? 'padding:8px 14px;gap:2px;border-radius:8px;'
+      : isCompactOv
+        ? 'padding:9px 15px;gap:3px;border-radius:9px;'
+        : ovCount <= 5
+          ? 'padding:15px 18px;gap:6px;'
+          : 'padding:11px 16px;gap:4px;';
+    const ovTitleSize = isUltraCompactOv ? 19 : isCompactOv ? 20 : ovCount <= 5 ? 23 : 21;
+    const ovMetaSize = isUltraCompactOv ? 15.5 : isCompactOv ? 16 : 17.5;
+    const ovPillPad = isCompactOv ? 'padding:2px 8px;font-size:13.5px;' : '';
+    const ovListGap = isUltraCompactOv ? 6 : isCompactOv ? 7 : 10;
 
-  const overviewRowsHtml =
-    overviewList.length === 0
-      ? `<div class="ov-row"><div class="ov-title">当前未选中活动</div><div class="ov-fit">请在左侧选择日期并勾选活动。</div></div>`
-      : overviewList
-          .map((e, idx) => {
-            const inferred = inferAudienceFit(e);
-            const customNote = (config.audienceNotes[e.id] ?? e.friendNote ?? '').trim();
-            const fitText = customNote
-              ? `适合 / 亮点：${truncate(customNote, isCompactOv ? 36 : 42)}`
-              : `适合：${inferred.audience}`;
-            const pills: string[] = [];
-            if (e.isFriendEvent) pills.push(`<span class="tag-pill tag-pill--dark" style="${ovPillPad}">朋友主办</span>`);
-            if (e.hiringCompanyNames?.length) pills.push(`<span class="tag-pill tag-pill--dark" style="${ovPillPad}">在招</span>`);
-            pills.push(`<span class="tag-pill tag-pill--soft" style="${ovPillPad}">${esc(inferred.interest)}</span>`);
-            if (e.isFree === true && !isUltraCompactOv) pills.push(`<span class="tag-pill" style="${ovPillPad}">免费</span>`);
+    const firstDayMd = pageEvents.length ? fmtShortDate(sgDateKey(pageEvents[0].startAt)) : '';
+    const lastDayMd = pageEvents.length ? fmtShortDate(sgDateKey(pageEvents[pageEvents.length - 1].startAt)) : '';
+    const pageSpan = firstDayMd && lastDayMd && firstDayMd !== lastDayMd ? `${firstDayMd} – ${lastDayMd}` : firstDayMd;
 
-            return `<div class="ov-row${e.isFriendEvent ? ' ov-row--friend' : ''}" style="${ovRowStyle}">
-              <div class="ov-top">
-                <span style="font-size:${ovMetaSize}px;font-weight:700;color:#231F20;">${String(idx + 1).padStart(2, '0')} · ${esc(fmtEventDateTime(e.startAt))} · ${esc(shortVenue(e))}</span>
-                <span style="display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end;">${pills.join('')}</span>
-              </div>
-              <div class="ov-title" style="font-size:${ovTitleSize}px;">${esc(truncate(e.title, isCompactOv ? 56 : 62))}</div>
-              <div class="ov-fit" style="font-size:${ovMetaSize}px;">
-                <span style="color:#231F20;">${esc(fitText)}</span>
-                ${e.organiser ? `<span style="flex-shrink:0;">${esc(truncate(e.organiser, 18))}</span>` : ''}
-              </div>
-            </div>`;
-          })
-          .join('');
+    const overviewRowsHtml =
+      pageEvents.length === 0
+        ? `<div class="ov-row"><div class="ov-title">当前未选中活动</div><div class="ov-fit">请在左侧选择日期并勾选活动。</div></div>`
+        : pageEvents
+            .map((e) => {
+              globalOvIndex += 1;
+              const inferred = inferAudienceFit(e);
+              const customNote = (config.audienceNotes[e.id] ?? e.friendNote ?? '').trim();
+              const fitText = customNote
+                ? `适合 / 亮点：${truncate(customNote, isCompactOv ? 36 : 42)}`
+                : `适合：${inferred.audience}`;
+              const pills: string[] = [];
+              if (e.isFriendEvent) pills.push(`<span class="tag-pill tag-pill--dark" style="${ovPillPad}">朋友主办</span>`);
+              if (e.hiringCompanyNames?.length) pills.push(`<span class="tag-pill tag-pill--dark" style="${ovPillPad}">在招</span>`);
+              pills.push(`<span class="tag-pill tag-pill--soft" style="${ovPillPad}">${esc(inferred.interest)}</span>`);
+              if (e.isFree === true && !isUltraCompactOv) pills.push(`<span class="tag-pill" style="${ovPillPad}">免费</span>`);
 
-  const ovArtScale = isCompactOv ? 'transform:scale(0.76);transform-origin:right center;margin:-18px 0 -18px -24px;' : '';
+              return `<div class="ov-row${e.isFriendEvent ? ' ov-row--friend' : ''}" style="${ovRowStyle}">
+                <div class="ov-top">
+                  <span style="font-size:${ovMetaSize}px;font-weight:700;color:#231F20;">${String(globalOvIndex).padStart(2, '0')} · ${esc(fmtEventDateTime(e.startAt))} · ${esc(shortVenue(e))}</span>
+                  <span style="display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end;">${pills.join('')}</span>
+                </div>
+                <div class="ov-title" style="font-size:${ovTitleSize}px;">${esc(truncate(e.title, isCompactOv ? 56 : 62))}</div>
+                <div class="ov-fit" style="font-size:${ovMetaSize}px;">
+                  <span style="color:#231F20;">${esc(fitText)}</span>
+                  ${e.organiser ? `<span style="flex-shrink:0;">${esc(truncate(e.organiser, 18))}</span>` : ''}
+                </div>
+              </div>`;
+            })
+            .join('');
 
-  drafts.push({
-    role: '02 活动总览 · 人群与兴趣 · Notionaly',
-    primaryStyle: 'notionaly',
-    titlePlain: '本期活动总览：按人群与兴趣对号入座。',
-    titleHtml: isCompactOv ? '本期活动总览：按人群与兴趣挑场。' : '本期活动总览：<br>按人群与兴趣挑场。',
-    bodyHtml: `
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:14px;">
-        <p style="flex:1;font-size:${isCompactOv ? 23 : 26}px;line-height:1.45;">不按时间死翻列表，直接按<b>适合人群与兴趣方向</b>快速扫一眼，找出最贴近你当下阶段的场次。</p>
-        <div style="${ovArtScale}">${buildNotionalySorterSvg()}</div>
-      </div>
-      <div class="overview-list" style="gap:${ovListGap}px;">
-        ${overviewRowsHtml}
-      </div>
-      <p class="small" style="font-size:${isCompactOv ? 18 : 20}px;">${
-        overviewRemaining > 0 && !config.includeOverflowChecklist
-          ? `以上按日期均衡展示 ${overviewList.length} 场；其余 ${overviewRemaining} 场完整信息与报名链接见 ${esc(config.siteUrl || 'sgaioasis.vercel.app/zh')}。`
-          : `本期所选 ${overviewList.length} 场已全部收录，保留官方原名，具体名额以官方报名页为准。`
-      }</p>
-    `,
-    warnings: [],
+    const ovArtScale = isCompactOv ? 'transform:scale(0.76);transform-origin:right center;margin:-18px 0 -18px -24px;' : '';
+    const pageTitlePlain = isMultiOv
+      ? `本期活动总览（${pageIdx + 1}/${overviewPagesData.length}）：${pageSpan}`
+      : '本期活动总览：按人群与兴趣对号入座。';
+    const pageTitleHtml = isMultiOv
+      ? `本期活动总览（${pageIdx + 1}/${overviewPagesData.length}）· ${esc(pageSpan)}`
+      : isCompactOv
+        ? '本期活动总览：按人群与兴趣挑场。'
+        : '本期活动总览：<br>按人群与兴趣挑场。';
+
+    drafts.push({
+      role: isMultiOv
+        ? `活动总览 ${pageIdx + 1}/${overviewPagesData.length} · ${pageSpan} · ${pageIdx === 0 ? 'Notionaly' : 'Diagram Design'}`
+        : '02 活动总览 · 人群与兴趣 · Notionaly',
+      primaryStyle: pageIdx === 0 ? 'notionaly' : 'diagram-design',
+      titlePlain: pageTitlePlain,
+      titleHtml: pageTitleHtml,
+      bodyHtml: `
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:14px;">
+          <p style="flex:1;font-size:${isCompactOv ? 22 : 26}px;line-height:1.45;">${
+            pageIdx === 0
+              ? '不按时间死翻列表，直接按<b>适合人群与兴趣方向</b>快速扫一眼，找出最贴近你当下阶段的场次。'
+              : `承接上页，完整覆盖 <b>${esc(pageSpan)}</b> 共 ${pageEvents.length} 场已选活动，确保所选日期无遗漏。`
+          }</p>
+          ${pageIdx === 0 ? `<div style="${ovArtScale}">${buildNotionalySorterSvg()}</div>` : ''}
+        </div>
+        <div class="overview-list" style="gap:${ovListGap}px;">
+          ${overviewRowsHtml}
+        </div>
+        <p class="small" style="font-size:${isCompactOv ? 18 : 20}px;">${
+          overviewHiddenCount > 0
+            ? `以上按日期均衡展示 ${pageEvents.length} 场；其余 ${overviewHiddenCount} 场见 ${esc(config.siteUrl || 'sgaioasis.vercel.app/zh')}（或在后台勾选“自动分页展示全部活动”）。`
+            : isMultiOv
+              ? `全套总览共 ${selectedEvents.length} 场（${esc(dateRangeText)}），保留官方原名，实时名额以官方报名页为准。`
+              : `本期所选 ${pageEvents.length} 场已全部收录，保留官方原名，具体名额以官方报名页为准。`
+        }</p>
+      `,
+      warnings: [],
+    });
   });
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -1336,7 +1373,15 @@ export function generateXhsLifePack(
       ? `热度信号：本期有 ${hotTotal} 场已满/候补（如 ${truncate(hottestEvent.title, 28)}），${approvalTotal} 场需审核，建议尽早占位。`
       : `热度信号：本期 ${freeTotal} 场免费公开、${approvalTotal} 场需主办方审核；${hiringTotal} 场关联在招公司${hiringRolesSum > 0 ? `（合计 ${hiringRolesSum} 个在招岗）` : ''}。`;
 
-  const posterOf = (e: XhsEventItem) => config.customPosters?.[e.id] || e.coverImageUrl || null;
+  const posterOf = (e: XhsEventItem) => {
+    const custom = config.customPosters?.[e.id];
+    if (custom) return custom;
+    if (!e.coverImageUrl) return null;
+    if (config.proxyExternalImages && /^https:\/\//i.test(e.coverImageUrl)) {
+      return `/api/admin/image-proxy?url=${encodeURIComponent(e.coverImageUrl)}`;
+    }
+    return e.coverImageUrl;
+  };
 
   const buildPickBadges = (e: XhsEventItem, idx: number): string => {
     const pills: string[] = [`<span class="tag-pill tag-pill--dark">主推 0${idx + 1}</span>`];
@@ -1622,39 +1667,6 @@ export function generateXhsLifePack(
     warnings: [],
   });
 
-  // ── Optional Overflow Directory Pages (if user toggles full list & > 6 events) ──
-  for (let p = 0; p < extraPagesCount; p++) {
-    const chunk = extraEvents.slice(p * 8, (p + 1) * 8);
-    const startIdx = overviewCap + p * 8 + 1;
-    const lines = chunk.map((e, i) => {
-      const idx = String(startIdx + i).padStart(2, '0');
-      const dateMd = fmtShortDate(sgDateKey(e.startAt));
-      const time = fmtTimeOnly(e.startAt);
-      const inferred = inferAudienceFit(e);
-      const flag = e.isFriendEvent ? '[友] ' : e.hiringCompanyNames?.length ? '[招] ' : '';
-      return `${idx}. ${dateMd} ${time}  ${flag}${truncate(e.title, 34)}\n    ${shortVenue(e)} · 适合：${truncate(config.audienceNotes[e.id] || e.friendNote || inferred.audience, 24)}`;
-    });
-
-    drafts.push({
-      role: `0${6 + p} 完整活动补录 · Diagram Design`,
-      primaryStyle: 'diagram-design',
-      titlePlain: `更多活动完整补录（${dateRangeText}）`,
-      titleHtml: `更多活动完整补录<br>（${esc(dateRangeText)}）`,
-      bodyHtml: `
-        <p>承接第 02 页，补齐本期剩余 <b>${chunk.length} 场</b> 活动时间、地点与适合人群。</p>
-        <div class="prompt-box" style="flex:1;">
-          <div class="prompt-head">
-            <span class="prompt-title">活动补录清单（第 ${startIdx}–${startIdx + chunk.length - 1} 场）</span>
-            <span class="prompt-tag">DIRECTORY</span>
-          </div>
-          <pre class="prompt-code">${esc(lines.join('\n'))}</pre>
-        </div>
-        <p class="small">全部官方报名链接均可在 https://${esc(cleanSiteUrl)}/events 实时查看。</p>
-      `,
-      warnings: [],
-    });
-  }
-
   // Finalize page numbers & apply optional user HTML overrides
   const totalStr = String(drafts.length).padStart(2, '0');
   const cards: GeneratedCard[] = drafts.map((d, idx) => {
@@ -1721,12 +1733,12 @@ export function generateXhsLifePack(
   const captionMd = [
     `新加坡这周的 AI 活动分散在 Luma、GDG、SGInnovate 和各种朋友群里，想下班去听一场，光翻链接查地址就挺耗精力。`,
     ``,
-    `我用自己维护的开源小站 SG AI Oasis 整理了 ${dateRangeText} 共 ${selectedEvents.length} 场活动，顺手把网站刚更新的功能也放在 5 张图里：`,
-    `1. 图 1：按本期选出的 ${selectedEvents.length} 场活动生成全岛位置图，先看清都在哪几个片区、顺不顺路。`,
-    `2. 图 2：活动总览表，按适合人群和兴趣方向归好类，不用挨个点开猜内容。`,
-    `3. 图 3：本期热度与关键统计，加上优先锁定的重点主推——${pickSummary}。`,
-    `4. 图 4：去现场前可以在网站上直接点进主办方看新加坡在招岗位，也能用新加的 GO/NOGO 小工具按学习、人脉、职业 30 秒判断值不值得去。`,
-    `5. 图 5：整理了网站四个免费功能（机会地图、近期活动、在招岗位、GO/NOGO）和直达二维码，浏览器搜「SG AI Oasis」或打开 https://${cleanSiteUrl} 就能直接用，不用登录。`,
+    `我用自己维护的开源小站 SG AI Oasis 整理了 ${dateRangeText} 共 ${selectedEvents.length} 场活动，顺手把网站刚更新的功能也放在 ${cards.length} 张图里：`,
+    `1. 图 1：按本期选出的 ${selectedEvents.length} 场活动生成全岛 2D 位置图，先看清都在哪几个片区、顺不顺路。`,
+    `2. ${overviewPagesData.length > 1 ? `图 2–${1 + overviewPagesData.length}` : '图 2'}：完整活动总览，覆盖本期全部 ${selectedEvents.length} 场活动并按适合人群与兴趣归类，不用挨个点开猜内容。`,
+    `3. 图 ${2 + overviewPagesData.length}：本期热度与关键统计，加上带官方展板的重点主推——${pickSummary}。`,
+    `4. 图 ${3 + overviewPagesData.length}：去现场前可以在网站上直接点进主办方看新加坡在招岗位，也能用新加的 GO/NOGO 小工具按学习、人脉、职业 30 秒判断值不值得去。`,
+    `5. 图 ${4 + overviewPagesData.length}：整理了网站四个免费功能（机会地图、近期活动、在招岗位、GO/NOGO）和直达二维码，浏览器搜「SG AI Oasis」或打开 https://${cleanSiteUrl} 就能直接用，不用登录。`,
     ``,
     `边界说明：部分活动需主办方审核或报名后才公布具体地址，席位和状态以官方报名页为准；参加活动也不代表内推或面试承诺。`,
     ``,
