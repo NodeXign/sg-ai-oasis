@@ -113,6 +113,7 @@ const zh = {
     line: 'SG AI Oasis 是「人在坡岛」的开源项目。活动与岗位每天自动更新。',
     disclaimer: '参加活动不代表能获得内推或面试。请以官方页面信息为准。',
     github: 'GitHub',
+    admin: '小红书导出后台',
   },
   gonogo: {
     evaluateBtn: '评估 — 去还是不去',
@@ -467,6 +468,7 @@ const en: Dict = {
     line: 'SG AI Oasis is an open-source project by Stay SG. Events and roles update automatically every day.',
     disclaimer: 'Attending an event does not guarantee a referral or an interview. Always check the official page.',
     github: 'GitHub',
+    admin: 'XHS Export Admin',
   },
   gonogo: {
     evaluateBtn: 'Evaluate — Go / Not Go',

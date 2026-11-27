@@ -20,6 +20,17 @@ export interface SgEvent {
   sourceIds: string[];
   companyIds: string[];     // companies in the watchlist linked to this event
   firstSeen: string;
+  isFriendEvent?: boolean;  // manually imported friend/community event
+  friendNote?: string;      // curator note or audience fit
+  publishToSite?: boolean;  // whether to also show on public pages (map/events)
+}
+
+export interface FriendEvent extends SgEvent {
+  isFriendEvent: true;
+  friendNote?: string;
+  publishToSite: boolean;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface EventSource {

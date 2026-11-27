@@ -13,12 +13,31 @@ export function generateStaticParams() {
 }
 
 export function generateMetadata({ params }: { params: { lang: string } }): Metadata {
-  const t = getDict(isLang(params.lang) ? params.lang : 'zh');
+  const lang = isLang(params.lang) ? params.lang : 'zh';
+  const t = getDict(lang);
   return {
+    metadataBase: new URL('https://sgaioasis.vercel.app'),
     title: t.siteTitle,
     description: t.siteDescription,
-    openGraph: { title: t.siteTitle, description: t.siteDescription, siteName: 'SG AI Oasis' },
-    alternates: { languages: { 'zh-Hans': '/zh', en: '/en' } },
+    keywords: [
+      'SG AI Oasis',
+      'Singapore AI events',
+      'Singapore AI jobs',
+      '新加坡 AI 活动',
+      '新加坡 AI 岗位',
+      '人在坡岛',
+      'Stay SG',
+    ],
+    openGraph: {
+      title: t.siteTitle,
+      description: t.siteDescription,
+      siteName: 'SG AI Oasis',
+      url: `/${lang}`,
+    },
+    alternates: {
+      canonical: `/${lang}`,
+      languages: { 'zh-Hans': '/zh', en: '/en' },
+    },
   };
 }
 

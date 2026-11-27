@@ -1,0 +1,47 @@
+ObjC.import('Vision');
+ObjC.import('Foundation');
+
+function run(argv) {
+  if (!argv || argv.length === 0) {
+    throw new Error('Usage: osascript -l JavaScript macos_ocr.jxa <image-path>');
+  }
+  var imagePath = argv[0];
+  var url = $.NSURL.fileURLWithPath(imagePath);
+  var req = $.VNRecognizeTextRequest.alloc.init;
+  req.recognitionLevel = $.VNRequestTextRecognitionLevelAccurate;
+  req.usesLanguageCorrection = true;
+  req.recognitionLanguages = $(['zh-Hans', 'zh-Hant', 'en-US']);
+
+  var handler = $.VNImageRequestHandler.alloc.initWithURLOptions(url, $.NSDictionary.dictionary);
+  var ok = handler.performRequestsError($([req]), null);
+  if (!ok) {
+    throw new Error('Vision OCR request failed');
+  }
+
+  var results = req.results;
+  var items = [];
+  for (var i = 0; i < results.count; i++) {
+    var obs = results.objectAtIndex(i);
+    var box = obs.boundingBox;
+    var top = obs.topCandidates(1);
+    if (top.count > 0) {
+      items.push({
+        y: box.origin.y + box.size.height / 2,
+        x: box.origin.x,
+        text: ObjC.unwrap(top.objectAtIndex(0).string),
+      });
+    }
+  }
+
+  // Sort top-to-bottom (Vision origin is bottom-left), then left-to-right on the same visual row
+  items.sort(function (a, b) {
+    if (Math.abs(a.y - b.y) > 0.015) return b.y - a.y;
+    return a.x - b.x;
+  });
+
+  return items
+    .map(function (it) {
+      return it.text;
+    })
+    .join('\n');
+}

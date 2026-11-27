@@ -517,7 +517,15 @@ function PinIcon({ className = 'h-2.5 w-2.5 shrink-0' }: { className?: string })
   );
 }
 
-export default function EventMap({ points, copy }: { points: MapPoint[]; copy: MapCopy }) {
+export default function EventMap({
+  points,
+  copy,
+  hideControls = false,
+}: {
+  points: MapPoint[];
+  copy: MapCopy;
+  hideControls?: boolean;
+}) {
   const stageRef = useRef<HTMLDivElement>(null);
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<import('maplibre-gl').Map | null>(null);
@@ -1064,36 +1072,40 @@ export default function EventMap({ points, copy }: { points: MapPoint[]; copy: M
         )}
 
         {/* Top-left Game-style 3D Toggle + Reset + Expand Toolbar */}
-        <div className="absolute left-[10px] top-[108px] z-30 flex flex-col gap-1.5">
-          <button
-            type="button"
-            aria-pressed={is3D}
-            onClick={handleToggle3D}
-            className={`map-3d-btn ${is3D ? 'map-3d-btn--active' : ''}`}
-            title={is3D ? copy.mode2D : copy.mode3D}
-          >
-            {is3D ? copy.mode3D : copy.mode2D}
-          </button>
-        </div>
+        {!hideControls && (
+          <>
+            <div className="absolute left-[10px] top-[108px] z-30 flex flex-col gap-1.5">
+              <button
+                type="button"
+                aria-pressed={is3D}
+                onClick={handleToggle3D}
+                className={`map-3d-btn ${is3D ? 'map-3d-btn--active' : ''}`}
+                title={is3D ? copy.mode2D : copy.mode3D}
+              >
+                {is3D ? copy.mode3D : copy.mode2D}
+              </button>
+            </div>
 
-        <div className="absolute left-[48px] top-[10px] z-30 flex flex-wrap items-center gap-1.5">
-          <button
-            type="button"
-            onClick={handleResetView}
-            className="inline-flex h-[30px] items-center rounded-md border border-[var(--border)] bg-white/95 px-2.5 text-[11px] font-medium text-[#334155] shadow-sm backdrop-blur transition-colors hover:bg-white hover:text-[var(--foreground)]"
-          >
-            {copy.resetView}
-          </button>
-          {isDesktop && (
-            <button
-              type="button"
-              onClick={() => setExpanded((v) => !v)}
-              className="inline-flex h-[30px] items-center rounded-md border border-[var(--border)] bg-white/95 px-2.5 text-[11px] font-medium text-[#334155] shadow-sm backdrop-blur transition-colors hover:bg-white hover:text-[var(--foreground)]"
-            >
-              {expanded ? copy.collapse : copy.expand}
-            </button>
-          )}
-        </div>
+            <div className="absolute left-[48px] top-[10px] z-30 flex flex-wrap items-center gap-1.5">
+              <button
+                type="button"
+                onClick={handleResetView}
+                className="inline-flex h-[30px] items-center rounded-md border border-[var(--border)] bg-white/95 px-2.5 text-[11px] font-medium text-[#334155] shadow-sm backdrop-blur transition-colors hover:bg-white hover:text-[var(--foreground)]"
+              >
+                {copy.resetView}
+              </button>
+              {isDesktop && (
+                <button
+                  type="button"
+                  onClick={() => setExpanded((v) => !v)}
+                  className="inline-flex h-[30px] items-center rounded-md border border-[var(--border)] bg-white/95 px-2.5 text-[11px] font-medium text-[#334155] shadow-sm backdrop-blur transition-colors hover:bg-white hover:text-[var(--foreground)]"
+                >
+                  {expanded ? copy.collapse : copy.expand}
+                </button>
+              )}
+            </div>
+          </>
+        )}
 
         {/* Bottom-right semantic Legend (desktop) */}
         {isDesktop && (
