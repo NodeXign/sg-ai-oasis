@@ -3,6 +3,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Lang, SgEvent } from '@/lib/types';
 import { resolveEventGeo } from '@/lib/sg-geo';
+import { renderClientMapSnapshot } from '@/lib/client-map-snapshot';
+import { renderCardHtmlToPngClient } from '@/lib/client-card-png';
 import {
   checkFooterTopic,
   generateXhsLifePack,
@@ -226,9 +228,10 @@ export default function XhsAdminStudio({
   const [card4ScreenshotDataUrl, setCard4ScreenshotDataUrl] = useState<string | null>(null);
   const [capturingTarget, setCapturingTarget] = useState<'map' | 'gonogo' | null>(null);
 
-  const [includeOverflowChecklist, setIncludeOverflowChecklist] = useState(false);
+  const [includeOverflowChecklist, setIncludeOverflowChecklist] = useState(true);
   const [exceptionReason, setExceptionReason] = useState('');
   const [cardHtmlOverrides, setCardHtmlOverrides] = useState<Record<string, string>>({});
+  const [renderProgress, setRenderProgress] = useState<string | null>(null);
 
   // ── Preview & Export state ──
   const [activePageIdx, setActivePageIdx] = useState(0);
@@ -352,60 +355,71 @@ export default function XhsAdminStudio({
     });
   }, [eventsInRange, eventFilter]);
 
-  const selectedEventIds = useMemo(
-    () => eventsInRange.filter((e) => !excludedIds.has(e.id)).map((e) => e.id),
+  const selectedEventsList = useMemo(
+    () => eventsInRange.filter((e) => !excludedIds.has(e.id)),
     [eventsInRange, excludedIds],
   );
-  const selectedMapKey = useMemo(() => selectedEventIds.join(','), [selectedEventIds]);
+  const selectedEventIds = useMemo(() => selectedEventsList.map((e) => e.id), [selectedEventsList]);
+  const selectedMapKey = useMemo(() => `${lang}:${selectedEventIds.join(',')}`, [lang, selectedEventIds]);
 
-  // Auto-sync Card 01 with the real website 2D MapLibre map whenever selection changes (local Playwright ready)
+  // Universal auto-sync for Card 01: renders the exact website 2D MapLibre Positron map
+  // directly in the user's browser (works on iPhone, Android, Desktop, Vercel — zero Playwright needed!).
   useEffect(() => {
-    if (!envStatus.checked || !envStatus.rendererAvailable) return;
-    if (manualCoverMap || selectedEventIds.length === 0) return;
+    if (manualCoverMap || selectedEventsList.length === 0) return;
     if (capturedMapKey === selectedMapKey && coverMapSnapshotDataUrl) return;
 
-    const controller = new AbortController();
+    let cancelled = false;
     const timer = setTimeout(async () => {
       setCapturingTarget('map');
       try {
-        const res = await fetch('/api/admin/capture-site', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            target: 'map',
-            lang,
-            startDate,
-            endDate,
-            selectedIds: selectedEventIds,
-          }),
-          signal: controller.signal,
-        });
-        const data = await res.json();
-        if (!controller.signal.aborted && data.ok && data.dataUrl) {
-          setCoverMapSnapshotDataUrl(data.dataUrl);
+        const dataUrl = await renderClientMapSnapshot(selectedEventsList, lang);
+        if (!cancelled && dataUrl) {
+          setCoverMapSnapshotDataUrl(dataUrl);
           setCapturedMapKey(selectedMapKey);
         }
       } catch {
-        // ignore abort or transient network error; user can retry manually
+        // Fallback to server Playwright capture if local environment has it and WebGL is unavailable
+        if (!cancelled && envStatus.rendererAvailable) {
+          try {
+            const res = await fetch('/api/admin/capture-site', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                target: 'map',
+                lang,
+                startDate,
+                endDate,
+                selectedIds: selectedEventIds,
+              }),
+            });
+            const data = await res.json();
+            if (!cancelled && data.ok && data.dataUrl) {
+              setCoverMapSnapshotDataUrl(data.dataUrl);
+              setCapturedMapKey(selectedMapKey);
+            }
+          } catch {
+            // keep SVG fallback
+          }
+        }
       } finally {
-        if (!controller.signal.aborted) {
+        if (!cancelled) {
           setCapturingTarget((cur) => (cur === 'map' ? null : cur));
         }
       }
-    }, 550);
+    }, 450);
 
     return () => {
+      cancelled = true;
       clearTimeout(timer);
-      controller.abort();
     };
   }, [
-    envStatus.checked,
-    envStatus.rendererAvailable,
     manualCoverMap,
     selectedMapKey,
     capturedMapKey,
     coverMapSnapshotDataUrl,
+    selectedEventsList,
     selectedEventIds,
+    envStatus.rendererAvailable,
     lang,
     startDate,
     endDate,
@@ -871,6 +885,20 @@ export default function XhsAdminStudio({
     setCapturingTarget(target);
     setRenderError(null);
     try {
+      // Map capture runs natively in the browser via MapLibre WebGL (works on Mobile + Vercel + Mac!)
+      if (target === 'map') {
+        try {
+          const dataUrl = await renderClientMapSnapshot(selectedEventsList, lang);
+          setCoverMapSnapshotDataUrl(dataUrl);
+          setManualCoverMap(false);
+          setCapturedMapKey(selectedMapKey);
+          setActivePageIdx(0);
+          return;
+        } catch {
+          // fall through to server Playwright capture if available
+        }
+      }
+
       const res = await fetch('/api/admin/capture-site', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -894,7 +922,7 @@ export default function XhsAdminStudio({
         setActivePageIdx(0);
       } else {
         setCard4ScreenshotDataUrl(data.dataUrl);
-        setActivePageIdx(3);
+        setActivePageIdx(Math.max(0, pack.cards.length - 2));
       }
     } catch (err) {
       setRenderError(err instanceof Error ? err.message : '截图失败');
@@ -927,95 +955,105 @@ export default function XhsAdminStudio({
     setRendering(true);
     setRenderError(null);
     setSavedDiskDir(null);
+    setRenderProgress(null);
     try {
-      // Ensure Card 01 always uses the up-to-date real 2D website map before rendering PNGs
-      let activePack = pack;
-      if (
-        envStatus.rendererAvailable &&
-        !manualCoverMap &&
-        selectedEventIds.length > 0 &&
-        (capturedMapKey !== selectedMapKey || !coverMapSnapshotDataUrl)
-      ) {
+      // 1. Ensure Card 01 has an up-to-date real 2D MapLibre map snapshot (works on Mobile + Vercel + Mac!)
+      let freshMapUrl = coverMapSnapshotDataUrl;
+      if (!manualCoverMap && selectedEventsList.length > 0 && (capturedMapKey !== selectedMapKey || !freshMapUrl)) {
+        setRenderProgress(isZh ? '正在生成 2D 实景地图…' : 'Rendering 2D map…');
         try {
-          const mapRes = await fetch('/api/admin/capture-site', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              target: 'map',
-              lang,
-              startDate,
-              endDate,
-              selectedIds: selectedEventIds,
-            }),
-          });
-          const mapData = await mapRes.json();
-          if (mapData.ok && mapData.dataUrl) {
-            setCoverMapSnapshotDataUrl(mapData.dataUrl);
-            setCapturedMapKey(selectedMapKey);
-            activePack = generateXhsLifePack(allEvents, {
-              startDate,
-              endDate,
-              kicker,
-              footerTopic,
-              coverTitle,
-              coverIntro,
-              siteUrl,
-              searchKeywords,
-              selectedEventIds,
-              pickEventIds: activePickIds,
-              audienceNotes,
-              customPosters,
-              coverMapSnapshotDataUrl: mapData.dataUrl,
-              card3StatHighlight,
-              card4Title,
-              card4Intro,
-              card4Point1Title,
-              card4Point1Body,
-              card4Point2Title,
-              card4Point2Body,
-              card4ScreenshotDataUrl,
-              includeOverflowChecklist,
-              exceptionReason,
-              cardHtmlOverrides,
-            });
-          }
+          freshMapUrl = await renderClientMapSnapshot(selectedEventsList, lang);
+          setCoverMapSnapshotDataUrl(freshMapUrl);
+          setCapturedMapKey(selectedMapKey);
         } catch {
-          // continue with current pack if map capture fails
+          // continue with existing map
         }
       }
 
-      const res = await fetch('/api/admin/export-pack', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          ...(adminToken ? { 'x-admin-token': adminToken } : {}),
-        },
-        body: JSON.stringify({
-          packSlug: activePack.packSlug,
-          cards: activePack.cards.map((c) => ({
-            pageNumber: c.pageNumber,
-            filename: c.filename,
-            pngFilename: c.pngFilename,
-            html: c.html,
-          })),
-          captionMd: captionOverride ?? activePack.captionMd,
-          usageJson: activePack.usageJson,
-          saveToDisk,
-        }),
-      });
-      const data = await res.json();
-      if (!data.ok) {
-        setRenderError(
-          [data.reason || data.error || 'Render unavailable', data.hint].filter(Boolean).join('\n'),
-        );
-        return;
+      const buildPack = (proxyImages: boolean) =>
+        generateXhsLifePack(allEvents, {
+          startDate,
+          endDate,
+          kicker,
+          footerTopic,
+          coverTitle,
+          coverIntro,
+          siteUrl,
+          searchKeywords,
+          selectedEventIds,
+          pickEventIds: activePickIds,
+          audienceNotes,
+          customPosters,
+          coverMapSnapshotDataUrl: freshMapUrl,
+          card3StatHighlight,
+          card4Title,
+          card4Intro,
+          card4Point1Title,
+          card4Point1Body,
+          card4Point2Title,
+          card4Point2Body,
+          card4ScreenshotDataUrl,
+          includeOverflowChecklist,
+          proxyExternalImages: proxyImages,
+          exceptionReason,
+          cardHtmlOverrides,
+        });
+
+      // 2. Local Mac/Node with Playwright -> render via Playwright & save full folder to exports/
+      if (envStatus.rendererAvailable) {
+        const activePack = buildPack(false);
+        setRenderProgress(isZh ? `正在 Playwright 渲染 ${activePack.cards.length} 张 PNG…` : 'Rendering via Playwright…');
+        const res = await fetch('/api/admin/export-pack', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            ...(adminToken ? { 'x-admin-token': adminToken } : {}),
+          },
+          body: JSON.stringify({
+            packSlug: activePack.packSlug,
+            cards: activePack.cards.map((c) => ({
+              pageNumber: c.pageNumber,
+              filename: c.filename,
+              pngFilename: c.pngFilename,
+              html: c.html,
+            })),
+            captionMd: captionOverride ?? activePack.captionMd,
+            usageJson: activePack.usageJson,
+            saveToDisk,
+          }),
+        });
+        const data = await res.json();
+        if (data.ok) {
+          setRenderedPages(data.pages ?? []);
+          setSavedDiskDir(data.savedDir ?? null);
+          return;
+        }
       }
-      setRenderedPages(data.pages ?? []);
-      setSavedDiskDir(data.savedDir ?? null);
+
+      // 3. Vercel / Mobile / Browser-native PNG renderer (zero Playwright required!)
+      const browserPack = buildPack(true);
+      const outPages: RenderedPageResult[] = [];
+      for (let i = 0; i < browserPack.cards.length; i++) {
+        const c = browserPack.cards[i];
+        setRenderProgress(
+          isZh
+            ? `正在浏览器生成 1080×1440 PNG（${i + 1} / ${browserPack.cards.length}）…`
+            : `Rendering PNG ${i + 1} / ${browserPack.cards.length}…`,
+        );
+        const rendered = await renderCardHtmlToPngClient({
+          pageNumber: c.pageNumber,
+          filename: c.filename,
+          pngFilename: c.pngFilename,
+          html: c.html,
+        });
+        outPages.push(rendered);
+      }
+      setRenderedPages(outPages);
     } catch (err) {
       setRenderError(err instanceof Error ? err.message : 'Export request failed.');
     } finally {
       setRendering(false);
+      setRenderProgress(null);
     }
   }
 
@@ -1074,18 +1112,14 @@ export default function XhsAdminStudio({
 
           <div className="flex flex-col items-start gap-2 sm:items-end">
             {envStatus.checked && (
-              <span
-                className={`badge ${
-                  envStatus.rendererAvailable ? 'border-emerald-200 bg-emerald-50 text-emerald-800' : 'border-amber-200 bg-amber-50 text-amber-800'
-                }`}
-              >
+              <span className="badge border-emerald-200 bg-emerald-50 text-emerald-800">
                 {envStatus.rendererAvailable
                   ? isZh
-                    ? '本机 Playwright + Chrome 就绪 · 支持一键出图 & 截取网页'
-                    : 'Playwright + Chrome ready · 1-click PNG & site capture'
+                    ? '本机 Playwright + 2D 地图就绪 · 支持一键出图并存盘'
+                    : 'Local Playwright + 2D map ready · 1-click PNG & save'
                   : isZh
-                    ? '无头浏览器未就绪 · 可导出 HTML + 配文 + 用量 JSON'
-                    : 'Headless Chrome unavailable · HTML + Caption + JSON ready'}
+                    ? '手机 / 浏览器引擎就绪 · 支持实景 2D 地图与一键导出 PNG'
+                    : 'Mobile / Browser engine ready · 2D map & 1080×1440 PNG'}
               </span>
             )}
             {envStatus.authRequired && (
@@ -2006,8 +2040,10 @@ export default function XhsAdminStudio({
                   className="btn btn-primary btn-sm"
                 >
                   {rendering
-                    ? isZh ? '正在 Playwright 渲染 1080×1440 PNG…' : 'Rendering 1080×1440 PNGs…'
-                    : isZh ? '一键渲染 1080×1440 PNG 并保存导出包' : 'Render 1080×1440 PNG Pack'}
+                    ? renderProgress || (isZh ? '正在生成 1080×1440 PNG…' : 'Rendering 1080×1440 PNGs…')
+                    : envStatus.rendererAvailable
+                      ? isZh ? `一键渲染 ${pack.cards.length} 张 PNG 并保存导出包` : `Render ${pack.cards.length} PNGs & Save`
+                      : isZh ? `一键生成 ${pack.cards.length} 张 1080×1440 PNG` : `Generate ${pack.cards.length} PNGs`}
                 </button>
                 {renderedPages.length > 0 && (
                   <button type="button" className="btn btn-sm" onClick={handleDownloadAllPngs}>
@@ -2044,37 +2080,66 @@ export default function XhsAdminStudio({
             )}
 
             {renderedPages.length > 0 && (
-              <div className="mt-3 overflow-x-auto rounded-md border border-[var(--border)]">
-                <table className="w-full text-left text-xs">
-                  <thead className="bg-[var(--muted)] text-[11px] text-muted">
-                    <tr>
-                      <th className="px-3 py-2">页面</th>
-                      <th className="px-3 py-2">高度校验 (≤1440)</th>
-                      <th className="px-3 py-2">人在坡岛</th>
-                      <th className="px-3 py-2">Stay SG</th>
-                      <th className="px-3 py-2">图片</th>
-                      <th className="px-3 py-2 text-right">操作</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-[var(--border)]">
-                    {renderedPages.map((p) => (
-                      <tr key={p.pageNumber}>
-                        <td className="px-3 py-1.5 font-mono font-medium">{p.pngFilename}</td>
-                        <td className={`px-3 py-1.5 tabular-nums ${p.overflow ? 'font-semibold text-red-600' : 'text-emerald-700'}`}>
-                          {p.scrollHeight}px {p.overflow ? '⚠ 溢出' : '✓'}
-                        </td>
-                        <td className="px-3 py-1.5">{p.hasBrandPill ? '✓' : '✗'}</td>
-                        <td className="px-3 py-1.5">{p.hasStaySgLogo ? '✓' : '✗'}</td>
-                        <td className="px-3 py-1.5">{p.imagesOk ? '✓' : '✗'}</td>
-                        <td className="px-3 py-1.5 text-right">
-                          <button type="button" className="link text-xs" onClick={() => downloadDataUrl(p.pngFilename, p.pngDataUrl)}>
-                            {isZh ? '下载 PNG' : 'PNG'}
-                          </button>
-                        </td>
+              <div className="mt-3 space-y-3">
+                <div className="overflow-x-auto rounded-md border border-[var(--border)]">
+                  <table className="w-full text-left text-xs">
+                    <thead className="bg-[var(--muted)] text-[11px] text-muted">
+                      <tr>
+                        <th className="px-3 py-2">页面</th>
+                        <th className="px-3 py-2">高度校验 (≤1440)</th>
+                        <th className="px-3 py-2">人在坡岛</th>
+                        <th className="px-3 py-2">Stay SG</th>
+                        <th className="px-3 py-2">图片</th>
+                        <th className="px-3 py-2 text-right">操作</th>
                       </tr>
+                    </thead>
+                    <tbody className="divide-y divide-[var(--border)]">
+                      {renderedPages.map((p) => (
+                        <tr key={p.pageNumber}>
+                          <td className="px-3 py-1.5 font-mono font-medium">{p.pngFilename}</td>
+                          <td className={`px-3 py-1.5 tabular-nums ${p.overflow ? 'font-semibold text-red-600' : 'text-emerald-700'}`}>
+                            {p.scrollHeight}px {p.overflow ? '⚠ 溢出' : '✓'}
+                          </td>
+                          <td className="px-3 py-1.5">{p.hasBrandPill ? '✓' : '✗'}</td>
+                          <td className="px-3 py-1.5">{p.hasStaySgLogo ? '✓' : '✗'}</td>
+                          <td className="px-3 py-1.5">{p.imagesOk ? '✓' : '✗'}</td>
+                          <td className="px-3 py-1.5 text-right">
+                            <button type="button" className="link text-xs" onClick={() => downloadDataUrl(p.pngFilename, p.pngDataUrl)}>
+                              {isZh ? '下载 PNG' : 'PNG'}
+                            </button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                {/* Mobile-friendly PNG Gallery (iPhone/Android users can long-press any image to save directly to Photos!) */}
+                <div className="rounded-lg border border-[var(--border)] bg-[var(--muted)]/40 p-3 space-y-2">
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="font-semibold">
+                      {isZh ? `已生成 ${renderedPages.length} 张 1080×1440 成品 PNG（手机端长按图片可直接存相册）` : `${renderedPages.length} PNGs Ready (long-press on mobile to save)`}
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 lg:grid-cols-5">
+                    {renderedPages.map((p) => (
+                      <div key={p.pageNumber} className="space-y-1">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={p.pngDataUrl}
+                          alt={p.pngFilename}
+                          className="w-full rounded-md border border-[var(--border)] bg-white shadow-sm"
+                        />
+                        <div className="flex items-center justify-between text-[11px] text-muted">
+                          <span className="font-mono">{p.pngFilename}</span>
+                          <button type="button" className="link" onClick={() => downloadDataUrl(p.pngFilename, p.pngDataUrl)}>
+                            {isZh ? '保存' : 'Save'}
+                          </button>
+                        </div>
+                      </div>
                     ))}
-                  </tbody>
-                </table>
+                  </div>
+                </div>
               </div>
             )}
           </section>
@@ -2102,27 +2167,17 @@ export default function XhsAdminStudio({
                 </div>
 
                 <div className="flex flex-wrap items-center gap-1.5">
-                  {safePageIdx === 0 && envStatus.rendererAvailable && (
+                  {safePageIdx === 0 && (
                     <button
                       type="button"
                       disabled={capturingTarget !== null}
                       onClick={() => handleCaptureSite('map')}
                       className="btn btn-sm !h-7 !px-2.5 !text-xs"
                     >
-                      {capturingTarget === 'map' ? '同步 2D 地图中…' : '↻ 刷新 2D 网站地图'}
+                      {capturingTarget === 'map' ? '同步 2D 地图中…' : '↻ 刷新 2D 实景地图'}
                     </button>
                   )}
-                  {safePageIdx === 0 && envStatus.checked && !envStatus.rendererAvailable && (
-                    <a
-                      href={`/${lang}/admin/map-shot?ids=${encodeURIComponent(selectedMapKey)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-sm !h-7 !px-2.5 !text-xs"
-                    >
-                      打开 2D 联动地图 ↗
-                    </a>
-                  )}
-                  {safePageIdx === 3 && envStatus.rendererAvailable && (
+                  {safePageIdx === pack.cards.length - 2 && envStatus.rendererAvailable && (
                     <button
                       type="button"
                       disabled={capturingTarget !== null}

@@ -619,17 +619,17 @@ export default function EventMap({
       const w = stage?.clientWidth ?? 1160;
       const desktop = w >= DESKTOP_MIN_WIDTH;
 
-      // Default to the active city belt shown in the reference; users can zoom out for the whole island.
-      let minLng = 103.675;
-      let maxLng = 103.96;
-      let minLat = 1.26;
-      let maxLat = 1.40;
+      // Default to full Singapore island belt with breathing room so edge hubs (NTU, Marine Parade) never clip.
+      let minLng = 103.655;
+      let maxLng = 103.985;
+      let minLat = 1.248;
+      let maxLat = 1.415;
 
       for (const p of points) {
-        minLng = Math.min(minLng, p.lng);
-        maxLng = Math.max(maxLng, p.lng);
-        minLat = Math.min(minLat, p.lat);
-        maxLat = Math.max(maxLat, p.lat);
+        minLng = Math.min(minLng, p.lng - 0.01);
+        maxLng = Math.max(maxLng, p.lng + 0.01);
+        minLat = Math.min(minLat, p.lat - 0.008);
+        maxLat = Math.max(maxLat, p.lat + 0.008);
       }
 
       map.fitBounds(
@@ -639,9 +639,9 @@ export default function EventMap({
         ],
         {
           padding: desktop
-            ? { top: 58, bottom: 70, left: 58, right: 58 }
-            : { top: 42, bottom: 28, left: 20, right: 20 },
-          maxZoom: desktop ? 12.1 : 11.4,
+            ? { top: 64, bottom: 78, left: 82, right: 82 }
+            : { top: 44, bottom: 32, left: 26, right: 26 },
+          maxZoom: desktop ? 11.8 : 11.2,
           pitch: use3D ? (desktop ? PITCH_3D : MOBILE_PITCH_3D) : 0,
           bearing: use3D ? BEARING_3D : 0,
           animate,

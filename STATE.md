@@ -1,10 +1,10 @@
 # 状态
 
-最后更新：2026-11-27 · J7 的 MacBook Pro · Antigravity
+最后更新：2026-11-28 · J7 的 MacBook Pro · Antigravity
 
 ## 下一步
 
-- 线上访问 `https://sgaioasis.vercel.app/zh/admin` 确认生产环境可用，并用手机扫码实测图 05 二维码跳转（`https://sgaioasis.vercel.app/zh` 已返回 HTTP 200）。
+- 在手机浏览器实测 `https://sgaioasis.vercel.app/zh/admin`：选择任意日期范围（如 `11/28 – 12/5`），确认图 01 自动加载与网站一致的高清 2D 地图，点击「一键生成 N 张 1080×1440 PNG」后长按图片直接存相册；同时用手机扫码核实图 05 二维码跳转。
 - 若需保护 Vercel 线上的 `/api/admin/*` 接口，在 Vercel 环境变量中配置 `ADMIN_PASSWORD` 即可。
 - Supabase：在真实项目上按顺序执行 001–004，配置密钥（本机 `.env.local`、Vercel、GitHub Secrets）。
 - 种子公司与大会名单核对：`data/companies.json` 的 `conferences` 字段仍是空的。
@@ -12,7 +12,13 @@
 
 ## 已完成
 
-- 2026-11-28（Antigravity · 分支 `feat/xhs-life-admin`）：完成图 01 真实 2D 网站地图自动联动（`EventMap` 支持 `hideControls`、`/admin/map-shot` 精确匹配 `944×630` 无裁切比例、后台选活动/日期自动防抖抓取 2D 地图并在导出 PNG 前自动确保最新）并保留 `data/friend_events.json` 中的 NTU 活动；提交 PR 并合并上线 `master`。
+- 2026-11-28（Antigravity · 分支 `feat/mobile-map-and-full-export`）：解决手机端/Vercel 线上地图不全、导出海报遗漏日期活动、以及移动端无法出 PNG 三大核心痛点：
+  - **全端通用浏览器原生 2D 地图引擎**（`lib/client-map-snapshot.ts`）：直接在用户浏览器（iPhone / Android / 桌面 / Vercel 无 Playwright 环境）用 MapLibre GL OpenFreeMap Positron 底图 + `944×720`（2× Retina `1888×1440`）离屏合成与网站风格完全一致的实景 2D 地图（含完整海岸线/路网、MRT 站、片区地标、实线/虚线活动卡片、防重叠避让、底部图例），`fitBounds` 覆全岛并放宽首页 `EventMap.tsx` 边缘留白，彻底消除灰边与 NTU/东海岸裁切。
+  - **所选日期 100% 全量覆盖（自动分页）**（`lib/xhs-life-cards.ts`）：`includeOverflowChecklist` 默认开启；超过 8 场活动时自动按时间顺序将图 02 拆分为每页 7 场的连续总览页（`1/3 · 11/28–12/1`、`2/3 · 12/1–12/3`、`3/3 · 12/3–12/5`），确保所选日期每一场活动都出现在成品海报上（≤ 8 场保持精准 5 页 40/20/40 配比）；单场地图编号与总览页编号一致，聚落点清晰标示 `5场`/`2场`。
+  - **Vercel/手机端一键生成 1080×1440 PNG + 长按存相册**（`lib/client-card-png.ts` + `app/api/admin/image-proxy/route.ts` + `components/XhsAdminStudio.tsx`）：新增同源白名单图片代理绕过 Luma/GDG 海报 CORS 污染，浏览器原生 `html-to-image` 无 Playwright 亦可直出全部 `1080×1440` 成品 PNG 并提供手机长按存相册画廊；本机 Mac 仍自动优先走 Playwright 落盘保存完整导出包。
+  - **双场景 E2E 与目视复核通过**：模拟 Vercel + 390×844 手机视口（`11/28–12/5` 19 场 → 7 张 `1080×1440` PNG，含 Luma/GDG/NTU 展板）与桌面端（`11/27–11/29` 7 场 → 5 张 PNG）均 0 报错、`1440px` 零溢出，并逐张目视审查确认地图细节完整、无遮挡。
+
+- 2026-11-28（Antigravity · 分支 `feat/xhs-life-admin`）：完成图 01 真实 2D 网站地图自动联动（`EventMap` 支持 `hideControls`、`/admin/map-shot` 精确匹配 `944×630` 无裁切比例、后台选活动/日期自动防抖抓取 2D 地图并在导出 PNG 前自动确保最新）并保留 `data/friend_events.json` 中的 NTU 活动；提交 PR #5 并合并上线 `master`。
 
 - 2026-11-28（Antigravity · 分支 `feat/xhs-life-admin`，未提交）：完成第三轮细节打磨与主域名对齐：
   - **图 02 动态适配 1–8 场（解决 11/29 被截断问题）**：按 `1–5 / 6 / 7–8` 三档密度自适应，实测 `11/27–11/29` 全部 7 场（含朋友导入的 NTU 活动与 11/29 活动）一页完整展示无压脚；超过 8 场按日期轮询均衡覆盖。
