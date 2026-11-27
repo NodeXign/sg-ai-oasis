@@ -19,9 +19,23 @@ const zh = {
     statJobs: '个官网核实岗位',
     statCompanies: '家招聘公司',
     mapTitle: '本周活动地图',
-    mapNote: '蓝底标签：主办方正在新加坡招人。点击标签查看详情与去不去评估。',
+    mapNote: '蓝色实心点：主办方正在新加坡招人。',
+    mapCount: (n: number) => `${n} 场已标注`,
+    mapReset: '重置视图',
+    mapExpand: '全屏查看',
+    mapCollapse: '退出全屏',
+    map3D: '3D',
+    map2D: '2D',
+    mapClusterHint: '带 + 的编号表示该地点有多场活动；下方按时间列出全部活动。',
+    legendExact: '确定具体地址',
+    legendArea: '仅确定区域位置（具体地址待公布）',
     legendHiring: '主办方在招人',
-    legendEvent: '活动（日期 · 最近地铁站）',
+    legendEvent: '社区活动',
+    hiringBadge: '招人',
+    mrtShort: (name: string, mins: number) => `${name} 站 · 步行 ${mins} 分`,
+    mrtArea: (area: string) => `${area} 区域 · 地址待公布`,
+    viewRoles: '查看在招岗位',
+    close: '关闭',
     noCoords: (n: number) => `另有 ${n} 场活动的地址报名后才公开，未显示在地图上。`,
     byDay: '活动分布 · 按日期',
     byFunction: '岗位分布 · 按职能',
@@ -359,9 +373,23 @@ const en: Dict = {
     statJobs: 'roles verified at source',
     statCompanies: 'companies hiring',
     mapTitle: "This week's event map",
-    mapNote: 'Blue capsule: the organiser is hiring in Singapore. Click any capsule for details & Go / Not Go.',
+    mapNote: 'Solid blue dot: the organiser is hiring in Singapore.',
+    mapCount: (n: number) => `${n} mapped`,
+    mapReset: 'Reset view',
+    mapExpand: 'Expand map',
+    mapCollapse: 'Exit full view',
+    map3D: '3D',
+    map2D: '2D',
+    mapClusterHint: 'A + indicates multiple events at a location. All events are listed below in time order.',
+    legendExact: 'Exact venue confirmed',
+    legendArea: 'Area only (address TBA)',
     legendHiring: 'Organiser is hiring',
-    legendEvent: 'Event (Date · Nearest MRT)',
+    legendEvent: 'Community event',
+    hiringBadge: 'Hiring',
+    mrtShort: (name: string, mins: number) => `${name} MRT · ${mins}m walk`,
+    mrtArea: (area: string) => `${area} area · TBA`,
+    viewRoles: 'View open roles',
+    close: 'Close',
     noCoords: (n: number) => `${n} more ${n === 1 ? 'event shares its' : 'events share their'} address after registration and ${n === 1 ? 'is' : 'are'} not on the map.`,
     byDay: 'Events by day',
     byFunction: 'Roles by function',
@@ -697,6 +725,25 @@ export function fmtTime(iso: string, lang: Lang): string {
 export function fmtShort(iso: string, lang: Lang): string {
   const d = new Date(iso.length === 10 ? `${iso}T12:00:00+08:00` : iso);
   return d.toLocaleDateString(LOCALE[lang], { month: 'short', day: 'numeric', timeZone: TZ });
+}
+export function fmtDatePill(iso: string, lang: Lang): string {
+  const d = new Date(iso.length === 10 ? `${iso}T12:00:00+08:00` : iso);
+  if (lang === 'zh') {
+    const parts = new Intl.DateTimeFormat('zh-CN', {
+      month: 'numeric', day: 'numeric', weekday: 'short', timeZone: TZ,
+    }).formatToParts(d);
+    const m = parts.find((p) => p.type === 'month')?.value ?? '';
+    const day = parts.find((p) => p.type === 'day')?.value ?? '';
+    const wd = parts.find((p) => p.type === 'weekday')?.value ?? '';
+    return `${m}/${day} ${wd}`;
+  }
+  const parts = new Intl.DateTimeFormat('en-SG', {
+    month: 'short', day: 'numeric', weekday: 'short', timeZone: TZ,
+  }).formatToParts(d);
+  const m = parts.find((p) => p.type === 'month')?.value ?? '';
+  const day = parts.find((p) => p.type === 'day')?.value ?? '';
+  const wd = parts.find((p) => p.type === 'weekday')?.value ?? '';
+  return `${m} ${day} · ${wd}`;
 }
 export function fmtMapDate(iso: string, lang: Lang): string {
   const d = new Date(iso.length === 10 ? `${iso}T12:00:00+08:00` : iso);

@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import type { Company, JobFunction, Lang } from '@/lib/types';
-import { fmtDay, fmtMapDate, fmtTime, getDict } from '@/lib/i18n';
+import { fmtDatePill, fmtDay, fmtTime, getDict } from '@/lib/i18n';
 import { getUpcomingEvents, groupByDay } from '@/lib/events';
 import { getJobsData, openRolesByCompany } from '@/lib/jobs';
-import { getNearestMrt } from '@/lib/mrt-stations';
+import { resolveEventGeo } from '@/lib/sg-geo';
 import SiteHeader from '@/components/SiteHeader';
 import EventMap, { type MapPoint } from '@/components/EventMap';
 
@@ -48,56 +48,59 @@ export default async function HomePage({ params }: { params: { lang: Lang } }) {
   const companyById: Record<string, Company> = Object.fromEntries(companies.map((c) => [c.id, c]));
   const hiringOf = (ids: string[]) => ids.filter((id) => openRoles[id] && companyById[id]);
 
-  const points: MapPoint[] = events
-    .filter((e) => e.lat != null && e.lng != null && !e.isOnline)
-    .map((e) => {
-      const h = hiringOf(e.companyIds);
-      const mrt = getNearestMrt(e.lat!, e.lng!, 1)[0];
-      const nearMrt = mrt && mrt.walkMins <= 15 ? { name: mrt.name, walkMins: Math.max(mrt.walkMins, 1) } : undefined;
-      const time = e.endAt
-        ? `${fmtTime(e.startAt, lang)} – ${fmtTime(e.endAt, lang)}`
-        : fmtTime(e.startAt, lang);
-      const when = `${fmtDay(e.startAt, lang)} · ${time}`;
-      return {
-        id: e.id,
-        lat: e.lat!,
-        lng: e.lng!,
-        title: e.title,
-        url: e.url,
-        when,
-        shortDate: fmtMapDate(e.startAt, lang),
-        venue: e.venue,
-        mrtName: nearMrt?.name,
-        mrtWalkText: nearMrt ? dict.events.walk(nearMrt.name, nearMrt.walkMins) : undefined,
-        hiring: h.length > 0,
-        hiringText: h.length ? dict.events.hiring(companyById[h[0]].name, openRoles[h[0]]) : undefined,
-        evalContext: {
-          id: e.id,
-          title: e.title,
-          startAt: e.startAt,
-          endAt: e.endAt,
-          whenLabel: when,
-          venue: e.venue || dict.events.addressHidden,
-          isOnline: e.isOnline,
-          mrtName: nearMrt?.name,
-          mrtWalkMins: nearMrt?.walkMins,
-          organiser: e.organiser,
-          tags: e.tags,
-          isFree: e.isFree,
-          price: e.price,
-          status: e.status,
-          url: e.url,
-          hiringCompanies: h.map((id) => ({
-            id,
-            name: companyById[id].name,
-            sector: companyById[id].sector,
-            aiFocus: companyById[id].aiFocus,
-            openRoles: openRoles[id],
-          })),
-        },
-      };
+  const points: MapPoint[] = [];
+  events.forEach((e) => {
+    const geo = resolveEventGeo(e);
+    if (!geo) return;
+    const h = hiringOf(e.companyIds);
+    const locationLabel =
+      geo.precision === 'area' && geo.areaLabel
+        ? t.mrtArea(geo.areaLabel)
+        : geo.mrtName && geo.mrtWalkMins != null
+          ? t.mrtShort(geo.mrtName, geo.mrtWalkMins)
+          : e.venue || geo.areaLabel || '';
+
+    points.push({
+      id: e.id,
+      index: points.length + 1,
+      lat: geo.lat,
+      lng: geo.lng,
+      title: e.title,
+      datePill: fmtDatePill(e.startAt, lang),
+      when: e.endAt
+        ? `${fmtDay(e.startAt, lang)} · ${fmtTime(e.startAt, lang)} – ${fmtTime(e.endAt, lang)}`
+        : `${fmtDay(e.startAt, lang)} · ${fmtTime(e.startAt, lang)}`,
+      venue: e.venue,
+      address: e.address,
+      locationLabel,
+      precision: geo.precision,
+      url: e.url,
+      organiser: e.organiser || undefined,
+      hiring: h.length > 0,
+      hiringText: h.length ? dict.events.hiring(companyById[h[0]].name, openRoles[h[0]]) : undefined,
+      hiringHref: h.length ? `/${lang}/jobs?company=${h[0]}` : undefined,
+      evaluateHref: `/${lang}/gonogo?event=${encodeURIComponent(e.id)}`,
     });
-  const offMap = events.length - points.length;
+  });
+  const offMap = events.filter((e) => !e.isOnline).length - points.length;
+
+  const mapCopy = {
+    register: dict.events.register,
+    resetView: t.mapReset,
+    expand: t.mapExpand,
+    collapse: t.mapCollapse,
+    mode3D: t.map3D,
+    mode2D: t.map2D,
+    clusterHint: t.mapClusterHint,
+    legendExact: t.legendExact,
+    legendArea: t.legendArea,
+    legendHiring: t.legendHiring,
+    legendEvent: t.legendEvent,
+    hiringBadge: t.hiringBadge,
+    viewRoles: t.viewRoles,
+    evaluate: dict.gonogo.evaluateBtn,
+    close: t.close,
+  };
 
   const dayRows = groupByDay(events).map(([day, list]) => ({ label: fmtDay(day, lang), value: list.length }));
   const fnCount: Record<string, number> = {};
@@ -135,40 +138,39 @@ export default async function HomePage({ params }: { params: { lang: Lang } }) {
           </dl>
         </section>
 
-        {/* Map + distributions */}
-        <section className="container-page">
-          <div className="grid gap-4 lg:grid-cols-[minmax(0,1.7fr)_minmax(280px,1fr)]">
-            <div className="card flex flex-col overflow-hidden">
-              <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 border-b border-[var(--border)] px-4 py-3">
+        {/* Featured Map (wide breakout container so Singapore island has generous breathing room) */}
+        <section className="mx-auto w-full max-w-[1280px] px-4 sm:px-6">
+          <div className="card flex flex-col overflow-hidden">
+            <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1.5 border-b border-[var(--border)] px-4 py-3">
+              <div className="flex items-center gap-2.5">
                 <h2 className="text-sm font-semibold">{t.mapTitle}</h2>
-                <div className="flex items-center gap-4 text-xs text-muted">
-                  <span className="flex items-center gap-1.5">
-                    <span className="h-3 w-5 rounded-full bg-[var(--primary)]" />{t.legendHiring}
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <span className="h-3 w-5 rounded-full border border-[#d4d4d4] bg-white" />{t.legendEvent}
-                  </span>
-                </div>
+                <span className="badge badge-primary tabular-nums">{t.mapCount(points.length)}</span>
               </div>
-              <EventMap points={points} lang={lang} registerLabel={dict.events.register} />
-              {offMap > 0 && <p className="border-t border-[var(--border)] px-4 py-2.5 text-xs text-muted">{t.noCoords(offMap)}</p>}
+              <Link href={`/${lang}/events`} className="link text-[13px]">{t.allEvents} →</Link>
             </div>
+            <EventMap points={points} copy={mapCopy} />
+            {offMap > 0 && (
+              <p className="border-t border-[var(--border)] px-4 py-2.5 text-xs text-muted">{t.noCoords(offMap)}</p>
+            )}
+          </div>
+        </section>
 
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-              <div className="card p-4">
-                <div className="mb-3 flex items-center justify-between">
-                  <h2 className="text-sm font-semibold">{t.byDay}</h2>
-                  <Link href={`/${lang}/events`} className="link text-[13px]">{t.allEvents} →</Link>
-                </div>
-                {dayRows.length ? <Bars rows={dayRows} /> : <p className="text-[13px] text-muted">{dict.events.empty}</p>}
+        {/* Distributions below the map in a balanced 2-column row */}
+        <section className="container-page mt-4">
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="card p-4">
+              <div className="mb-3 flex items-center justify-between">
+                <h2 className="text-sm font-semibold">{t.byDay}</h2>
+                <Link href={`/${lang}/events`} className="link text-[13px]">{t.allEvents} →</Link>
               </div>
-              <div className="card p-4">
-                <div className="mb-3 flex items-center justify-between">
-                  <h2 className="text-sm font-semibold">{t.byFunction}</h2>
-                  <Link href={`/${lang}/jobs`} className="link text-[13px]">{t.allJobs} →</Link>
-                </div>
-                <Bars rows={fnRows} />
+              {dayRows.length ? <Bars rows={dayRows} /> : <p className="text-[13px] text-muted">{dict.events.empty}</p>}
+            </div>
+            <div className="card p-4">
+              <div className="mb-3 flex items-center justify-between">
+                <h2 className="text-sm font-semibold">{t.byFunction}</h2>
+                <Link href={`/${lang}/jobs`} className="link text-[13px]">{t.allJobs} →</Link>
               </div>
+              <Bars rows={fnRows} />
             </div>
           </div>
         </section>

@@ -80,6 +80,10 @@ a:focus-visible, button:focus-visible {
   outline-offset: 2px;
 }
 
+/* Map stage, Mapbox-Light monochrome aesthetic, 3D AI City & organic knowledge graph */
+.map-stage {
+  background: #e3e7ec;
+}
 /* Map markers and popups */
 .map-pill-wrap {
   display: flex;
@@ -192,6 +196,261 @@ a:focus-visible, button:focus-visible {
 }
 .map-popup-reg:hover { background: var(--muted); }
 .maplibregl-map { font-family: inherit !important; }
+.maplibregl-ctrl-group {
+  border-radius: 8px !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: 0 2px 10px rgb(15 23 42 / 0.08) !important;
+  overflow: hidden;
+  background: rgb(255 255 255 / 0.94) !important;
+}
+.maplibregl-ctrl-group button {
+  width: 30px !important;
+  height: 30px !important;
+}
+.maplibregl-ctrl-attrib {
+  font-size: 10px !important;
+  background: rgb(255 255 255 / 0.78) !important;
+  backdrop-filter: blur(4px);
+}
+
+/* Game-like vertical control stack matching monochrome 3D map UI */
+.map-3d-btn {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  border: 1px solid var(--border);
+  background: rgb(255 255 255 / 0.94);
+  color: #334155;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  box-shadow: 0 2px 8px rgb(15 23 42 / 0.08);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.map-3d-btn:hover { background: #ffffff; color: var(--foreground); }
+.map-3d-btn--active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgb(18 87 253 / 0.3);
+}
+.map-3d-btn--active:hover { background: var(--primary-hover); color: #ffffff; }
+
+/* Glowing MRT Hub Beacon on the 3D AI City floor */
+.map-hub-beacon {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgb(18 87 253 / 0.24) 0%, rgb(18 87 253 / 0.06) 55%, transparent 72%);
+  pointer-events: none;
+  z-index: 13;
+}
+.map-hub-beacon::after {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border-radius: 999px;
+  border: 1.5px solid rgb(18 87 253 / 0.45);
+}
+
+/* Hand-drawn architectural landmark layer (compact, true GPS anchor) */
+.map-landmark {
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  user-select: none;
+  filter: drop-shadow(0 0 2px rgb(255 255 255 / 0.92));
+  transition: opacity 0.2s ease;
+}
+.map-landmark-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  line-height: 1;
+  color: #1e293b;
+  background: rgb(255 255 255 / 0.82);
+  padding: 1.5px 4px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* Quiet common MRT station micro-anchors (exact real GPS position) */
+.map-mrt {
+  pointer-events: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  user-select: none;
+  white-space: nowrap;
+}
+.map-mrt-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  border: 1px solid #ffffff;
+  box-shadow: 0 0 0 1px rgb(15 23 42 / 0.14);
+  flex-shrink: 0;
+}
+.map-mrt-label {
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  color: #475569;
+  background: rgb(255 255 255 / 0.72);
+  padding: 1px 3.5px;
+  border-radius: 3px;
+}
+
+/* Fullscreen map modal wrapper */
+.map-fullscreen {
+  position: fixed;
+  inset: 16px;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  box-shadow: 0 24px 64px rgb(15 23 42 / 0.24);
+  overflow: hidden;
+}
+.map-fullscreen-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 55;
+  background: rgb(15 23 42 / 0.42);
+  backdrop-filter: blur(4px);
+}
+
+/* Map anchor dots */
+.map-anchor {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  border: 2px solid var(--primary);
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgb(15 23 42 / 0.22);
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.16s ease, box-shadow 0.16s ease, background-color 0.16s ease;
+  z-index: 15;
+}
+.map-anchor--hiring {
+  width: 14px;
+  height: 14px;
+  background: var(--primary);
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 2px var(--primary), 0 2px 8px rgb(18 87 253 / 0.35);
+}
+.map-anchor--area {
+  border-style: dashed;
+  background: rgb(255 255 255 / 0.92);
+}
+.map-anchor--active {
+  transform: translate(-50%, -50%) scale(1.32);
+  box-shadow: 0 0 0 4px rgb(18 87 253 / 0.22), 0 2px 8px rgb(18 87 253 / 0.4);
+  z-index: 25;
+}
+
+/* Floating callout cards (sleek compact chips to maximize island breathing room) */
+.map-callout {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5px;
+  text-align: left;
+  background: rgb(255 255 255 / 0.96);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  padding: 5.5px 8px;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgb(15 23 42 / 0.06), 0 1px 2px rgb(15 23 42 / 0.04);
+  transition: border-color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease, opacity 0.16s ease;
+  z-index: 20;
+}
+.map-callout--exact {
+  border: 1.5px solid #d4d4d8;
+}
+.map-callout--area {
+  border: 1.5px dashed #94a3b8;
+  background: rgb(255 255 255 / 0.92);
+}
+.map-callout:hover,
+.map-callout--active {
+  border-color: var(--primary);
+  box-shadow: 0 8px 22px rgb(18 87 253 / 0.14), 0 2px 6px rgb(15 23 42 / 0.06);
+  transform: translateY(-1px);
+  z-index: 35;
+}
+.map-callout--dimmed {
+  opacity: 0.45;
+}
+
+/* Dual-coding index badge & date capsule */
+.map-index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: #18181b;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+.map-index--hiring {
+  background: var(--primary);
+}
+.map-date-pill {
+  display: inline-flex;
+  align-items: center;
+  height: 18px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.map-date-pill--hiring {
+  background: var(--primary-soft);
+  color: var(--primary);
+}
+
+/* Bottom-right frosted legend */
+.map-legend {
+  background: rgb(255 255 255 / 0.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgb(226 232 240 / 0.95);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgb(15 23 42 / 0.07);
+}
+
+/* Clicked event detail overlay */
+.map-detail-card {
+  background: rgb(255 255 255 / 0.98);
+  backdrop-filter: blur(10px);
+  border: 1px solid #d4d4d8;
+  border-radius: 12px;
+  box-shadow: 0 14px 36px rgb(15 23 42 / 0.16);
+}
 
 /* Go / Not Go decision maker */
 .kw-chip {

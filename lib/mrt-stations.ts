@@ -39,6 +39,8 @@ export const MRT_STATIONS: RawStation[] = [
   { name: 'Outram Park',     code: 'EW16/NE3/TE17', line: 'EW', color: LINE_COLORS.EW, lat: 1.2801, lng: 103.8395 },
   { name: 'Queenstown',      code: 'EW19',       line: 'EW', color: LINE_COLORS.EW, lat: 1.2944, lng: 103.8056 },
   { name: 'Buona Vista',     code: 'EW21/CC22',  line: 'EW', color: LINE_COLORS.EW, lat: 1.3073, lng: 103.7906 },
+  { name: 'Jurong East',     code: 'EW24/NS1',   line: 'EW', color: LINE_COLORS.EW, lat: 1.3332, lng: 103.7422 },
+  { name: 'Pioneer',         code: 'EW28',       line: 'EW', color: LINE_COLORS.EW, lat: 1.3376, lng: 103.6973 },
   // ─── North-South Line ─────────────────────────────────
   { name: 'Ang Mo Kio',      code: 'NS16',       line: 'NS', color: LINE_COLORS.NS, lat: 1.3699, lng: 103.8496 },
   { name: 'Bishan',          code: 'NS17/CC15',  line: 'NS', color: LINE_COLORS.NS, lat: 1.3506, lng: 103.8481 },
@@ -64,6 +66,10 @@ export const MRT_STATIONS: RawStation[] = [
   { name: 'Holland Village', code: 'CC21',       line: 'CC', color: LINE_COLORS.CC, lat: 1.3116, lng: 103.7961 },
   { name: 'one-north',       code: 'CC23',       line: 'CC', color: LINE_COLORS.CC, lat: 1.2998, lng: 103.7871 },
   { name: 'Kent Ridge',      code: 'CC24',       line: 'CC', color: LINE_COLORS.CC, lat: 1.2934, lng: 103.7847 },
+  { name: 'Haw Par Villa',   code: 'CC25',       line: 'CC', color: LINE_COLORS.CC, lat: 1.2825, lng: 103.7818 },
+  { name: 'Pasir Panjang',   code: 'CC26',       line: 'CC', color: LINE_COLORS.CC, lat: 1.2762, lng: 103.7914 },
+  { name: 'Labrador Park',   code: 'CC27',       line: 'CC', color: LINE_COLORS.CC, lat: 1.2722, lng: 103.8029 },
+  { name: 'Telok Blangah',   code: 'CC28',       line: 'CC', color: LINE_COLORS.CC, lat: 1.2707, lng: 103.8098 },
   { name: 'HarbourFront',    code: 'CC29/NE1',   line: 'CC', color: LINE_COLORS.CC, lat: 1.2655, lng: 103.8217 },
   // ─── Downtown Line ────────────────────────────────────
   { name: 'Beauty World',    code: 'DT5',        line: 'DT', color: LINE_COLORS.DT, lat: 1.3414, lng: 103.7759 },
