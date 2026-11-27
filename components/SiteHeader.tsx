@@ -11,14 +11,14 @@ export default function SiteHeader({ lang, active }: { lang: Lang; active: PageK
   return (
     <header className="sticky top-0 z-[1000] border-b border-[var(--border)] bg-white/85 backdrop-blur">
       <div className="container-page flex h-14 items-center justify-between gap-3">
-        <div className="flex min-w-0 items-center gap-4 sm:gap-6">
+        <div className="flex min-w-0 items-center gap-2.5 sm:gap-6">
           <Link href={`/${lang}`} className="flex shrink-0 items-center gap-2 text-[15px] font-semibold tracking-tight">
             <span aria-hidden className="grid h-6 w-6 place-items-center rounded-md bg-[var(--primary)] text-[11px] font-bold text-white">SG</span>
             <span className="hidden sm:inline">AI Oasis</span>
           </Link>
-          <nav className="flex items-center gap-0.5" aria-label="Main">
+          <nav className="no-scrollbar flex min-w-0 items-center gap-0.5 overflow-x-auto" aria-label="Main">
             {(Object.keys(PATH) as PageKey[]).map((key) => (
-              <Link key={key} href={`/${lang}${PATH[key]}`} className="nav-link"
+              <Link key={key} href={`/${lang}${PATH[key]}`} className="nav-link shrink-0 whitespace-nowrap !px-2 !text-[13px] sm:!px-2.5 sm:!text-sm"
                     aria-current={key === active ? 'page' : undefined}>
                 {t.nav[key]}
               </Link>

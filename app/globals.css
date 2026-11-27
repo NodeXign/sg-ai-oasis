@@ -424,6 +424,43 @@ a:focus-visible, button:focus-visible {
 }
 
 /* Job graph */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+@media (max-width: 639px) {
+  .map-pill {
+    max-width: 146px;
+    height: 22px;
+    padding: 0 7px;
+    font-size: 10.5px;
+  }
+  .maplibregl-popup {
+    max-width: calc(100vw - 28px) !important;
+  }
+  .map-popup-eval,
+  .map-popup-reg {
+    height: 32px;
+    font-size: 12.5px;
+  }
+  .coin3d-arena {
+    height: 176px;
+    padding-bottom: 14px;
+  }
+  .coin3d-btn,
+  .coin3d-object {
+    width: 128px;
+    height: 128px;
+  }
+  .gonogo-slider::-webkit-slider-thumb {
+    width: 22px;
+    height: 22px;
+  }
+  .gonogo-slider::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+  }
+}
+
 .graph-node { cursor: pointer; }
 .graph-node text { transition: fill 0.15s; }
 .graph-node rect, .graph-node circle { transition: fill 0.15s, stroke 0.15s; }

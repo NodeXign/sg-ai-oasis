@@ -334,6 +334,9 @@ const zh = {
       soundOff: '静音',
       lowInfoShort: '信息较少，可微调',
       hoursShort: (h: string) => `约 ${h}h`,
+      mobileTabPick: (n: number) => `选活动 (${n})`,
+      mobileTabEval: '抛硬币评测',
+      mobileGoFlip: (n: number) => `已选 ${n} 场 · 去抛硬币 →`,
     },
   },
 };
@@ -671,6 +674,9 @@ const en: Dict = {
       soundOff: 'Muted',
       lowInfoShort: 'Sparse details — adjust freely',
       hoursShort: (h: string) => `~${h}h`,
+      mobileTabPick: (n: number) => `Shortlist (${n})`,
+      mobileTabEval: 'Flip & Rank',
+      mobileGoFlip: (n: number) => `${n} picked · Flip coin →`,
     },
   },
 };

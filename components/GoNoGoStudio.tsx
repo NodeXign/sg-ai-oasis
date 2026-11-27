@@ -124,6 +124,7 @@ export default function GoNoGoStudio({
   const [isFlipping, setIsFlipping] = useState(false);
   const [batchRevealed, setBatchRevealed] = useState(false);
   const [soundEnabled, setSoundEnabled] = useState(true);
+  const [mobilePane, setMobilePane] = useState<'pick' | 'eval'>(() => (initialEventId ? 'eval' : 'pick'));
   const [tuningEventId, setTuningEventId] = useState<string | null>(null);
   const [reflectEventId, setReflectEventId] = useState<string | null>(null);
 
@@ -484,9 +485,36 @@ export default function GoNoGoStudio({
     rawWeights.career !== DEFAULT_RAW_WEIGHTS.career;
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[330px_minmax(0,1fr)] lg:items-start">
+    <div className="space-y-3 pb-16 lg:pb-0">
+      {/* Mobile 2-Pane Switcher (hidden on lg desktop where both columns show side-by-side) */}
+      <div className="sticky top-[57px] z-20 -mx-1 bg-white/95 px-1 py-2 backdrop-blur lg:hidden">
+        <div className="grid grid-cols-2 gap-1 rounded-lg bg-[var(--muted)] p-1">
+          <button
+            type="button"
+            onClick={() => setMobilePane('pick')}
+            aria-pressed={mobilePane === 'pick'}
+            className={`rounded-md py-2 text-xs font-semibold transition-colors ${
+              mobilePane === 'pick' ? 'bg-white text-[var(--foreground)] shadow-sm' : 'text-muted'
+            }`}
+          >
+            {st.mobileTabPick(pickedIds.length)}
+          </button>
+          <button
+            type="button"
+            onClick={() => setMobilePane('eval')}
+            aria-pressed={mobilePane === 'eval'}
+            className={`rounded-md py-2 text-xs font-semibold transition-colors ${
+              mobilePane === 'eval' ? 'bg-white text-[var(--foreground)] shadow-sm' : 'text-muted'
+            }`}
+          >
+            {st.mobileTabEval}
+          </button>
+        </div>
+      </div>
+
+      <div className="grid gap-5 lg:grid-cols-[330px_minmax(0,1fr)] lg:items-start">
       {/* LEFT COLUMN: Multi-Select Bookshelf of Candidate Events */}
-      <aside className="card overflow-hidden">
+      <aside className={`card overflow-hidden ${mobilePane === 'eval' ? 'hidden lg:block' : 'block'}`}>
         <div className="flex items-center justify-between gap-2 border-b border-[var(--border)] px-4 py-3">
           <div className="flex items-center gap-2">
             <h1 className="text-sm font-semibold">{st.shelfTitle}</h1>
@@ -499,7 +527,7 @@ export default function GoNoGoStudio({
                 setPickedIds(items.map((i) => i.event.id));
                 setBatchRevealed(false);
               }}
-              className="text-muted hover:text-[var(--foreground)] hover:underline"
+              className="py-1 text-muted hover:text-[var(--foreground)] hover:underline"
             >
               {st.selectAll}
             </button>
@@ -510,14 +538,14 @@ export default function GoNoGoStudio({
                 setPickedIds([]);
                 setBatchRevealed(false);
               }}
-              className="text-muted hover:text-[var(--foreground)] hover:underline"
+              className="py-1 text-muted hover:text-[var(--foreground)] hover:underline"
             >
               {st.clearAll}
             </button>
           </div>
         </div>
 
-        <div className="max-h-[74vh] space-y-4 overflow-y-auto p-3.5">
+        <div className="space-y-4 overflow-y-auto p-3.5 lg:max-h-[74vh]">
           {shelfGroups.map(([dayLabel, group]) => (
             <div key={dayLabel} className="shelf-tier">
               <div className="mb-1.5 flex items-center justify-between px-1">
@@ -605,9 +633,9 @@ export default function GoNoGoStudio({
       </aside>
 
       {/* RIGHT COLUMN: Batch Evaluation + 60fps 3D Coin Stage */}
-      <section className="card flex flex-col overflow-hidden">
+      <section className={`card flex-col overflow-hidden ${mobilePane === 'pick' ? 'hidden lg:flex' : 'flex'}`}>
         {/* Compact Focus Chips + Sound Toggle */}
-        <div className="space-y-3 border-b border-[var(--border)] px-5 py-4">
+        <div className="space-y-3 border-b border-[var(--border)] px-4 py-3.5 sm:px-5 sm:py-4">
           <div className="flex items-start justify-between gap-3">
             <div className="flex flex-wrap items-center gap-1.5">
               {visibleChipIds.map((id) => {
@@ -876,18 +904,18 @@ export default function GoNoGoStudio({
                       </div>
 
                       {/* Quick Row Actions */}
-                      <div className="flex shrink-0 items-center gap-1.5">
+                      <div className="flex w-full flex-wrap items-center gap-1.5 sm:w-auto sm:shrink-0">
                         <button
                           type="button"
                           onClick={() => setRowChoice(row, 'go')}
-                          className={`btn btn-sm !h-7 !px-2.5 text-xs ${dec?.finalChoice === 'go' ? 'btn-primary' : ''}`}
+                          className={`btn btn-sm !h-8 flex-1 sm:flex-none !px-2.5 text-xs ${dec?.finalChoice === 'go' ? 'btn-primary' : ''}`}
                         >
                           {dec?.finalChoice === 'go' ? `✓ ${t.chosenGoBadge}` : t.chooseGo}
                         </button>
                         <button
                           type="button"
                           onClick={() => setRowChoice(row, 'skip')}
-                          className={`btn btn-sm !h-7 !px-2 text-xs ${
+                          className={`btn btn-sm !h-8 flex-1 sm:flex-none !px-2.5 text-xs ${
                             dec?.finalChoice === 'skip' ? '!border-[var(--foreground)] !bg-[var(--foreground)] !text-white' : 'text-muted'
                           }`}
                         >
@@ -896,7 +924,7 @@ export default function GoNoGoStudio({
                         <button
                           type="button"
                           onClick={() => setTuningEventId(isTuning ? null : row.ev.id)}
-                          className={`btn btn-sm !h-7 !px-2 text-xs ${isTuning ? 'border-[var(--primary)] text-[var(--primary)]' : 'text-muted'}`}
+                          className={`btn btn-sm !h-8 !px-2.5 text-xs ${isTuning ? 'border-[var(--primary)] text-[var(--primary)]' : 'text-muted'}`}
                         >
                           {st.tuneBtn}
                         </button>
@@ -904,7 +932,7 @@ export default function GoNoGoStudio({
                           <button
                             type="button"
                             onClick={() => openReflect(row.ev.id)}
-                            className="btn btn-sm !h-7 !px-2 text-xs"
+                            className="btn btn-sm !h-8 !px-2.5 text-xs"
                           >
                             {hasRef ? `✓ ${t.reflectedBadge}` : t.reflectBtn}
                           </button>
@@ -914,7 +942,7 @@ export default function GoNoGoStudio({
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label={dict.events.register}
-                          className="btn btn-sm !h-7 !px-2 text-xs text-muted"
+                          className="btn btn-sm !h-8 !px-2.5 text-xs text-muted"
                         >
                           ↗
                         </a>
@@ -1004,6 +1032,23 @@ export default function GoNoGoStudio({
           </div>
         )}
       </section>
+      </div>
+
+      {/* Mobile Sticky Bottom Bar when picking events on bookshelf */}
+      {mobilePane === 'pick' && pickedIds.length > 0 && (
+        <div className="fixed inset-x-0 bottom-0 z-30 border-t border-[var(--border)] bg-white/95 px-4 py-3 shadow-[0_-4px_16px_rgb(0_0_0/0.06)] backdrop-blur lg:hidden">
+          <button
+            type="button"
+            onClick={() => {
+              setMobilePane('eval');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="btn btn-primary btn-lg w-full"
+          >
+            {st.mobileGoFlip(pickedIds.length)}
+          </button>
+        </div>
+      )}
     </div>
   );
 }
