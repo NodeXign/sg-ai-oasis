@@ -2,8 +2,9 @@
 """
 SG AI Oasis — daily job sync.
 
-For every company in data/companies.json, read its public careers board
-(Greenhouse / Lever / Ashby JSON endpoints), keep roles located in Singapore,
+For every company in data/companies.json, read its official public careers API
+(Greenhouse / Lever / Ashby / SmartRecruiters / Workday / Amazon Jobs / Google /
+Eightfold / WorkAtSea / ByteDance / Manus), keep roles located in Singapore,
 and merge them into data/jobs.json:
 
   - new role          -> status "open", firstSeen = today
@@ -18,6 +19,7 @@ also upserted to Supabase. Standard library only.
 Usage: python3 scripts/jobs_sync.py [--dry-run]
 """
 
+import http.cookiejar
 import json
 import os
 import re
@@ -36,14 +38,26 @@ META_PATH = ROOT / 'data' / 'jobs_meta.json'
 SGT = timezone(timedelta(hours=8))
 CLOSE_AFTER_MISSES = 2
 UA = {'User-Agent': 'sg-ai-oasis/1.0 (+https://github.com/NodeXign/sg-ai-oasis)'}
+BROWSER_UA = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
+    'Accept': 'application/json, text/html;q=0.9, */*;q=0.8',
+}
 
 
-def http_json(url: str, method: str = 'GET', body=None, headers=None, timeout: int = 25):
-    data = json.dumps(body).encode() if body is not None else None
-    req = urllib.request.Request(url, data=data, method=method, headers={**UA, **(headers or {})})
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        raw = resp.read()
-        return json.loads(raw) if raw else None
+def http_raw(url: str, method: str = 'GET', body=None, headers=None, timeout: int = 25, opener=None) -> bytes:
+    data = json.dumps(body).encode() if isinstance(body, (dict, list)) else (body.encode() if isinstance(body, str) else body)
+    h = {**UA, **(headers or {})}
+    if isinstance(body, (dict, list)) and 'Content-Type' not in h:
+        h['Content-Type'] = 'application/json'
+    req = urllib.request.Request(url, data=data, method=method, headers=h)
+    fn = opener.open if opener else urllib.request.urlopen
+    with fn(req, timeout=timeout) as resp:
+        return resp.read()
+
+
+def http_json(url: str, method: str = 'GET', body=None, headers=None, timeout: int = 25, opener=None):
+    raw = http_raw(url, method=method, body=body, headers=headers, timeout=timeout, opener=opener)
+    return json.loads(raw) if raw else None
 
 
 # ─── Board readers: each returns [{extId, title, location, url, department, postedAt}] ──
@@ -95,7 +109,343 @@ def read_ashby(token: str) -> list[dict]:
     return out
 
 
-READERS = {'greenhouse': read_greenhouse, 'lever': read_lever, 'ashby': read_ashby}
+def read_smartrecruiters(token: str) -> list[dict]:
+    out, offset, limit = [], 0, 100
+    for _ in range(20):
+        data = http_json(f'https://api.smartrecruiters.com/v1/companies/{token}/postings?limit={limit}&offset={offset}&country=sg')
+        batch = data.get('content') or []
+        for j in batch:
+            loc_obj = j.get('location') or {}
+            city = (loc_obj.get('city') or '').strip()
+            country = (loc_obj.get('country') or '').strip().lower()
+            loc_text = city or ('Singapore' if country == 'sg' else '')
+            if country == 'sg' and 'singapore' not in loc_text.lower():
+                loc_text = f'{loc_text}, Singapore' if loc_text else 'Singapore'
+            out.append({
+                'extId': str(j['id']),
+                'title': (j.get('name') or '').strip(),
+                'location': loc_text,
+                'url': f"https://jobs.smartrecruiters.com/{token}/{j['id']}",
+                'department': (j.get('department') or {}).get('label') or '',
+                'postedAt': j.get('releasedDate'),
+            })
+        offset += len(batch)
+        if not batch or offset >= int(data.get('totalFound') or 0):
+            break
+    return out
+
+
+def _find_workday_sg_facets(facets: list[dict]) -> tuple[str | None, list[str]]:
+    by_param: dict[str, list[str]] = {}
+
+    def walk(nodes: list[dict]):
+        for node in nodes or []:
+            param = node.get('facetParameter')
+            vals = node.get('values') or []
+            if vals and isinstance(vals[0], dict) and 'facetParameter' in vals[0]:
+                walk(vals)
+            elif param:
+                for v in vals:
+                    desc = (v.get('descriptor') or '').lower()
+                    if 'singapore' in desc and v.get('id'):
+                        by_param.setdefault(param, []).append(v['id'])
+
+    walk(facets)
+    for preferred in ('locationHierarchy1', 'locations', 'locationCountry'):
+        if by_param.get(preferred):
+            return preferred, by_param[preferred]
+    for param, ids in by_param.items():
+        if ids:
+            return param, ids
+    return None, []
+
+
+def read_workday(token: str) -> list[dict]:
+    # token format: "<host>/<tenant>/<site>"
+    host, tenant, site = token.split('/', 2)
+    api_url = f'https://{host}/wday/cxs/{tenant}/{site}/jobs'
+    probe = http_json(api_url, method='POST', body={'appliedFacets': {}, 'limit': 1, 'offset': 0, 'searchText': ''}, headers=BROWSER_UA)
+    facet_param, sg_ids = _find_workday_sg_facets(probe.get('facets') or [])
+    if not facet_param or not sg_ids:
+        return []
+
+    out, offset, limit = [], 0, 20
+    applied = {facet_param: sg_ids}
+    for _ in range(50):
+        data = http_json(api_url, method='POST', body={'appliedFacets': applied, 'limit': limit, 'offset': offset, 'searchText': ''}, headers=BROWSER_UA)
+        postings = data.get('jobPostings') or []
+        for j in postings:
+            ext_path = j.get('externalPath') or ''
+            bullets = j.get('bulletFields') or []
+            ext_id = str(bullets[0]) if bullets else ext_path.rstrip('/').split('/')[-1]
+            loc = (j.get('locationsText') or '').strip()
+            if 'singapore' not in loc.lower():
+                loc = f'{loc} / Singapore' if loc else 'Singapore'
+            out.append({
+                'extId': ext_id,
+                'title': (j.get('title') or '').strip(),
+                'location': loc,
+                'url': f'https://{host}/en-US/{site}{ext_path}' if ext_path else f'https://{host}/en-US/{site}',
+                'department': '',
+                'postedAt': None,
+            })
+        offset += len(postings)
+        if not postings or offset >= int(data.get('total') or 0):
+            break
+    return out
+
+
+def read_amazon(token: str) -> list[dict]:
+    # token format: "<country_code>|<business_category>" e.g. "SGP|amazon-web-services"
+    parts = token.split('|', 1)
+    country = parts[0]
+    biz = parts[1] if len(parts) > 1 else ''
+    out, offset, limit = [], 0, 100
+    for _ in range(20):
+        params = [('offset', str(offset)), ('result_limit', str(limit)), ('country', country)]
+        if biz:
+            params.append(('business_category[]', biz))
+        url = 'https://www.amazon.jobs/en/search.json?' + urllib.parse.urlencode(params)
+        data = http_json(url, headers=BROWSER_UA)
+        jobs = data.get('jobs') or []
+        for j in jobs:
+            loc = (j.get('location') or j.get('normalized_location') or '').strip()
+            if country.upper() == 'SGP' and 'singapore' not in loc.lower():
+                loc = 'Singapore' if loc.upper() in ('SGP', '') else f'{loc}, Singapore'
+            posted = None
+            raw_date = j.get('posted_date')
+            if raw_date:
+                try:
+                    posted = datetime.strptime(raw_date.strip(), '%B %d, %Y').replace(tzinfo=timezone.utc).isoformat()
+                except ValueError:
+                    posted = None
+            job_path = j.get('job_path') or ''
+            out.append({
+                'extId': str(j.get('id_icims') or j.get('id')),
+                'title': (j.get('title') or '').strip(),
+                'location': loc,
+                'url': f'https://www.amazon.jobs{job_path}' if job_path.startswith('/') else job_path,
+                'department': j.get('job_category') or j.get('business_category') or '',
+                'postedAt': posted,
+            })
+        offset += len(jobs)
+        if not jobs or offset >= int(data.get('hits') or 0):
+            break
+    return out
+
+
+def read_google(token: str) -> list[dict]:
+    # Parses Google Careers' public server-rendered AF_initDataCallback (ds:1) JSON
+    out, seen = [], set()
+    total = None
+    for page in range(1, 20):
+        q = urllib.parse.urlencode({'location': token, 'page': str(page)})
+        html_txt = http_raw(
+            f'https://www.google.com/about/careers/applications/jobs/results/?{q}',
+            headers=BROWSER_UA, timeout=30
+        ).decode('utf-8', 'replace')
+        m = re.search(r"AF_initDataCallback\(\{key:\s*'ds:1',\s*hash:\s*'[^']+',\s*data:(.*?),\s*sideChannel:", html_txt, re.S)
+        if not m:
+            break
+        data = json.loads(m.group(1))
+        rows = data[0] if data and isinstance(data[0], list) else []
+        if total is None and len(data) > 2 and isinstance(data[2], int):
+            total = data[2]
+        if not rows:
+            break
+        for j in rows:
+            jid = str(j[0])
+            if jid in seen:
+                continue
+            seen.add(jid)
+            locs = [loc[0] for loc in (j[9] or []) if isinstance(loc, list) and loc and isinstance(loc[0], str)]
+            ts = j[12][0] if len(j) > 12 and isinstance(j[12], list) and j[12] and isinstance(j[12][0], (int, float)) else None
+            out.append({
+                'extId': jid,
+                'title': (j[1] or '').strip(),
+                'location': ' / '.join(dict.fromkeys(locs)) or token,
+                'url': f'https://www.google.com/about/careers/applications/jobs/results/{jid}',
+                'department': '',
+                'postedAt': datetime.fromtimestamp(ts, timezone.utc).isoformat() if ts else None,
+            })
+        if total is not None and len(out) >= total:
+            break
+    return out
+
+
+def read_eightfold(token: str) -> list[dict]:
+    # token format: "<host>|<domain>|<location>"
+    host, domain, location = token.split('|', 2)
+    cj = http.cookiejar.CookieJar()
+    opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
+    init_url = f'https://{host}/careers?' + urllib.parse.urlencode({'location': location})
+    http_raw(init_url, headers=BROWSER_UA, opener=opener)
+
+    out, start = [], 0
+    for _ in range(30):
+        q = urllib.parse.urlencode({
+            'domain': domain, 'query': '', 'location': location,
+            'start': str(start), 'sort_by': 'relevance',
+        })
+        data = http_json(
+            f'https://{host}/api/pcsx/search?{q}',
+            headers={**BROWSER_UA, 'Referer': init_url}, opener=opener
+        )
+        payload = (data or {}).get('data') or {}
+        positions = payload.get('positions') or []
+        for p in positions:
+            locs = [l for l in (p.get('locations') or []) if isinstance(l, str) and l.strip()]
+            ts = p.get('postedTs')
+            pos_url = p.get('positionUrl') or ''
+            out.append({
+                'extId': str(p.get('displayJobId') or p.get('id')),
+                'title': (p.get('name') or '').strip(),
+                'location': ' / '.join(dict.fromkeys(locs)) or location,
+                'url': f'https://{host}{pos_url}' if pos_url.startswith('/') else (pos_url or init_url),
+                'department': (p.get('department') or '').strip(),
+                'postedAt': datetime.fromtimestamp(ts, timezone.utc).isoformat() if isinstance(ts, (int, float)) else None,
+            })
+        start += len(positions)
+        total = int(payload.get('count') or 0)
+        if not positions or start >= total:
+            break
+    return out
+
+
+def read_workatsea(token: str) -> list[dict]:
+    # Unified public ATS for Sea Group / Shopee / Garena / Monee (ats.workatsea.com)
+    city_data = http_json('https://ats.workatsea.com/ats/api/v1/user/city/job_count/', headers=BROWSER_UA)
+    city_id = None
+    for region in (city_data or {}).get('data') or []:
+        for city in region.get('cities') or []:
+            if (city.get('city_name') or '').lower() == token.lower():
+                city_id = city.get('city_id')
+                break
+        if city_id is not None:
+            break
+    if city_id is None:
+        return []
+
+    out, offset, limit = [], 0, 100
+    for _ in range(20):
+        url = f'https://ats.workatsea.com/ats/api/v1/user/job/list/?limit={limit}&offset={offset}&city_ids={city_id}'
+        data = http_json(url, headers=BROWSER_UA)
+        payload = (data or {}).get('data') or {}
+        jobs = payload.get('job_list') or []
+        for j in jobs:
+            jid = str(j.get('job_id') or j.get('id'))
+            out.append({
+                'extId': jid,
+                'title': (j.get('job_name') or '').strip(),
+                'location': token,
+                'url': f'https://career.sea.com/position/{jid}',
+                'department': '',
+                'postedAt': None,
+            })
+        offset += len(jobs)
+        total = int(payload.get('total_count') or payload.get('total') or 0)
+        if not jobs or offset >= total:
+            break
+    return out
+
+
+def read_bytedance(token: str) -> list[dict]:
+    # token format: "<website-path>|<city_code>" e.g. "en|CT_163"
+    wp, city_code = token.split('|', 1)
+    cj = http.cookiejar.CookieJar()
+    opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
+    http_raw(f'https://jobs.bytedance.com/{wp}/position', headers=BROWSER_UA, opener=opener)
+    csrf_resp = http_json(
+        'https://jobs.bytedance.com/api/v1/csrf/token',
+        method='POST', body={'portal_entrance': 1},
+        headers={**BROWSER_UA, 'website-path': wp}, opener=opener
+    )
+    csrf_token = ((csrf_resp or {}).get('data') or {}).get('token')
+    if not csrf_token:
+        raise RuntimeError('ByteDance CSRF token missing')
+    hdrs = {
+        **BROWSER_UA,
+        'x-csrf-token': csrf_token,
+        'website-path': wp,
+        'Portal-Channel': 'office',
+        'Portal-Platform': 'pc',
+        'Origin': 'https://jobs.bytedance.com',
+        'Referer': f'https://jobs.bytedance.com/{wp}/position',
+    }
+    out, offset, limit = [], 0, 20
+    for _ in range(40):
+        resp = None
+        for attempt in range(2):
+            try:
+                resp = http_json(
+                    'https://jobs.bytedance.com/api/v1/search/job/posts',
+                    method='POST',
+                    body={
+                        'keyword': '', 'limit': limit, 'offset': offset,
+                        'job_category_id_list': [], 'location_code_list': [city_code],
+                        'subject_id_list': [], 'recruitment_id_list': [],
+                        'portal_type': 2, 'portal_entrance': 1,
+                    },
+                    headers=hdrs, timeout=30, opener=opener
+                )
+                break
+            except Exception:
+                if attempt == 1:
+                    raise
+        payload = (resp or {}).get('data') or {}
+        posts = payload.get('job_post_list') or []
+        for p in posts:
+            city_info = p.get('city_info') or {}
+            city_list = [c.get('en_name') or c.get('name') or '' for c in (p.get('city_list') or []) if isinstance(c, dict)]
+            locs = [city_info.get('en_name') or city_info.get('name') or ''] + city_list
+            pub_ms = p.get('publish_time')
+            cat = p.get('job_category') or {}
+            out.append({
+                'extId': str(p['id']),
+                'title': (p.get('title') or '').strip(),
+                'location': ' / '.join(dict.fromkeys(l for l in locs if l)) or 'Singapore',
+                'url': f"https://jobs.bytedance.com/{wp}/position/{p['id']}/detail",
+                'department': cat.get('en_name') or cat.get('name') or '',
+                'postedAt': datetime.fromtimestamp(pub_ms / 1000, timezone.utc).isoformat() if isinstance(pub_ms, (int, float)) else None,
+            })
+        offset += len(posts)
+        total = int(payload.get('count') or 0)
+        if not posts or offset >= total:
+            break
+    return out
+
+
+def read_manus(token: str) -> list[dict]:
+    inp = urllib.parse.quote(json.dumps({'0': {'json': {'locale': 'en'}}}))
+    data = http_json(f'https://{token}/api/trpc/applications.publicJobs?batch=1&input={inp}', headers=BROWSER_UA)
+    jobs = data[0]['result']['data']['json'] if data else []
+    out = []
+    for j in jobs:
+        locs = [l for l in (j.get('locations') or []) if isinstance(l, str) and l.strip()]
+        out.append({
+            'extId': str(j['id']),
+            'title': (j.get('title') or '').strip(),
+            'location': ' / '.join(dict.fromkeys(locs)),
+            'url': f'https://{token}/en',
+            'department': (j.get('category') or '').strip(),
+            'postedAt': None,
+        })
+    return out
+
+
+READERS = {
+    'greenhouse': read_greenhouse,
+    'lever': read_lever,
+    'ashby': read_ashby,
+    'smartrecruiters': read_smartrecruiters,
+    'workday': read_workday,
+    'amazon': read_amazon,
+    'google': read_google,
+    'eightfold': read_eightfold,
+    'workatsea': read_workatsea,
+    'bytedance': read_bytedance,
+    'manus': read_manus,
+}
 
 
 # ─── Rule-based labels (zero LLM tokens) ──────────────────────
@@ -276,8 +626,8 @@ def to_job_row(j: dict) -> dict:
 def main():
     dry_run = '--dry-run' in sys.argv
     today = datetime.now(SGT).date().isoformat()
-    companies = [c for c in json.loads(COMPANIES_PATH.read_text()) if c.get('active', True)]
-    existing = json.loads(JOBS_PATH.read_text()) if JOBS_PATH.exists() else []
+    companies = [c for c in json.loads(COMPANIES_PATH.read_text(encoding='utf-8')) if c.get('active', True)]
+    existing = json.loads(JOBS_PATH.read_text(encoding='utf-8')) if JOBS_PATH.exists() else []
 
     with ThreadPoolExecutor(max_workers=8) as pool:
         results = list(pool.map(fetch_company, companies))
@@ -295,8 +645,8 @@ def main():
 
     if dry_run:
         return
-    JOBS_PATH.write_text(json.dumps(jobs, indent=1, ensure_ascii=False) + '\n')
-    META_PATH.write_text(json.dumps(meta, indent=2, ensure_ascii=False) + '\n')
+    JOBS_PATH.write_text(json.dumps(jobs, indent=1, ensure_ascii=False) + '\n', encoding='utf-8')
+    META_PATH.write_text(json.dumps(meta, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
 
     if os.environ.get('SUPABASE_URL') and os.environ.get('SUPABASE_SERVICE_ROLE_KEY'):
         supabase_upsert('companies', [to_company_row(c) for c in companies])

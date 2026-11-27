@@ -9,7 +9,11 @@
     "website": "https://openai.com",
     "careersUrl": "https://jobs.ashbyhq.com/openai",
     "linkedinUrl": null,
-    "organizerIds": [],
+    "organizerIds": [
+      "openai-singapore",
+      "openai-community",
+      "codex"
+    ],
     "seedSource": "ats-verified",
     "conferences": [],
     "active": true
@@ -25,7 +29,10 @@
     "careersUrl": "https://job-boards.greenhouse.io/anthropic",
     "linkedinUrl": null,
     "organizerIds": [
-      "anthropic-community"
+      "anthropic-community",
+      "claude-sg-community",
+      "claudesg",
+      "claude"
     ],
     "seedSource": "ats-verified",
     "conferences": [],
@@ -56,7 +63,28 @@
     "website": "https://cursor.com",
     "careersUrl": "https://jobs.ashbyhq.com/cursor",
     "linkedinUrl": null,
-    "organizerIds": [],
+    "organizerIds": [
+      "cursor-singapore",
+      "cursor-community"
+    ],
+    "seedSource": "ats-verified",
+    "conferences": [],
+    "active": true
+  },
+  {
+    "id": "manus",
+    "name": "Manus",
+    "ats": "manus",
+    "atsToken": "careers.manus.im",
+    "sector": "AI Product",
+    "aiFocus": "General-purpose AI agents, Singapore HQ",
+    "website": "https://manus.im",
+    "careersUrl": "https://careers.manus.im/en",
+    "linkedinUrl": null,
+    "organizerIds": [
+      "manus-ai",
+      "manus-singapore"
+    ],
     "seedSource": "ats-verified",
     "conferences": [],
     "active": true
@@ -131,7 +159,11 @@
     "website": "https://www.notion.com",
     "careersUrl": "https://jobs.ashbyhq.com/notion",
     "linkedinUrl": null,
-    "organizerIds": [],
+    "organizerIds": [
+      "notion-singapore",
+      "notionsingapore",
+      "notion-singapore-community"
+    ],
     "seedSource": "ats-verified",
     "conferences": [],
     "active": true
@@ -152,6 +184,83 @@
     "active": true
   },
   {
+    "id": "google",
+    "name": "Google",
+    "ats": "google",
+    "atsToken": "Singapore",
+    "sector": "Data & AI Platform",
+    "aiFocus": "Gemini, DeepMind, Google Cloud AI, developer ecosystem",
+    "website": "https://about.google",
+    "careersUrl": "https://www.google.com/about/careers/applications/jobs/results/?location=Singapore",
+    "linkedinUrl": null,
+    "organizerIds": [
+      "gdg-singapore",
+      "gdg-cloud-singapore",
+      "google-for-startups",
+      "google-cloud",
+      "gemini"
+    ],
+    "seedSource": "ats-verified",
+    "conferences": [],
+    "active": true
+  },
+  {
+    "id": "aws",
+    "name": "AWS",
+    "ats": "amazon",
+    "atsToken": "SGP|amazon-web-services",
+    "sector": "AI Infrastructure",
+    "aiFocus": "Cloud infrastructure, Bedrock, SageMaker, enterprise AI",
+    "website": "https://aws.amazon.com",
+    "careersUrl": "https://www.amazon.jobs/en/locations/singapore?business_category[]=amazon-web-services",
+    "linkedinUrl": null,
+    "organizerIds": [
+      "amazon-web-services",
+      "aws-singapore",
+      "aws-user-group-singapore"
+    ],
+    "seedSource": "ats-verified",
+    "conferences": [],
+    "active": true
+  },
+  {
+    "id": "microsoft",
+    "name": "Microsoft",
+    "ats": "eightfold",
+    "atsToken": "apply.careers.microsoft.com|microsoft.com|Singapore",
+    "sector": "Data & AI Platform",
+    "aiFocus": "Azure AI, Copilot, enterprise AI platforms",
+    "website": "https://www.microsoft.com",
+    "careersUrl": "https://apply.careers.microsoft.com/careers?location=Singapore",
+    "linkedinUrl": null,
+    "organizerIds": [
+      "microsoft-singapore",
+      "microsoft-reactor-singapore",
+      "azure-singapore"
+    ],
+    "seedSource": "ats-verified",
+    "conferences": [],
+    "active": true
+  },
+  {
+    "id": "nvidia",
+    "name": "NVIDIA",
+    "ats": "workday",
+    "atsToken": "nvidia.wd5.myworkdayjobs.com/nvidia/NVIDIAExternalCareerSite",
+    "sector": "AI Infrastructure",
+    "aiFocus": "AI compute, GPUs, CUDA, NIM, robotics and research",
+    "website": "https://www.nvidia.com",
+    "careersUrl": "https://nvidia.wd5.myworkdayjobs.com/en-US/NVIDIAExternalCareerSite?locationHierarchy1=2fcb99c455831013ea52df1adb7432a8",
+    "linkedinUrl": null,
+    "organizerIds": [
+      "nvidia-singapore",
+      "nvidia-inception"
+    ],
+    "seedSource": "ats-verified",
+    "conferences": [],
+    "active": true
+  },
+  {
     "id": "databricks",
     "name": "Databricks",
     "ats": "greenhouse",
@@ -161,7 +270,10 @@
     "website": "https://www.databricks.com",
     "careersUrl": "https://job-boards.greenhouse.io/databricks",
     "linkedinUrl": null,
-    "organizerIds": [],
+    "organizerIds": [
+      "databricks-community",
+      "databricks-singapore"
+    ],
     "seedSource": "ats-verified",
     "conferences": [],
     "active": true
@@ -298,7 +410,10 @@
     "website": "https://stripe.com",
     "careersUrl": "https://job-boards.greenhouse.io/stripe",
     "linkedinUrl": null,
-    "organizerIds": [],
+    "organizerIds": [
+      "stripe-stablecoins-community",
+      "stripe-singapore"
+    ],
     "seedSource": "ats-verified",
     "conferences": [],
     "active": true
@@ -351,12 +466,12 @@
   {
     "id": "thoughtworks",
     "name": "Thoughtworks",
-    "ats": "greenhouse",
+    "ats": "ashby",
     "atsToken": "thoughtworks",
     "sector": "Consulting",
     "aiFocus": "Technology consulting and AI delivery",
     "website": "https://www.thoughtworks.com",
-    "careersUrl": "https://job-boards.greenhouse.io/thoughtworks",
+    "careersUrl": "https://jobs.ashbyhq.com/thoughtworks",
     "linkedinUrl": null,
     "organizerIds": [],
     "seedSource": "ats-verified",
@@ -389,6 +504,81 @@
     "careersUrl": "https://job-boards.greenhouse.io/airtrunk",
     "linkedinUrl": null,
     "organizerIds": [],
+    "seedSource": "ats-verified",
+    "conferences": [],
+    "active": true
+  },
+  {
+    "id": "grab",
+    "name": "Grab",
+    "ats": "smartrecruiters",
+    "atsToken": "Grab",
+    "sector": "Consumer Tech",
+    "aiFocus": "Superapp, mapping, large-scale ML and GenAI, Singapore HQ",
+    "website": "https://www.grab.com",
+    "careersUrl": "https://grab.careers/jobs/?location=Singapore",
+    "linkedinUrl": null,
+    "organizerIds": [
+      "grab-singapore",
+      "grab-ai"
+    ],
+    "seedSource": "ats-verified",
+    "conferences": [],
+    "active": true
+  },
+  {
+    "id": "sea-shopee",
+    "name": "Shopee / Sea",
+    "ats": "workatsea",
+    "atsToken": "Singapore",
+    "sector": "Consumer Tech",
+    "aiFocus": "E-commerce, digital finance, gaming, applied AI & ML, Singapore HQ",
+    "website": "https://www.sea.com",
+    "careersUrl": "https://career.sea.com/jobs?location=Singapore",
+    "linkedinUrl": null,
+    "organizerIds": [
+      "shopee",
+      "sea-group",
+      "garena",
+      "monee"
+    ],
+    "seedSource": "ats-verified",
+    "conferences": [],
+    "active": true
+  },
+  {
+    "id": "bytedance",
+    "name": "ByteDance",
+    "ats": "bytedance",
+    "atsToken": "en|CT_163",
+    "sector": "Consumer Tech",
+    "aiFocus": "AI research, Seed, BytePlus, TikTok, global hub in Singapore",
+    "website": "https://www.bytedance.com",
+    "careersUrl": "https://jobs.bytedance.com/en/position?location=CT_163",
+    "linkedinUrl": null,
+    "organizerIds": [
+      "bytedance-singapore",
+      "byteplus",
+      "tiktok"
+    ],
+    "seedSource": "ats-verified",
+    "conferences": [],
+    "active": true
+  },
+  {
+    "id": "tencent",
+    "name": "Tencent",
+    "ats": "workday",
+    "atsToken": "tencent.wd1.myworkdayjobs.com/tencent/Tencent_Careers",
+    "sector": "Consumer Tech",
+    "aiFocus": "Tencent Cloud, Hunyuan LLM, gaming and AI infrastructure",
+    "website": "https://www.tencent.com",
+    "careersUrl": "https://tencent.wd1.myworkdayjobs.com/en-US/Tencent_Careers",
+    "linkedinUrl": null,
+    "organizerIds": [
+      "tencent-cloud",
+      "tencent-singapore"
+    ],
     "seedSource": "ats-verified",
     "conferences": [],
     "active": true

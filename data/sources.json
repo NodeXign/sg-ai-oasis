@@ -18,5 +18,65 @@
     "aiFilter": true,
     "descEn": "Luma's public city listing for Singapore. We keep only events whose title mentions AI topics.",
     "descZh": "Luma 的新加坡城市公开列表。这里只保留标题里提到 AI 相关主题的活动。"
+  },
+  {
+    "id": "gdg-singapore",
+    "name": "GDG Singapore",
+    "kind": "bevy-chapter",
+    "apiId": "495",
+    "url": "https://gdg.community.dev/gdg-singapore/",
+    "aiFilter": false,
+    "descEn": "Google Developer Group Singapore's official Bevy chapter (DevFest, Google I/O Extended, Gemini & agent workshops).",
+    "descZh": "Google Developer Group Singapore 官方 Bevy 社区页，收录 DevFest、Google I/O Extended 与 Gemini / Agent 工作坊。"
+  },
+  {
+    "id": "gdg-cloud-singapore",
+    "name": "GDG Cloud Singapore",
+    "kind": "bevy-chapter",
+    "apiId": "526",
+    "url": "https://gdg.community.dev/gdg-cloud-singapore/",
+    "aiFilter": false,
+    "descEn": "Google Developer Group Cloud Singapore's official Bevy chapter for cloud and AI practitioner events.",
+    "descZh": "GDG Cloud Singapore 官方 Bevy 社区页，收录新加坡云原生与 AI 实践活动。"
+  },
+  {
+    "id": "notion-singapore",
+    "name": "Notion Singapore",
+    "kind": "luma-calendar",
+    "apiId": "cal-IWxoQpfKlLgGo4D",
+    "url": "https://luma.com/notionsingapore",
+    "aiFilter": false,
+    "descEn": "Notion Singapore Community's official Luma calendar for workshops, build bars, and AI productivity meetups.",
+    "descZh": "Notion Singapore 官方社区 Luma 日历，收录工作坊、Build Bar 与 AI 效率聚会。"
+  },
+  {
+    "id": "lorong-ai",
+    "name": "Lorong AI",
+    "kind": "luma-calendar",
+    "apiId": "cal-6iIeDGNQ7vK8cfx",
+    "url": "https://luma.com/lorong-ai",
+    "aiFilter": false,
+    "descEn": "Lorong AI's official Luma calendar (embedded on lorong.ai/events), hosting Singapore AI talks, demos, and hackathons at One-North.",
+    "descZh": "Lorong AI 官方 Luma 日历（与 lorong.ai/events 同步），收录 One-North 基地的高频 AI 分享、Demo 与黑客松。"
+  },
+  {
+    "id": "claude-sg",
+    "name": "Claude SG Community",
+    "kind": "luma-calendar",
+    "apiId": "cal-Dkjza6RmAxAYMWj",
+    "url": "https://luma.com/claudesg",
+    "aiFilter": false,
+    "descEn": "Claude SG Community's official Luma calendar for Claude and Claude Code workshops in Singapore.",
+    "descZh": "Claude SG 社区 Luma 日历，收录新加坡的 Claude 与 Claude Code 实践工作坊。"
+  },
+  {
+    "id": "sginnovate",
+    "name": "SGInnovate",
+    "kind": "sginnovate-html",
+    "apiId": "sginnovate",
+    "url": "https://www.sginnovate.com/events",
+    "aiFilter": true,
+    "descEn": "SGInnovate's public upcoming events page. We keep Singapore/online deep-tech events matching AI topics.",
+    "descZh": "SGInnovate 官方近期活动页。这里仅保留新加坡本地或线上、且主题与 AI 相关的深科技活动。"
   }
 ]
