@@ -3,9 +3,11 @@ import type { Lang } from '@/lib/types';
 import { getDict } from '@/lib/i18n';
 
 type PageKey = 'home' | 'events' | 'jobs' | 'gonogo';
-const PATH: Record<PageKey, string> = { home: '', events: '/events', jobs: '/jobs', gonogo: '/gonogo' };
+type ActiveKey = PageKey | 'admin';
+const PATH: Record<ActiveKey, string> = { home: '', events: '/events', jobs: '/jobs', gonogo: '/gonogo', admin: '/admin' };
+const NAV_KEYS: PageKey[] = ['home', 'events', 'jobs', 'gonogo'];
 
-export default function SiteHeader({ lang, active }: { lang: Lang; active: PageKey }) {
+export default function SiteHeader({ lang, active }: { lang: Lang; active: ActiveKey }) {
   const t = getDict(lang);
   const other: Lang = lang === 'zh' ? 'en' : 'zh';
   return (
@@ -17,7 +19,7 @@ export default function SiteHeader({ lang, active }: { lang: Lang; active: PageK
             <span className="hidden sm:inline">AI Oasis</span>
           </Link>
           <nav className="no-scrollbar flex min-w-0 items-center gap-0 overflow-x-auto sm:gap-0.5" aria-label="Main">
-            {(Object.keys(PATH) as PageKey[]).map((key) => (
+            {NAV_KEYS.map((key) => (
               <Link key={key} href={`/${lang}${PATH[key]}`} className="nav-link shrink-0 whitespace-nowrap !px-1.5 !text-[12px] sm:!px-2.5 sm:!text-sm"
                     aria-current={key === active ? 'page' : undefined}>
                 {t.nav[key]}

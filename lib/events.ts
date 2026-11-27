@@ -1,7 +1,8 @@
-import type { EventSource, SgEvent } from './types';
+import type { EventSource, FriendEvent, SgEvent } from './types';
 import staticEvents  from '@/data/events.json';
 import staticSources from '@/data/sources.json';
 import staticMeta    from '@/data/events_meta.json';
+import { readFriendEvents } from './friend-events';
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 
@@ -9,7 +10,7 @@ export const eventSources = staticSources as EventSource[];
 export const eventsLastRun = (staticMeta as { lastRun?: string }).lastRun ?? null;
 
 // Supabase when configured (view `events_open`, migration 004), otherwise the JSON file.
-async function loadEvents(): Promise<SgEvent[]> {
+async function loadSyncedEvents(): Promise<SgEvent[]> {
   const url  = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const anon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   if (!url || !anon) return staticEvents as SgEvent[];
@@ -32,6 +33,29 @@ async function loadEvents(): Promise<SgEvent[]> {
     console.error('[events] Supabase read failed, using static data', err);
     return staticEvents as SgEvent[];
   }
+}
+
+async function loadEvents(): Promise<SgEvent[]> {
+  const [synced, friends] = await Promise.all([loadSyncedEvents(), readFriendEvents()]);
+  const publishedFriends = friends.filter((f) => f.publishToSite);
+  if (!publishedFriends.length) return synced;
+  const seen = new Set(synced.map((e) => e.id));
+  return [...synced, ...publishedFriends.filter((f) => !seen.has(f.id))];
+}
+
+// All synced + friend events (regardless of date horizon or publishToSite), for the Admin studio.
+export async function getAdminEventsData(): Promise<{
+  syncedEvents: SgEvent[];
+  friendEvents: FriendEvent[];
+}> {
+  const [syncedEvents, friendEvents] = await Promise.all([
+    loadSyncedEvents(),
+    readFriendEvents(),
+  ]);
+  return {
+    syncedEvents: [...syncedEvents].sort((a, b) => a.startAt.localeCompare(b.startAt)),
+    friendEvents: [...friendEvents].sort((a, b) => a.startAt.localeCompare(b.startAt)),
+  };
 }
 
 // Upcoming events inside the next `days` days. An event that started in the

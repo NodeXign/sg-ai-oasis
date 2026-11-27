@@ -1,0 +1,29 @@
+[
+  {
+    "id": "friend-mwz61urf-msa1",
+    "title": "2026 NTU 职场与创业对话会：职场还是创业？AI 时代的选择",
+    "startAt": "2026-11-28T06:00:00.000Z",
+    "endAt": "2026-11-28T08:30:00.000Z",
+    "venue": "NTU",
+    "address": "NTU",
+    "lat": null,
+    "lng": null,
+    "url": "https://luma.com/3ut92je5",
+    "coverImageUrl": "https://images.lumacdn.com/uploads/nj/daf75e8b-4225-458c-8f7b-436f6d0b136d.png",
+    "organiser": "Personal",
+    "isFree": true,
+    "price": null,
+    "status": "approval",
+    "isOnline": false,
+    "tags": [],
+    "sourceIds": [
+      "friend-import"
+    ],
+    "companyIds": [],
+    "firstSeen": "2026-11-27",
+    "isFriendEvent": true,
+    "publishToSite": false,
+    "createdAt": "2026-11-27T15:58:45.243Z",
+    "updatedAt": "2026-11-27T15:58:45.243Z"
+  }
+]
