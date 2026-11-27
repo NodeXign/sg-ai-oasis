@@ -2,8 +2,8 @@ import Link from 'next/link';
 import type { Lang } from '@/lib/types';
 import { getDict } from '@/lib/i18n';
 
-type PageKey = 'home' | 'events' | 'jobs';
-const PATH: Record<PageKey, string> = { home: '', events: '/events', jobs: '/jobs' };
+type PageKey = 'home' | 'events' | 'jobs' | 'gonogo';
+const PATH: Record<PageKey, string> = { home: '', events: '/events', jobs: '/jobs', gonogo: '/gonogo' };
 
 export default function SiteHeader({ lang, active }: { lang: Lang; active: PageKey }) {
   const t = getDict(lang);

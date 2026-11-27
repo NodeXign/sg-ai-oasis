@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import type { Company, JobFunction, Lang } from '@/lib/types';
-import { fmtDay, fmtTime, getDict } from '@/lib/i18n';
+import { fmtDay, fmtMapDate, fmtTime, getDict } from '@/lib/i18n';
 import { getUpcomingEvents, groupByDay } from '@/lib/events';
 import { getJobsData, openRolesByCompany } from '@/lib/jobs';
+import { getNearestMrt } from '@/lib/mrt-stations';
 import SiteHeader from '@/components/SiteHeader';
 import EventMap, { type MapPoint } from '@/components/EventMap';
 
@@ -51,12 +52,49 @@ export default async function HomePage({ params }: { params: { lang: Lang } }) {
     .filter((e) => e.lat != null && e.lng != null && !e.isOnline)
     .map((e) => {
       const h = hiringOf(e.companyIds);
+      const mrt = getNearestMrt(e.lat!, e.lng!, 1)[0];
+      const nearMrt = mrt && mrt.walkMins <= 15 ? { name: mrt.name, walkMins: Math.max(mrt.walkMins, 1) } : undefined;
+      const time = e.endAt
+        ? `${fmtTime(e.startAt, lang)} – ${fmtTime(e.endAt, lang)}`
+        : fmtTime(e.startAt, lang);
+      const when = `${fmtDay(e.startAt, lang)} · ${time}`;
       return {
-        id: e.id, lat: e.lat!, lng: e.lng!, title: e.title, url: e.url,
-        when: `${fmtDay(e.startAt, lang)} · ${fmtTime(e.startAt, lang)}`,
+        id: e.id,
+        lat: e.lat!,
+        lng: e.lng!,
+        title: e.title,
+        url: e.url,
+        when,
+        shortDate: fmtMapDate(e.startAt, lang),
         venue: e.venue,
+        mrtName: nearMrt?.name,
+        mrtWalkText: nearMrt ? dict.events.walk(nearMrt.name, nearMrt.walkMins) : undefined,
         hiring: h.length > 0,
         hiringText: h.length ? dict.events.hiring(companyById[h[0]].name, openRoles[h[0]]) : undefined,
+        evalContext: {
+          id: e.id,
+          title: e.title,
+          startAt: e.startAt,
+          endAt: e.endAt,
+          whenLabel: when,
+          venue: e.venue || dict.events.addressHidden,
+          isOnline: e.isOnline,
+          mrtName: nearMrt?.name,
+          mrtWalkMins: nearMrt?.walkMins,
+          organiser: e.organiser,
+          tags: e.tags,
+          isFree: e.isFree,
+          price: e.price,
+          status: e.status,
+          url: e.url,
+          hiringCompanies: h.map((id) => ({
+            id,
+            name: companyById[id].name,
+            sector: companyById[id].sector,
+            aiFocus: companyById[id].aiFocus,
+            openRoles: openRoles[id],
+          })),
+        },
       };
     });
   const offMap = events.length - points.length;
@@ -105,14 +143,14 @@ export default async function HomePage({ params }: { params: { lang: Lang } }) {
                 <h2 className="text-sm font-semibold">{t.mapTitle}</h2>
                 <div className="flex items-center gap-4 text-xs text-muted">
                   <span className="flex items-center gap-1.5">
-                    <span className="h-2.5 w-2.5 rounded-full bg-[var(--primary)]" />{t.legendHiring}
+                    <span className="h-3 w-5 rounded-full bg-[var(--primary)]" />{t.legendHiring}
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <span className="h-2.5 w-2.5 rounded-full border-2 border-[var(--primary)] bg-white" />{t.legendEvent}
+                    <span className="h-3 w-5 rounded-full border border-[#d4d4d4] bg-white" />{t.legendEvent}
                   </span>
                 </div>
               </div>
-              <EventMap points={points} registerLabel={dict.events.register} />
+              <EventMap points={points} lang={lang} registerLabel={dict.events.register} />
               {offMap > 0 && <p className="border-t border-[var(--border)] px-4 py-2.5 text-xs text-muted">{t.noCoords(offMap)}</p>}
             </div>
 
