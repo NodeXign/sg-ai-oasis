@@ -529,8 +529,8 @@ export default function EventMap({ points, copy }: { points: MapPoint[]; copy: M
   const [projectedMrts, setProjectedMrts] = useState<ProjectedMrt[]>([]);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
-  const [is3D, setIs3D] = useState(true);
-  const is3DRef = useRef(true);
+  const [is3D, setIs3D] = useState(false);
+  const is3DRef = useRef(false);
   const [expanded, setExpanded] = useState(false);
   const [mapReady, setMapReady] = useState(false);
 
@@ -659,8 +659,8 @@ export default function EventMap({ points, copy }: { points: MapPoint[]; copy: M
         style: STYLE_URL,
         center: SINGAPORE_CENTER,
         zoom: 11.4,
-        pitch: PITCH_3D,
-        bearing: BEARING_3D,
+        pitch: 0,
+        bearing: 0,
         minZoom: 8.7,
         maxZoom: 16.2,
         maxPitch: 62,
@@ -674,9 +674,9 @@ export default function EventMap({ points, copy }: { points: MapPoint[]; copy: M
 
       map.on('style.load', () => {
         if (!map) return;
-        applyMonochrome3DStyle(map, true);
+        applyMonochrome3DStyle(map, is3DRef.current);
         setMapReady(true);
-        fitIslandView(map, false, true);
+        fitIslandView(map, false, is3DRef.current);
         syncProjections();
       });
 
@@ -684,7 +684,7 @@ export default function EventMap({ points, copy }: { points: MapPoint[]; copy: M
       map.on('resize', scheduleSync);
       map.on('click', () => setSelectedId(null));
 
-      fitIslandView(map, false, true);
+      fitIslandView(map, false, is3DRef.current);
       syncProjections();
     })();
 
@@ -1235,7 +1235,7 @@ export default function EventMap({ points, copy }: { points: MapPoint[]; copy: M
                   type="button"
                   onClick={() => {
                     setSelectedId(p.id);
-                    mapRef.current?.easeTo({ center: [p.lng, p.lat], zoom: 13.5, pitch: 45, duration: 450 });
+                    mapRef.current?.easeTo({ center: [p.lng, p.lat], zoom: 13.5, pitch: is3DRef.current ? (isDesktop ? PITCH_3D : MOBILE_PITCH_3D) : 0, duration: 450 });
                   }}
                   className={[
                     'flex flex-col gap-1 rounded-lg bg-white p-2.5 text-left transition-colors',
