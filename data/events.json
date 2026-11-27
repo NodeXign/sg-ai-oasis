@@ -1,124 +1,5 @@
 [
  {
-  "id": "evt-Q2Ha3PC0mv2yn1y",
-  "title": "Nerd Out №02 · Physical AI, Unpacked",
-  "startAt": "2026-11-26T10:00:00.000Z",
-  "endAt": "2026-11-26T13:00:00.000Z",
-  "venue": "65 Mohamed Sultan Rd",
-  "address": "65 Mohamed Sultan Rd, Singapore 239003",
-  "lat": 1.2913588,
-  "lng": 103.83943819999999,
-  "url": "https://luma.com/aav8azb7",
-  "coverImageUrl": "https://images.lumacdn.com/uploads/4x/1a226382-61c0-4403-8eed-0e6cdf411832.png",
-  "organiser": "SuperNerds Club",
-  "isFree": true,
-  "price": null,
-  "status": "sold_out",
-  "isOnline": false,
-  "tags": [],
-  "sourceIds": [
-   "ai-at-singapore",
-   "luma-singapore"
-  ],
-  "companyIds": [],
-  "firstSeen": "2026-11-22"
- },
- {
-  "id": "evt-9D7dzNQtlD0HFxs",
-  "title": "See What Your Agent Did: Trace it. Debug it. Ship it.",
-  "startAt": "2026-11-26T10:00:00.000Z",
-  "endAt": "2026-11-26T12:30:00.000Z",
-  "venue": "Room2F - Events & Gallery Space",
-  "address": "Room2F - Events & Gallery Space, 231 Bain St, #04-07, Complex 180231",
-  "lat": 1.2968401999999999,
-  "lng": 103.8540495,
-  "url": "https://luma.com/clickh-k5ti",
-  "coverImageUrl": "https://images.lumacdn.com/uploads/2v/e253206d-6ffa-410e-8ff8-4629f7379240.png",
-  "organiser": "ClickHouse Events",
-  "isFree": true,
-  "price": null,
-  "status": "approval",
-  "isOnline": false,
-  "tags": [],
-  "sourceIds": [
-   "luma-singapore"
-  ],
-  "companyIds": [
-   "clickhouse"
-  ],
-  "firstSeen": "2026-11-22"
- },
- {
-  "id": "evt-XD1MVCXcqSdvAEP",
-  "title": "ATLAS (AI Singapore) x DataScience SG",
-  "startAt": "2026-11-26T10:30:00.000Z",
-  "endAt": "2026-11-26T13:00:00.000Z",
-  "venue": "Lorong AI @ One-North",
-  "address": "Lorong AI @ One-North, 69 Ayer Rajah Cres., Singapore 139961",
-  "lat": 1.296139,
-  "lng": 103.786991,
-  "url": "https://luma.com/htb5wgaj",
-  "coverImageUrl": "https://images.lumacdn.com/gallery-images/ui/01c9cb66-d401-4867-beb1-a105654060c5.png",
-  "organiser": "DataScience SG",
-  "isFree": true,
-  "price": null,
-  "status": "approval",
-  "isOnline": false,
-  "tags": [],
-  "sourceIds": [
-   "ai-at-singapore"
-  ],
-  "companyIds": [],
-  "firstSeen": "2026-11-24"
- },
- {
-  "id": "evt-ArDBQuOVcHVl1RR",
-  "title": "AI Supper Club Singapore: Reliability. Economics. Business Impact.",
-  "startAt": "2026-11-26T11:00:00.000Z",
-  "endAt": "2026-11-26T13:30:00.000Z",
-  "venue": "Lobby Lounge at The Westin Singapore",
-  "address": "Lobby Lounge at The Westin Singapore, 12 Marina View, Asia Square Tower 2 Level 32, The Westin, Singapore 018961",
-  "lat": 1.2782776999999999,
-  "lng": 103.8507723,
-  "url": "https://luma.com/3ssqs0cu",
-  "coverImageUrl": "https://images.lumacdn.com/uploads/99/7de32286-df8e-4ab9-bd11-15b145687ef8.png",
-  "organiser": "AI SUPPER CLUB - by Look Beyond",
-  "isFree": true,
-  "price": null,
-  "status": "approval",
-  "isOnline": false,
-  "tags": [],
-  "sourceIds": [
-   "ai-at-singapore"
-  ],
-  "companyIds": [],
-  "firstSeen": "2026-11-22"
- },
- {
-  "id": "evt-VCqqrePybmFDd4Q",
-  "title": "Vibe Coders Jam Session: feat. Base44",
-  "startAt": "2026-11-26T11:00:00.000Z",
-  "endAt": "2026-11-26T14:00:00.000Z",
-  "venue": "",
-  "address": "",
-  "lat": null,
-  "lng": null,
-  "url": "https://luma.com/base44sgnov",
-  "coverImageUrl": "https://images.lumacdn.com/uploads/p6/3e8dedfa-780d-4f56-b191-e1a8e247d555.png",
-  "organiser": "AI Builders",
-  "isFree": true,
-  "price": null,
-  "status": "sold_out",
-  "isOnline": false,
-  "tags": [],
-  "sourceIds": [
-   "ai-at-singapore",
-   "luma-singapore"
-  ],
-  "companyIds": [],
-  "firstSeen": "2026-11-22"
- },
- {
   "id": "evt-Nk3vp9NqdNijRjv",
   "title": "Generalizing Embodied AI Beyond the Lab: Commonsense, Affordances, Steering and Safety",
   "startAt": "2026-11-27T07:00:00.000Z",
@@ -197,7 +78,7 @@
   "lat": 1.2961669999999998,
   "lng": 103.787009,
   "url": "https://luma.com/1u8sl5mg",
-  "coverImageUrl": "https://images.lumacdn.com/uploads/7l/0a5bc7c6-3562-46a5-9fa5-d4e66fdc33ef.png",
+  "coverImageUrl": "https://images.lumacdn.com/uploads/dz/5344c7ed-ab4e-4b4d-ba0f-7a736f898faf.png",
   "organiser": "",
   "isFree": true,
   "price": null,
@@ -306,6 +187,29 @@
   "firstSeen": "2026-11-22"
  },
  {
+  "id": "evt-ArDBQuOVcHVl1RR",
+  "title": "AI Supper Club Singapore: Reliability. Economics. Business Impact.",
+  "startAt": "2026-12-03T11:00:00.000Z",
+  "endAt": "2026-12-03T13:30:00.000Z",
+  "venue": "Lobby Lounge at The Westin Singapore",
+  "address": "Lobby Lounge at The Westin Singapore, 12 Marina View, Asia Square Tower 2 Level 32, The Westin, Singapore 018961",
+  "lat": 1.2782776999999999,
+  "lng": 103.8507723,
+  "url": "https://luma.com/3ssqs0cu",
+  "coverImageUrl": "https://images.lumacdn.com/uploads/99/7de32286-df8e-4ab9-bd11-15b145687ef8.png",
+  "organiser": "AI SUPPER CLUB - by Look Beyond",
+  "isFree": true,
+  "price": null,
+  "status": "approval",
+  "isOnline": false,
+  "tags": [],
+  "sourceIds": [
+   "ai-at-singapore"
+  ],
+  "companyIds": [],
+  "firstSeen": "2026-11-22"
+ },
+ {
   "id": "evt-0xsm4QJL4eknu8P",
   "title": "AI Masterclass: Going Global from Day One | Powered by Google for Startups",
   "startAt": "2026-12-04T08:00:00.000Z",
@@ -370,29 +274,6 @@
   "tags": [],
   "sourceIds": [
    "ai-at-singapore",
-   "luma-singapore"
-  ],
-  "companyIds": [],
-  "firstSeen": "2026-11-22"
- },
- {
-  "id": "evt-yfFxfNQCG2CPk9C",
-  "title": "Singapore AI & Robotics Demo Night (Dec 2026)",
-  "startAt": "2026-12-08T10:30:00.000Z",
-  "endAt": "2026-12-08T12:30:00.000Z",
-  "venue": "National Library / Lee Kong Chian Reference Library",
-  "address": "National Library / Lee Kong Chian Reference Library, 100 Victoria St, Singapore 188064",
-  "lat": 1.2975884,
-  "lng": 103.8543081,
-  "url": "https://luma.com/iue679ne",
-  "coverImageUrl": "https://images.lumacdn.com/event-covers/oi/3f64f340-a7e8-410d-88c4-ffba55e5f9fd.jpg",
-  "organiser": "Singapore AI & Robotics Demo Nights",
-  "isFree": true,
-  "price": null,
-  "status": "open",
-  "isOnline": false,
-  "tags": [],
-  "sourceIds": [
    "luma-singapore"
   ],
   "companyIds": [],

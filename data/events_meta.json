@@ -1,15 +1,15 @@
 {
-  "lastRun": "2026-11-26T12:39:08+08:00",
-  "events": 21,
-  "linkedToCompanies": 2,
+  "lastRun": "2026-11-27T12:43:30+08:00",
+  "events": 16,
+  "linkedToCompanies": 1,
   "sources": {
     "ai-at-singapore": {
-      "listed": 20,
-      "kept": 17
+      "listed": 17,
+      "kept": 14
     },
     "luma-singapore": {
-      "listed": 31,
-      "kept": 4
+      "listed": 29,
+      "kept": 2
     }
   },
   "failedSources": []

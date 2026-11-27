@@ -1,11 +1,11 @@
 {
-  "lastRun": "2026-11-26T12:39:08+08:00",
+  "lastRun": "2026-11-27T12:43:30+08:00",
   "companies": 27,
   "openJobs": 621,
-  "aiRelatedOpenJobs": 159,
-  "new": 13,
-  "verified": 584,
-  "closed": 10,
+  "aiRelatedOpenJobs": 161,
+  "new": 5,
+  "verified": 589,
+  "closed": 5,
   "failedCompanies": [
     {
       "id": "thoughtworks",
