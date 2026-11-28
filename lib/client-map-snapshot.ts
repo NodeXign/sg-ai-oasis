@@ -295,7 +295,7 @@ export async function renderClientMapSnapshot(
     const fontStack = '-apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif';
 
     // Track occupied label boxes to keep everything collision-free
-    const legendBox = { x1: W - 242, y1: H - 102, x2: W - 12, y2: H - 12 };
+    const legendBox = { x1: W - 294, y1: H - 110, x2: W - 12, y2: H - 12 };
 
     // Cluster mapped events by screen proximity FIRST so callout cards reserve space before background labels
     const hubs: MappedHub[] = [];
@@ -389,12 +389,12 @@ export async function renderClientMapSnapshot(
       ...hubs.map((h) => ({ x1: h.x - 14, y1: h.y - 14, x2: h.x + 14, y2: h.y + 14 })),
     ];
 
-    const cardW = cardsToPlace.length <= 6 ? 196 : 184;
-    const cardH = 66;
+    const cardW = cardsToPlace.length <= 6 ? 248 : 234;
+    const cardH = 84;
     const placed: (CardDesc & { x: number; y: number; w: number; h: number })[] = [];
 
     // Multi-ring radial search strictly clamped inside [14, W - cardW - 14] x [14, H - cardH - 14]
-    const rings = [62, 102, 144, 190, 238];
+    const rings = [74, 118, 164, 212, 262];
     const angles = [
       -Math.PI / 2,
       Math.PI / 2,
@@ -444,58 +444,59 @@ export async function renderClientMapSnapshot(
     // Reserve all placed callout cards + legend before drawing background MRT / district labels
     const occupied: { x1: number; y1: number; x2: number; y2: number }[] = [
       { ...legendBox },
-      ...placed.map((c) => ({ x1: c.x - 4, y1: c.y - 4, x2: c.x + c.w + 4, y2: c.y + c.h + 4 })),
+      ...placed.map((c) => ({ x1: c.x - 5, y1: c.y - 5, x2: c.x + c.w + 5, y2: c.y + c.h + 5 })),
     ];
 
     // Layer 2: Key MRT stations (exact website style, strictly collision-free with callout cards)
     const sortedMrts = [...MAP_MRT_STATIONS].sort((a, b) => a.priority - b.priority);
-    ctx.font = `500 11px ${fontStack}`;
+    ctx.font = `600 13px ${fontStack}`;
     for (const st of sortedMrts) {
       const pt = map.project([st.lng, st.lat]);
       if (pt.x < 24 || pt.x > W - 24 || pt.y < 28 || pt.y > H - 28) continue;
 
       // Station colored dot with white halo
       ctx.beginPath();
-      ctx.arc(pt.x, pt.y, 4.2, 0, Math.PI * 2);
+      ctx.arc(pt.x, pt.y, 4.8, 0, Math.PI * 2);
       ctx.fillStyle = '#ffffff';
       ctx.fill();
       ctx.beginPath();
-      ctx.arc(pt.x, pt.y, 2.5, 0, Math.PI * 2);
+      ctx.arc(pt.x, pt.y, 2.8, 0, Math.PI * 2);
       ctx.fillStyle = st.lineColor;
       ctx.fill();
 
       const tw = ctx.measureText(st.name).width;
-      const box = { x1: pt.x + 6, y1: pt.y - 8, x2: pt.x + 12 + tw, y2: pt.y + 8 };
+      const box = { x1: pt.x + 6, y1: pt.y - 9, x2: pt.x + 14 + tw, y2: pt.y + 9 };
       const collides = occupied.some(
         (b) => !(box.x2 < b.x1 || box.x1 > b.x2 || box.y2 < b.y1 || box.y1 > b.y2),
       );
       if (!collides && box.x2 < W - 18) {
         occupied.push(box);
-        ctx.fillStyle = 'rgba(255,255,255,0.82)';
-        ctx.fillText(st.name, pt.x + 8.5, pt.y + 3.5);
-        ctx.fillStyle = '#64748b';
-        ctx.fillText(st.name, pt.x + 7.5, pt.y + 3.5);
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = 'rgba(255,255,255,0.92)';
+        ctx.strokeText(st.name, pt.x + 8.5, pt.y + 4.5);
+        ctx.fillStyle = '#475569';
+        ctx.fillText(st.name, pt.x + 8.5, pt.y + 4.5);
       }
     }
 
     // Layer 3: Key District Landmarks (skip any colliding with callout cards or MRT labels)
-    ctx.font = `700 12px ${fontStack}`;
+    ctx.font = `700 14.5px ${fontStack}`;
     for (const lm of DISTRICT_LABELS) {
       const pt = map.project([lm.lng, lm.lat]);
       if (pt.x < 28 || pt.x > W - 28 || pt.y < 24 || pt.y > H - 24) continue;
       const lw = ctx.measureText(lm.label).width;
-      const box = { x1: pt.x - lw / 2 - 4, y1: pt.y - 24, x2: pt.x + lw / 2 + 4, y2: pt.y - 8 };
+      const box = { x1: pt.x - lw / 2 - 4, y1: pt.y - 26, x2: pt.x + lw / 2 + 4, y2: pt.y - 8 };
       const collides = occupied.some(
         (b) => !(box.x2 < b.x1 || box.x1 > b.x2 || box.y2 < b.y1 || box.y1 > b.y2),
       );
       if (collides) continue;
       occupied.push(box);
       ctx.textAlign = 'center';
-      ctx.lineWidth = 3;
-      ctx.strokeStyle = 'rgba(255,255,255,0.92)';
-      ctx.strokeText(lm.label, pt.x, pt.y - 12);
+      ctx.lineWidth = 3.5;
+      ctx.strokeStyle = 'rgba(255,255,255,0.94)';
+      ctx.strokeText(lm.label, pt.x, pt.y - 13);
       ctx.fillStyle = '#18181b';
-      ctx.fillText(lm.label, pt.x, pt.y - 12);
+      ctx.fillText(lm.label, pt.x, pt.y - 13);
     }
     ctx.textAlign = 'left';
 
@@ -504,15 +505,14 @@ export async function renderClientMapSnapshot(
       const nearX = Math.max(c.x, Math.min(c.hubX, c.x + c.w));
       const nearY = Math.max(c.y, Math.min(c.hubY, c.y + c.h));
       const mx = (c.hubX + nearX) / 2;
-      const my = (c.hubY + nearY) / 2;
 
       ctx.save();
       ctx.beginPath();
       ctx.moveTo(c.hubX, c.hubY);
       ctx.quadraticCurveTo(mx, c.hubY, nearX, nearY);
-      ctx.strokeStyle = c.hiring ? 'rgba(18, 87, 253, 0.72)' : 'rgba(100, 116, 139, 0.78)';
-      ctx.lineWidth = c.hiring ? 1.5 : 1.25;
-      if (c.isArea) ctx.setLineDash([4, 3]);
+      ctx.strokeStyle = c.hiring ? 'rgba(18, 87, 253, 0.78)' : 'rgba(71, 85, 105, 0.82)';
+      ctx.lineWidth = c.hiring ? 2 : 1.6;
+      if (c.isArea) ctx.setLineDash([5, 3]);
       ctx.stroke();
       ctx.restore();
     }
@@ -521,145 +521,145 @@ export async function renderClientMapSnapshot(
     for (const h of hubs) {
       ctx.save();
       ctx.beginPath();
-      ctx.arc(h.x, h.y, 9.5, 0, Math.PI * 2);
-      ctx.fillStyle = h.hasHiring ? 'rgba(18, 87, 253, 0.20)' : 'rgba(18, 87, 253, 0.14)';
+      ctx.arc(h.x, h.y, 11, 0, Math.PI * 2);
+      ctx.fillStyle = h.hasHiring ? 'rgba(18, 87, 253, 0.22)' : 'rgba(18, 87, 253, 0.15)';
       ctx.fill();
 
       ctx.beginPath();
-      ctx.arc(h.x, h.y, 6, 0, Math.PI * 2);
+      ctx.arc(h.x, h.y, 7, 0, Math.PI * 2);
       ctx.fillStyle = h.hasHiring ? '#1257fd' : '#ffffff';
       ctx.fill();
-      ctx.lineWidth = 2.2;
+      ctx.lineWidth = 2.6;
       ctx.strokeStyle = '#1257fd';
       ctx.stroke();
       ctx.restore();
     }
 
-    // Draw crisp website floating callout cards
+    // Draw crisp mobile-legible website floating callout cards
     for (const c of placed) {
       ctx.save();
-      ctx.shadowColor = 'rgba(15, 23, 42, 0.10)';
-      ctx.shadowBlur = 10;
+      ctx.shadowColor = 'rgba(15, 23, 42, 0.12)';
+      ctx.shadowBlur = 12;
       ctx.shadowOffsetY = 3;
-      drawRoundedRect(ctx, c.x, c.y, c.w, c.h, 8);
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.96)';
+      drawRoundedRect(ctx, c.x, c.y, c.w, c.h, 10);
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.97)';
       ctx.fill();
       ctx.restore();
 
       ctx.save();
-      drawRoundedRect(ctx, c.x, c.y, c.w, c.h, 8);
-      ctx.lineWidth = 1.3;
-      ctx.strokeStyle = c.isArea ? '#94a3b8' : '#d4d4d8';
-      if (c.isArea) ctx.setLineDash([4, 3]);
+      drawRoundedRect(ctx, c.x, c.y, c.w, c.h, 10);
+      ctx.lineWidth = 1.6;
+      ctx.strokeStyle = c.isArea ? '#64748b' : '#cbd5e1';
+      if (c.isArea) ctx.setLineDash([5, 3]);
       ctx.stroke();
       ctx.restore();
 
       // Index / count pill badge
-      const bx = c.x + 9;
-      const by = c.y + 9;
-      ctx.font = `700 10px ${fontStack}`;
-      const bw = Math.max(20, Math.ceil(ctx.measureText(c.badgeText).width) + 10);
-      drawRoundedRect(ctx, bx, by, bw, 17, 8.5);
+      const bx = c.x + 11;
+      const by = c.y + 10;
+      ctx.font = `700 13px ${fontStack}`;
+      const bw = Math.max(26, Math.ceil(ctx.measureText(c.badgeText).width) + 12);
+      drawRoundedRect(ctx, bx, by, bw, 22, 11);
       ctx.fillStyle = c.hiring ? '#1257fd' : '#141414';
       ctx.fill();
       ctx.fillStyle = '#ffffff';
       ctx.textAlign = 'center';
-      ctx.fillText(c.badgeText, bx + bw / 2, by + 12);
+      ctx.fillText(c.badgeText, bx + bw / 2, by + 15.5);
       ctx.textAlign = 'left';
 
       // Date pill
-      ctx.font = `600 10.5px ${fontStack}`;
-      ctx.fillStyle = c.hiring ? '#1257fd' : '#334155';
-      ctx.fillText(c.dateText, bx + bw + 6, by + 12.5);
+      ctx.font = `700 13.5px ${fontStack}`;
+      ctx.fillStyle = c.hiring ? '#1257fd' : '#1e293b';
+      ctx.fillText(c.dateText, bx + bw + 7, by + 15.5);
 
       // Right extra tag (招人)
       if (c.extraTag) {
-        ctx.font = `700 10px ${fontStack}`;
+        ctx.font = `700 13px ${fontStack}`;
         ctx.fillStyle = '#1257fd';
         ctx.textAlign = 'right';
-        ctx.fillText(c.extraTag, c.x + c.w - 9, by + 12.5);
+        ctx.fillText(c.extraTag, c.x + c.w - 11, by + 15.5);
         ctx.textAlign = 'left';
       }
 
-      // Event Title
-      ctx.font = `700 11.5px ${fontStack}`;
+      // Event Title (high contrast, mobile-readable)
+      ctx.font = `700 15px ${fontStack}`;
       ctx.fillStyle = '#0a0a0a';
-      ctx.fillText(truncText(ctx, c.titleText, c.w - 18), c.x + 9, c.y + 42);
+      ctx.fillText(truncText(ctx, c.titleText, c.w - 22), c.x + 11, c.y + 52);
 
       // MRT / venue subtitle
-      ctx.font = `500 10px ${fontStack}`;
-      ctx.fillStyle = '#64748b';
-      ctx.fillText(truncText(ctx, `📍 ${c.subText}`, c.w - 18), c.x + 9, c.y + 57);
+      ctx.font = `600 12.5px ${fontStack}`;
+      ctx.fillStyle = '#475569';
+      ctx.fillText(truncText(ctx, `📍 ${c.subText}`, c.w - 22), c.x + 11, c.y + 72);
     }
 
-    // Layer 5: Crisp bottom-right website semantic legend
+    // Layer 5: Crisp bottom-right website semantic legend (enlarged for phone screens)
     const lx = legendBox.x1;
     const ly = legendBox.y1;
     const lw = legendBox.x2 - legendBox.x1;
     const lh = legendBox.y2 - legendBox.y1;
     ctx.save();
-    ctx.shadowColor = 'rgba(15, 23, 42, 0.08)';
-    ctx.shadowBlur = 8;
+    ctx.shadowColor = 'rgba(15, 23, 42, 0.10)';
+    ctx.shadowBlur = 10;
     ctx.shadowOffsetY = 2;
-    drawRoundedRect(ctx, lx, ly, lw, lh, 9);
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.94)';
+    drawRoundedRect(ctx, lx, ly, lw, lh, 10);
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.96)';
     ctx.fill();
     ctx.restore();
-    drawRoundedRect(ctx, lx, ly, lw, lh, 9);
-    ctx.strokeStyle = '#e2e8f0';
-    ctx.lineWidth = 1;
+    drawRoundedRect(ctx, lx, ly, lw, lh, 10);
+    ctx.strokeStyle = '#cbd5e1';
+    ctx.lineWidth = 1.2;
     ctx.stroke();
 
     // Row 1: exact address
-    drawRoundedRect(ctx, lx + 12, ly + 13, 18, 11, 3);
+    drawRoundedRect(ctx, lx + 14, ly + 14, 20, 12, 3);
     ctx.fillStyle = '#ffffff';
     ctx.fill();
-    ctx.strokeStyle = '#71717a';
-    ctx.lineWidth = 1.4;
+    ctx.strokeStyle = '#52525b';
+    ctx.lineWidth = 1.6;
     ctx.stroke();
-    ctx.font = `500 10.5px ${fontStack}`;
-    ctx.fillStyle = '#334155';
-    ctx.fillText('确定具体地址', lx + 38, ly + 22);
+    ctx.font = `600 12.5px ${fontStack}`;
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('确定具体地址', lx + 42, ly + 24.5);
 
     // Row 2: area only
     ctx.save();
-    drawRoundedRect(ctx, lx + 12, ly + 33, 18, 11, 3);
-    ctx.strokeStyle = '#94a3b8';
-    ctx.lineWidth = 1.4;
-    ctx.setLineDash([3, 2]);
+    drawRoundedRect(ctx, lx + 14, ly + 37, 20, 12, 3);
+    ctx.strokeStyle = '#64748b';
+    ctx.lineWidth = 1.6;
+    ctx.setLineDash([4, 2]);
     ctx.stroke();
     ctx.restore();
-    ctx.fillText('仅确定区域位置（具体地址待公布）', lx + 38, ly + 42);
+    ctx.fillText('仅确定区域（具体地址待公布）', lx + 42, ly + 47.5);
 
     // Divider
     ctx.beginPath();
-    ctx.moveTo(lx + 12, ly + 56);
-    ctx.lineTo(lx + lw - 12, ly + 56);
+    ctx.moveTo(lx + 14, ly + 62);
+    ctx.lineTo(lx + lw - 14, ly + 62);
     ctx.strokeStyle = '#e2e8f0';
-    ctx.lineWidth = 1;
+    ctx.lineWidth = 1.2;
     ctx.stroke();
 
     // Row 3: hiring dot + community dot
     ctx.beginPath();
-    ctx.arc(lx + 18, ly + 71, 4, 0, Math.PI * 2);
+    ctx.arc(lx + 21, ly + 80, 5, 0, Math.PI * 2);
     ctx.fillStyle = '#1257fd';
     ctx.fill();
-    ctx.fillStyle = '#475569';
-    ctx.fillText('主办方在招人', lx + 28, ly + 74.5);
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('主办方在招人', lx + 33, ly + 84.5);
 
     ctx.beginPath();
-    ctx.arc(lx + 124, ly + 71, 4, 0, Math.PI * 2);
+    ctx.arc(lx + 150, ly + 80, 5, 0, Math.PI * 2);
     ctx.fillStyle = '#ffffff';
     ctx.fill();
     ctx.strokeStyle = '#1257fd';
-    ctx.lineWidth = 1.8;
+    ctx.lineWidth = 2;
     ctx.stroke();
-    ctx.fillStyle = '#475569';
-    ctx.fillText('社区活动', lx + 134, ly + 74.5);
+    ctx.fillStyle = '#1e293b';
+    ctx.fillText('社区活动', lx + 162, ly + 84.5);
 
     // Subtle OpenFreeMap attribution
-    ctx.font = `400 9px ${fontStack}`;
-    ctx.fillStyle = '#94a3b8';
+    ctx.font = `500 10.5px ${fontStack}`;
+    ctx.fillStyle = '#64748b';
     ctx.fillText('Basemap © OpenFreeMap / OpenStreetMap', 12, H - 10);
 
     return out.toDataURL('image/png');
