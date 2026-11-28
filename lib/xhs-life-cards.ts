@@ -403,24 +403,24 @@ function renderCardShell(opts: {
     height: 46px;
   }
   .kicker {
-    font-size: 19px;
-    font-weight: 600;
+    font-size: 21px;
+    font-weight: 700;
     letter-spacing: 1.5px;
     color: var(--muted);
-    margin: 0 0 10px;
+    margin: 0 0 8px;
     flex-shrink: 0;
   }
   h1 {
-    font-size: 60px;
-    font-weight: 700;
-    line-height: 1.15;
+    font-size: 62px;
+    font-weight: 800;
+    line-height: 1.14;
     letter-spacing: -1.8px;
-    margin: 0 0 14px;
+    margin: 0 0 12px;
     flex-shrink: 0;
   }
   p {
-    font-size: 26px;
-    line-height: 1.52;
+    font-size: 28px;
+    line-height: 1.48;
     margin: 0;
   }
   .page-body {
@@ -429,28 +429,29 @@ function renderCardShell(opts: {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 16px;
+    gap: 14px;
   }
   footer {
     position: absolute;
-    bottom: 42px;
+    bottom: 40px;
     left: 68px;
     right: 68px;
     display: flex;
     justify-content: space-between;
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 500;
     color: var(--muted);
   }
   .note {
     border-top: 1px solid var(--line);
     padding-top: 16px;
-    font-size: 24px;
-    line-height: 1.5;
+    font-size: 25px;
+    line-height: 1.48;
   }
   .small {
-    font-size: 20px;
+    font-size: 21px;
     color: var(--muted);
-    line-height: 1.48;
+    line-height: 1.45;
   }
   .frame-box {
     border: 1.75px solid var(--ink);
@@ -465,8 +466,8 @@ function renderCardShell(opts: {
     padding: 12px 20px;
     background: var(--paper-2);
     border-bottom: 1px solid #D4D4D4;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 21px;
+    font-weight: 700;
   }
   .kpi-strip {
     display: grid;
@@ -481,23 +482,24 @@ function renderCardShell(opts: {
   .kpi-cell {
     border: 1.5px solid var(--ink);
     border-radius: 10px;
-    padding: 14px 18px;
+    padding: 13px 18px;
     background: var(--paper-2);
   }
   .kpi-cell--dark {
     background: var(--ink);
     color: #FFFFFF;
   }
-  .kpi-cell--dark .kpi-lbl { color: rgba(255,255,255,0.78); }
+  .kpi-cell--dark .kpi-lbl { color: rgba(255,255,255,0.85); }
   .kpi-num {
-    font-size: 36px;
+    font-size: 44px;
     font-weight: 800;
-    line-height: 1.08;
+    line-height: 1.06;
     letter-spacing: -1px;
   }
   .kpi-lbl {
-    font-size: 17px;
-    color: var(--muted);
+    font-size: 21px;
+    font-weight: 600;
+    color: #404040;
     margin-top: 4px;
   }
   .district-bar {
@@ -505,20 +507,21 @@ function renderCardShell(opts: {
     justify-content: space-between;
     align-items: center;
     gap: 12px;
-    border: 1px solid var(--line);
+    border: 1.25px solid #C8C8C8;
     border-radius: 10px;
-    padding: 14px 20px;
+    padding: 13px 20px;
     background: var(--paper-2);
-    font-size: 20px;
+    font-size: 22px;
+    font-weight: 500;
   }
   .tag-pill {
     display: inline-flex;
     align-items: center;
-    font-size: 15px;
-    font-weight: 600;
-    padding: 3px 10px;
+    font-size: 17.5px;
+    font-weight: 700;
+    padding: 3px 11px;
     border-radius: 999px;
-    border: 1px solid var(--ink);
+    border: 1.25px solid var(--ink);
     background: var(--paper);
     color: var(--ink);
     white-space: nowrap;
@@ -528,9 +531,9 @@ function renderCardShell(opts: {
     color: #FFFFFF;
   }
   .tag-pill--soft {
-    border-color: #B8B8B8;
+    border-color: #B4B4B4;
     background: var(--paper-2);
-    color: #404040;
+    color: #2B2829;
   }
   .overview-list {
     flex: 1;
@@ -649,29 +652,30 @@ function renderCardShell(opts: {
     align-items: center;
   }
   .feature-num {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     letter-spacing: 1px;
-    padding: 4px 12px;
+    padding: 4px 13px;
     border-radius: 999px;
     background: var(--ink);
     color: #FFFFFF;
   }
   .feature-title {
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-top: 4px;
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1.18;
+    margin-top: 6px;
   }
   .feature-desc {
-    font-size: 21px;
-    line-height: 1.5;
-    color: #3A3738;
+    font-size: 24px;
+    line-height: 1.46;
+    color: #2E2B2C;
   }
   .feature-path {
     font-family: "SF Mono", Menlo, Monaco, Consolas, monospace;
-    font-size: 16px;
-    color: var(--muted);
+    font-size: 19px;
+    font-weight: 600;
+    color: #4A4647;
   }
   .qr-cta-box {
     border: 2px solid var(--ink);
@@ -1031,57 +1035,56 @@ function buildDefaultCard4ShowcaseSvg(hiringCount: number, sampleHiringName?: st
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 936 520" style="width:100%;height:100%;display:block;background:#FAFAFA;" role="img" aria-label="网站主办方直连与 GO/NOGO 决策小工具示意图">
   <defs>
     <marker id="c4-arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-      <path d="M0 0 L10 5 L0 10" fill="none" stroke="#231F20" stroke-width="1.6"/>
+      <path d="M0 0 L10 5 L0 10" fill="none" stroke="#231F20" stroke-width="1.8"/>
     </marker>
   </defs>
   <g font-family="-apple-system,'PingFang SC','Microsoft YaHei',sans-serif" fill="#231F20">
     <!-- Left mock panel: Event Card -> Hiring Link -->
-    <rect x="28" y="28" width="414" height="464" rx="14" fill="#FFFFFF" stroke="#231F20" stroke-width="2"/>
-    <rect x="28" y="28" width="414" height="48" rx="14" fill="#231F20"/>
-    <rect x="28" y="60" width="414" height="16" fill="#231F20"/>
-    <text x="52" y="60" font-size="20" font-weight="700" fill="#FFFFFF">① 活动页 · 直连在招主办方</text>
+    <rect x="24" y="24" width="424" height="472" rx="14" fill="#FFFFFF" stroke="#231F20" stroke-width="2.2"/>
+    <rect x="24" y="24" width="424" height="52" rx="14" fill="#231F20"/>
+    <rect x="24" y="58" width="424" height="18" fill="#231F20"/>
+    <text x="48" y="58" font-size="23" font-weight="700" fill="#FFFFFF">① 活动页 · 直连在招主办方</text>
 
-    <rect x="52" y="102" width="366" height="150" rx="10" fill="#FAFAFA" stroke="#231F20" stroke-width="1.5"/>
-    <rect x="70" y="120" width="110" height="28" rx="14" fill="#231F20"/>
-    <text x="125" y="140" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF">主办方在招</text>
-    <text x="70" y="182" font-size="21" font-weight="700">AI Engineering &amp; Builders Meetup</text>
-    <text x="70" y="214" font-size="17" fill="#616161">关联公司：${esc(truncate(companyLabel, 24))}</text>
-    <text x="70" y="238" font-size="16" fill="#616161">本期共 ${hiringCount} 场活动可遇到在招团队</text>
+    <rect x="46" y="96" width="380" height="156" rx="10" fill="#FAFAFA" stroke="#231F20" stroke-width="1.6"/>
+    <rect x="64" y="114" width="124" height="32" rx="16" fill="#231F20"/>
+    <text x="126" y="136" text-anchor="middle" font-size="17" font-weight="700" fill="#FFFFFF">主办方在招</text>
+    <text x="64" y="182" font-size="24" font-weight="800">AI Builders Meetup SG</text>
+    <text x="64" y="214" font-size="19" font-weight="600" fill="#404040">关联：${esc(truncate(companyLabel, 20))}</text>
+    <text x="64" y="240" font-size="18.5" font-weight="600" fill="#404040">本期 ${hiringCount} 场活动可遇到在招团队</text>
 
-    <path d="M235 252 V304" fill="none" stroke="#231F20" stroke-width="2" marker-end="url(#c4-arr)"/>
+    <path d="M236 252 V298" fill="none" stroke="#231F20" stroke-width="2.2" marker-end="url(#c4-arr)"/>
 
-    <rect x="52" y="314" width="366" height="152" rx="10" fill="#FFFFFF" stroke="#231F20" stroke-width="1.75" stroke-dasharray="6 4"/>
-    <text x="72" y="352" font-size="20" font-weight="700">一键跳到对应公司官网岗位页 ↗</text>
-    <text x="72" y="388" font-size="17" fill="#4A4647">• 先看该公司此刻在新加坡招什么岗位</text>
-    <text x="72" y="418" font-size="17" fill="#4A4647">• 带着真实业务问题去现场跟团队聊</text>
-    <text x="72" y="448" font-size="17" fill="#4A4647">• 聊完有感觉，直接回官网链接投递</text>
+    <rect x="46" y="308" width="380" height="164" rx="10" fill="#FFFFFF" stroke="#231F20" stroke-width="1.8" stroke-dasharray="6 4"/>
+    <text x="66" y="346" font-size="22" font-weight="800">一键跳公司官网岗位页 ↗</text>
+    <text x="66" y="384" font-size="19.5" font-weight="500" fill="#2E2B2C">• 先看该公司此刻新加坡在招岗位</text>
+    <text x="66" y="418" font-size="19.5" font-weight="500" fill="#2E2B2C">• 带着真实问题去现场跟团队聊</text>
+    <text x="66" y="452" font-size="19.5" font-weight="500" fill="#2E2B2C">• 聊完合适，直接回官网直投</text>
 
     <!-- Right mock panel: GO / NOGO Coin Decision Maker -->
-    <rect x="494" y="28" width="414" height="464" rx="14" fill="#FFFFFF" stroke="#231F20" stroke-width="2"/>
-    <rect x="494" y="28" width="414" height="48" rx="14" fill="#231F20"/>
-    <rect x="494" y="60" width="414" height="16" fill="#231F20"/>
-    <text x="518" y="60" font-size="20" font-weight="700" fill="#FFFFFF">② GO / NOGO · 去不去决策器</text>
+    <rect x="488" y="24" width="424" height="472" rx="14" fill="#FFFFFF" stroke="#231F20" stroke-width="2.2"/>
+    <rect x="488" y="24" width="424" height="52" rx="14" fill="#231F20"/>
+    <rect x="488" y="58" width="424" height="18" fill="#231F20"/>
+    <text x="512" y="58" font-size="23" font-weight="700" fill="#FFFFFF">② GO / NOGO · 去不去决策器</text>
 
     <!-- 3D sliders -->
-    <text x="520" y="118" font-size="18" font-weight="700">学习价值（权重 50%）</text>
-    <rect x="520" y="130" width="360" height="12" rx="6" fill="#EAEAEA"/>
-    <rect x="520" y="130" width="290" height="12" rx="6" fill="#231F20"/>
-    <text x="520" y="176" font-size="18" font-weight="700">职业契合（权重 35%）</text>
-    <rect x="520" y="188" width="360" height="12" rx="6" fill="#EAEAEA"/>
-    <rect x="520" y="188" width="255" height="12" rx="6" fill="#231F20"/>
-    <text x="520" y="234" font-size="18" font-weight="700">人脉潜力（权重 15%）</text>
-    <rect x="520" y="246" width="360" height="12" rx="6" fill="#EAEAEA"/>
-    <rect x="520" y="246" width="220" height="12" rx="6" fill="#231F20"/>
+    <text x="514" y="118" font-size="21" font-weight="700">学习价值（权重 50%）</text>
+    <rect x="514" y="130" width="372" height="14" rx="7" fill="#EAEAEA"/>
+    <rect x="514" y="130" width="300" height="14" rx="7" fill="#231F20"/>
+    <text x="514" y="180" font-size="21" font-weight="700">职业契合（权重 35%）</text>
+    <rect x="514" y="192" width="372" height="14" rx="7" fill="#EAEAEA"/>
+    <rect x="514" y="192" width="265" height="14" rx="7" fill="#231F20"/>
+    <text x="514" y="242" font-size="21" font-weight="700">人脉潜力（权重 15%）</text>
+    <rect x="514" y="254" width="372" height="14" rx="7" fill="#EAEAEA"/>
+    <rect x="514" y="254" width="228" height="14" rx="7" fill="#231F20"/>
 
     <!-- Coin verdict -->
-    <g transform="translate(701, 356)">
-      <circle cx="0" cy="0" r="64" fill="#231F20"/>
-      <circle cx="0" cy="0" r="54" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="5 4"/>
-      <text x="0" y="-4" text-anchor="middle" font-size="30" font-weight="800" fill="#FFFFFF">GO</text>
-      <text x="0" y="24" text-anchor="middle" font-size="15" font-weight="600" fill="#E5E5E5">值得去一趟</text>
+    <g transform="translate(700, 362)">
+      <circle cx="0" cy="0" r="66" fill="#231F20"/>
+      <circle cx="0" cy="0" r="56" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-dasharray="5 4"/>
+      <text x="0" y="-2" text-anchor="middle" font-size="34" font-weight="800" fill="#FFFFFF">GO</text>
+      <text x="0" y="28" text-anchor="middle" font-size="18" font-weight="700" fill="#F0F0F0">值得去一趟</text>
     </g>
-    <text x="701" y="454" text-anchor="middle" font-size="17" fill="#616161">同步估算往返通勤 + 活动总耗时，不做盲目 FOMO</text>
-    <text x="701" y="478" text-anchor="middle" font-size="15" fill="#8A8A8A">（后台支持一键截取真实 GO/NOGO 网页图替换此处）</text>
+    <text x="700" y="466" text-anchor="middle" font-size="19.5" font-weight="600" fill="#404040">自动估算往返通勤 + 活动总耗时</text>
   </g>
 </svg>`;
 }
@@ -1219,7 +1222,7 @@ export function generateXhsLifePack(
   const coverTitleHtml = esc(coverTitlePlain).replace(/\n/g, '<br>');
   const coverIntro = (
     config.coverIntro ||
-    `按所选 ${dateRangeText} 实时联动 ${selectedEvents.length} 场活动，全岛位置与片区分布一张图看清。`
+    `联动 ${dateRangeText} 共 ${selectedEvents.length} 场活动，全岛片区与地铁分布一张图看清。`
   ).trim();
 
   const linkedMap = buildLinkedSgMapSvg(selectedEvents);
@@ -1275,33 +1278,29 @@ export function generateXhsLifePack(
 
   // ═══════════════════════════════════════════════════════════════════════════
   // PAGE 02 (+ auto-paginated continuations) — ALL SELECTED EVENTS BY AUDIENCE & INTEREST
-  // Dynamic 4-tier density: 1-5 spacious, 6 standard, 7-8 compact, 9-10 dense (zero footer overlap)
+  // Mobile-first 2-line high-legibility row layout (big title + clear time/venue/fit)
   // ═══════════════════════════════════════════════════════════════════════════
   let globalOvIndex = 0;
   overviewPagesData.forEach((pageEvents, pageIdx) => {
     const isMultiOv = overviewPagesData.length > 1;
     const ovCount = pageEvents.length;
-    const isCompactOv = ovCount >= 7;
-    const isUltraCompactOv = ovCount >= 8;
     const isDenseOv = ovCount >= 9;
+    const isCompactOv = ovCount >= 7;
 
     const ovRowStyle = isDenseOv
-      ? 'padding:6px 14px;gap:2px;border-radius:8px;'
-      : isUltraCompactOv
-        ? 'padding:8px 14px;gap:2px;border-radius:8px;'
-        : isCompactOv
-          ? 'padding:9px 15px;gap:3px;border-radius:9px;'
-          : ovCount <= 5
-            ? 'padding:15px 18px;gap:6px;'
-            : 'padding:11px 16px;gap:4px;';
-    const ovTitleSize = isDenseOv ? 18 : isUltraCompactOv ? 19 : isCompactOv ? 20 : ovCount <= 5 ? 23 : 21;
-    const ovMetaSize = isDenseOv ? 14.5 : isUltraCompactOv ? 15.5 : isCompactOv ? 16 : 17.5;
-    const ovPillPad = isDenseOv
-      ? 'padding:1px 7px;font-size:12.5px;'
+      ? 'padding:10px 16px;gap:6px;border-radius:10px;border-width:1.4px;'
       : isCompactOv
-        ? 'padding:2px 8px;font-size:13.5px;'
-        : '';
-    const ovListGap = isDenseOv ? 6 : isUltraCompactOv ? 6 : isCompactOv ? 7 : ovCount <= 5 ? 16 : 10;
+        ? 'padding:12px 18px;gap:7px;border-radius:10px;border-width:1.5px;'
+        : 'padding:16px 20px;gap:9px;border-radius:12px;border-width:1.5px;';
+    const ovTitleSize = isDenseOv ? 23 : isCompactOv ? 25 : 27;
+    const ovMetaSize = isDenseOv ? 19.5 : isCompactOv ? 20.5 : 22;
+    const ovPillPad = isDenseOv
+      ? 'padding:2px 9px;font-size:15.5px;'
+      : isCompactOv
+        ? 'padding:3px 10px;font-size:16.5px;'
+        : 'padding:3px 11px;font-size:17.5px;';
+    const ovIdxSize = isDenseOv ? 16 : 18;
+    const ovListGap = isDenseOv ? 8 : isCompactOv ? 10 : 16;
     const ovListJustify = ovCount <= 5 ? 'justify-content:flex-start;' : '';
 
     const firstDayMd = pageEvents.length ? fmtShortDate(sgDateKey(pageEvents[0].startAt)) : '';
@@ -1316,41 +1315,40 @@ export function generateXhsLifePack(
               globalOvIndex += 1;
               const inferred = inferAudienceFit(e);
               const customNote = (config.audienceNotes[e.id] ?? e.friendNote ?? '').trim();
-              const fitText = customNote
-                ? `适合 / 亮点：${truncate(customNote, isDenseOv ? 34 : isCompactOv ? 36 : 42)}`
-                : `适合：${inferred.audience}`;
+              const fitShort = customNote
+                ? truncate(customNote, isDenseOv ? 20 : 24)
+                : truncate(inferred.audience, isDenseOv ? 18 : 22);
               const pills: string[] = [];
               if (e.hiringCompanyNames?.length) pills.push(`<span class="tag-pill tag-pill--dark" style="${ovPillPad}">在招</span>`);
               pills.push(`<span class="tag-pill tag-pill--soft" style="${ovPillPad}">${esc(inferred.interest)}</span>`);
-              if (e.isFree === true && !isDenseOv) pills.push(`<span class="tag-pill" style="${ovPillPad}">免费</span>`);
 
               return `<div class="ov-row" style="${ovRowStyle}">
-                <div class="ov-top">
-                  <span style="font-size:${ovMetaSize}px;font-weight:700;color:#231F20;">${String(globalOvIndex).padStart(2, '0')} · ${esc(fmtEventDateTime(e.startAt))} · ${esc(shortVenue(e))}</span>
-                  <span style="display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end;">${pills.join('')}</span>
+                <div class="ov-top" style="gap:10px;align-items:center;">
+                  <div style="display:flex;align-items:center;gap:9px;min-width:0;flex:1;">
+                    <span style="display:inline-flex;align-items:center;justify-content:center;min-width:34px;height:28px;padding:0 6px;border-radius:7px;background:#231F20;color:#FFFFFF;font-size:${ovIdxSize}px;font-weight:800;flex-shrink:0;">${String(globalOvIndex).padStart(2, '0')}</span>
+                    <span class="ov-title" style="font-size:${ovTitleSize}px;font-weight:800;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(e.title)}</span>
+                  </div>
+                  <span style="display:flex;gap:5px;flex-shrink:0;">${pills.join('')}</span>
                 </div>
-                <div class="ov-title" style="font-size:${ovTitleSize}px;line-height:1.22;">${esc(truncate(e.title, isDenseOv ? 58 : isCompactOv ? 56 : 62))}</div>
-                <div class="ov-fit" style="font-size:${ovMetaSize}px;">
-                  <span style="color:#231F20;">${esc(fitText)}</span>
-                  ${e.organiser ? `<span style="flex-shrink:0;">${esc(truncate(e.organiser, 18))}</span>` : ''}
+                <div class="ov-fit" style="font-size:${ovMetaSize}px;gap:12px;">
+                  <span style="color:#231F20;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(fmtEventDateTime(e.startAt))} · ${esc(shortVenue(e))}</span>
+                  <span style="color:#4A4647;font-weight:500;flex-shrink:0;">适合：${esc(fitShort)}</span>
                 </div>
               </div>`;
             })
             .join('');
 
     const ovArtScale = isDenseOv
-      ? 'transform:scale(0.56);transform-origin:right center;margin:-32px 0 -32px -56px;'
+      ? 'transform:scale(0.56);transform-origin:right center;margin:-36px 0 -36px -64px;'
       : isCompactOv
-        ? 'transform:scale(0.76);transform-origin:right center;margin:-18px 0 -18px -24px;'
-        : '';
+        ? 'transform:scale(0.68);transform-origin:right center;margin:-24px 0 -24px -40px;'
+        : 'transform:scale(0.84);transform-origin:right center;margin:-10px 0 -10px -12px;';
     const pageTitlePlain = isMultiOv
       ? `本期活动总览（${pageIdx + 1}/${overviewPagesData.length}）：${pageSpan}`
-      : '本期活动总览：按人群与兴趣对号入座。';
+      : '本期活动总览：按人群与兴趣挑场。';
     const pageTitleHtml = isMultiOv
-      ? `本期活动总览（${pageIdx + 1}/${overviewPagesData.length}）· ${esc(pageSpan)}`
-      : isCompactOv
-        ? '本期活动总览：按人群与兴趣挑场。'
-        : '本期活动总览：<br>按人群与兴趣挑场。';
+      ? `<span style="font-size:54px;">本期活动总览（${pageIdx + 1}/${overviewPagesData.length}）· ${esc(pageSpan)}</span>`
+      : `<span style="font-size:56px;">本期活动总览：按人群与兴趣挑场。</span>`;
 
     drafts.push({
       role: isMultiOv
@@ -1360,23 +1358,23 @@ export function generateXhsLifePack(
       titlePlain: pageTitlePlain,
       titleHtml: pageTitleHtml,
       bodyHtml: `
-        <div style="display:flex;justify-content:space-between;align-items:center;gap:14px;">
-          <p style="flex:1;font-size:${isDenseOv ? 20 : isCompactOv ? 22 : 26}px;line-height:1.4;">${
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;">
+          <p style="flex:1;font-size:${isDenseOv ? 24 : 26}px;line-height:1.38;color:#3A3738;">${
             pageIdx === 0
-              ? '不按时间死翻列表，直接按<b>适合人群与兴趣方向</b>快速扫一眼，找出最贴近你当下阶段的场次。'
-              : `承接上页，完整覆盖 <b>${esc(pageSpan)}</b> 共 ${pageEvents.length} 场已选活动，确保所选日期无遗漏。`
+              ? '按<b>时间顺序＋适合人群</b>一页扫清，在手机上直接圈出想去的场次。'
+              : `承接上页，完整覆盖 <b>${esc(pageSpan)}</b> 共 ${pageEvents.length} 场已选活动。`
           }</p>
           ${pageIdx === 0 ? `<div style="${ovArtScale}">${buildNotionalySorterSvg()}</div>` : ''}
         </div>
         <div class="overview-list" style="gap:${ovListGap}px;${ovListJustify}">
           ${overviewRowsHtml}
         </div>
-        <p class="small" style="font-size:${isDenseOv ? 16.5 : isCompactOv ? 18 : 20}px;">${
+        <p class="small" style="font-size:${isDenseOv ? 19 : 21}px;font-weight:500;">${
           overviewHiddenCount > 0
-            ? `以上按日期均衡展示 ${pageEvents.length} 场；其余 ${overviewHiddenCount} 场见 ${esc(config.siteUrl || 'sgaioasis.vercel.app/zh')}（或在后台勾选“自动分页展示全部活动”）。`
+            ? `以上按日期均衡展示 ${pageEvents.length} 场；其余 ${overviewHiddenCount} 场见 ${esc(config.siteUrl || 'sgaioasis.vercel.app/zh')}。`
             : isMultiOv
-              ? `全套总览共 ${selectedEvents.length} 场（${esc(dateRangeText)}），保留官方原名，实时名额以官方报名页为准。`
-              : `本期所选 ${pageEvents.length} 场已全部收录，保留官方原名，具体名额以官方报名页为准。`
+              ? `全套共 ${selectedEvents.length} 场（${esc(dateRangeText)}），保留官方原名，名额以官方报名页为准。`
+              : `本期所选 ${pageEvents.length} 场已全部收录，保留官方原名，名额以官方报名页为准。`
         }</p>
       `,
       warnings: [],
@@ -1436,35 +1434,35 @@ export function generateXhsLifePack(
 
     heroPicksHtml = `
       <div class="frame-box" style="flex:1;display:flex;flex-direction:column;background:#FAFAFA;">
-        <div style="display:grid;grid-template-columns:360px 1fr;gap:22px;padding:22px;background:#FFFFFF;border-bottom:1px solid #D4D4D4;align-items:stretch;">
-          ${renderPosterVisual(e, posterOf(e), { width: '360px', height: '360px', radius: 10 })}
+        <div style="display:grid;grid-template-columns:340px 1fr;gap:22px;padding:22px;background:#FFFFFF;border-bottom:1px solid #D4D4D4;align-items:stretch;">
+          ${renderPosterVisual(e, posterOf(e), { width: '340px', height: '340px', radius: 10 })}
           <div style="display:flex;flex-direction:column;justify-content:space-between;gap:12px;">
-            <div style="display:flex;flex-wrap:wrap;gap:7px;">${buildPickBadges(e, 0)}</div>
-            <div style="font-size:32px;font-weight:800;line-height:1.22;letter-spacing:-0.6px;">${esc(truncate(e.title, 72))}</div>
-            <div style="display:flex;flex-direction:column;gap:8px;font-size:20px;color:#3A3738;">
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">${buildPickBadges(e, 0)}</div>
+            <div style="font-size:35px;font-weight:800;line-height:1.2;letter-spacing:-0.6px;">${esc(truncate(e.title, 68))}</div>
+            <div style="display:flex;flex-direction:column;gap:8px;font-size:23px;color:#231F20;">
               <div><b>时间：</b>${esc(fmtEventTimeRange(e.startAt, e.endAt))} (SGT)</div>
-              <div><b>地点：</b>${esc(truncate(fullAddress || '地址报名后公开', 44))}</div>
-              ${e.organiser ? `<div><b>主办：</b>${esc(truncate(e.organiser, 30))}</div>` : ''}
-              ${shortLink ? `<div><b>入口：</b><span style="font-family:'SF Mono',Menlo,Consolas,monospace;font-size:18px;">${esc(shortLink)}</span></div>` : ''}
+              <div><b>地点：</b>${esc(truncate(fullAddress || '地址报名后公开', 38))}</div>
+              ${e.organiser ? `<div><b>主办：</b>${esc(truncate(e.organiser, 26))}</div>` : ''}
+              ${shortLink ? `<div><b>入口：</b><span style="font-family:'SF Mono',Menlo,Consolas,monospace;font-size:20px;">${esc(shortLink)}</span></div>` : ''}
             </div>
           </div>
         </div>
         <div style="flex:1;padding:20px 22px;display:grid;grid-template-columns:1fr 1fr;gap:14px;">
-          <div style="grid-column:1 / -1;border:1.25px solid #231F20;border-radius:10px;background:#FFFFFF;padding:16px 20px;">
-            <div style="font-size:18px;font-weight:700;color:#616161;margin-bottom:6px;">为什么主推 / 活动看点</div>
-            <div style="font-size:22px;line-height:1.5;color:#231F20;">${esc(
+          <div style="grid-column:1 / -1;border:1.5px solid #231F20;border-radius:10px;background:#FFFFFF;padding:18px 20px;">
+            <div style="font-size:20px;font-weight:700;color:#616161;margin-bottom:6px;">为什么主推 / 活动看点</div>
+            <div style="font-size:25px;font-weight:600;line-height:1.45;color:#231F20;">${esc(
               customNote ||
                 `本期高信号精选活动（${inferred.interest}），信息密度高，适合带着具体问题去现场交流。`,
             )}</div>
           </div>
-          <div style="border:1.25px solid #231F20;border-radius:10px;background:#FFFFFF;padding:15px 18px;">
-            <div style="font-size:17px;font-weight:700;color:#616161;margin-bottom:6px;">适合人群与兴趣</div>
-            <div style="font-size:20px;line-height:1.45;font-weight:600;color:#231F20;">${esc(inferred.audience)}</div>
-            <div style="margin-top:8px;"><span class="tag-pill tag-pill--soft">${esc(inferred.interest)}</span></div>
+          <div style="border:1.5px solid #231F20;border-radius:10px;background:#FFFFFF;padding:16px 18px;">
+            <div style="font-size:19px;font-weight:700;color:#616161;margin-bottom:6px;">适合人群与兴趣</div>
+            <div style="font-size:23px;line-height:1.42;font-weight:700;color:#231F20;">${esc(inferred.audience)}</div>
+            <div style="margin-top:10px;"><span class="tag-pill tag-pill--soft">${esc(inferred.interest)}</span></div>
           </div>
-          <div style="border:1.25px solid #231F20;border-radius:10px;background:#FFFFFF;padding:15px 18px;">
-            <div style="font-size:17px;font-weight:700;color:#616161;margin-bottom:6px;">行前实用提醒</div>
-            <div style="font-size:19px;line-height:1.48;color:#3A3738;">${esc(buildPreEventTip(e))}</div>
+          <div style="border:1.5px solid #231F20;border-radius:10px;background:#FFFFFF;padding:16px 18px;">
+            <div style="font-size:19px;font-weight:700;color:#616161;margin-bottom:6px;">行前实用提醒</div>
+            <div style="font-size:22px;line-height:1.45;color:#2E2B2C;">${esc(buildPreEventTip(e))}</div>
           </div>
         </div>
       </div>
@@ -1478,37 +1476,37 @@ export function generateXhsLifePack(
         const reason = customNote || `${inferred.interest} · 适合${inferred.audience}`;
         const shortLink = shortDisplayUrl(e.url);
         return `<div class="pick-card${idx === 0 ? ' pick-card--hero' : ''}" style="flex-direction:row;gap:20px;align-items:stretch;padding:18px 20px;">
-          ${renderPosterVisual(e, posterOf(e), { width: '250px', height: '250px', radius: 10 })}
+          ${renderPosterVisual(e, posterOf(e), { width: '240px', height: '240px', radius: 10 })}
           <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:space-between;gap:8px;">
-            <div style="display:flex;flex-wrap:wrap;gap:6px;">${buildPickBadges(e, idx)}</div>
-            <div style="font-size:26px;font-weight:800;line-height:1.24;">${esc(truncate(e.title, 62))}</div>
-            <div style="font-size:19px;color:#3A3738;line-height:1.45;">
+            <div style="display:flex;flex-wrap:wrap;gap:7px;">${buildPickBadges(e, idx)}</div>
+            <div style="font-size:30px;font-weight:800;line-height:1.22;">${esc(truncate(e.title, 56))}</div>
+            <div style="font-size:22px;color:#2E2B2C;line-height:1.42;">
               <div><b>时间：</b>${esc(fmtEventTimeRange(e.startAt, e.endAt))}</div>
-              <div><b>地点：</b>${esc(shortVenue(e))}${e.organiser ? ` · 主办：${esc(truncate(e.organiser, 20))}` : ''}</div>
-              ${shortLink ? `<div style="font-size:16px;color:#616161;font-family:'SF Mono',Menlo,Consolas,monospace;">${esc(shortLink)}</div>` : ''}
+              <div><b>地点：</b>${esc(shortVenue(e))}${e.organiser ? ` · ${esc(truncate(e.organiser, 18))}` : ''}</div>
+              ${shortLink ? `<div style="font-size:18px;color:#4A4647;font-family:'SF Mono',Menlo,Consolas,monospace;">${esc(shortLink)}</div>` : ''}
             </div>
-            <div class="pick-fit" style="font-size:19px;"><b>看点 / 适合：</b>${esc(truncate(reason, 60))}</div>
+            <div class="pick-fit" style="font-size:22px;"><b>看点：</b>${esc(truncate(reason, 48))}</div>
           </div>
         </div>`;
       })
       .join('');
   } else {
-    // 3 Picks -> Triple Compact Poster-Board Cards
+    // 3 Picks -> Triple Mobile-Readable Poster-Board Cards
     heroPicksHtml = pickEvents
       .map((e, idx) => {
         const inferred = inferAudienceFit(e);
         const customNote = (config.audienceNotes[e.id] ?? e.friendNote ?? '').trim();
         const reason = customNote || `${inferred.interest} · 适合${inferred.audience}`;
-        return `<div class="pick-card${idx === 0 ? ' pick-card--hero' : ''}" style="flex-direction:row;gap:18px;align-items:center;padding:14px 18px;">
-          ${renderPosterVisual(e, posterOf(e), { width: '164px', height: '164px', radius: 9 })}
-          <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:space-between;gap:6px;">
+        return `<div class="pick-card${idx === 0 ? ' pick-card--hero' : ''}" style="flex-direction:row;gap:18px;align-items:center;padding:16px 18px;">
+          ${renderPosterVisual(e, posterOf(e), { width: '166px', height: '166px', radius: 10 })}
+          <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:space-between;gap:7px;">
             <div class="pick-top">
-              <span class="pick-time" style="font-size:18px;">${esc(fmtEventTimeRange(e.startAt, e.endAt))}</span>
+              <span class="pick-time" style="font-size:21px;font-weight:800;">${esc(fmtEventTimeRange(e.startAt, e.endAt))}</span>
               <span class="pick-tags">${buildPickBadges(e, idx)}</span>
             </div>
-            <div class="pick-title" style="font-size:24px;">${esc(truncate(e.title, 58))}</div>
-            <div class="pick-meta" style="font-size:18px;">${esc(shortVenue(e))}${e.organiser ? ` · 主办：${esc(truncate(e.organiser, 22))}` : ''}</div>
-            <div class="pick-fit" style="font-size:18px;padding-top:6px;"><b>主推理由 / 适合：</b>${esc(truncate(reason, 52))}</div>
+            <div class="pick-title" style="font-size:26px;font-weight:800;line-height:1.24;letter-spacing:-0.4px;">${esc(truncate(e.title, 50))}</div>
+            <div class="pick-meta" style="font-size:21px;color:#3A3738;font-weight:600;">${esc(shortVenue(e))}${e.organiser ? ` · 主办：${esc(truncate(e.organiser, 20))}` : ''}</div>
+            <div class="pick-fit" style="font-size:20.5px;padding-top:6px;"><b>适合：</b>${esc(truncate(reason, 44))}</div>
           </div>
         </div>`;
       })
@@ -1539,7 +1537,7 @@ export function generateXhsLifePack(
           <div class="kpi-lbl">覆盖活动天数</div>
         </div>
       </div>
-      <div class="district-bar" style="font-size:19px;">
+      <div class="district-bar" style="font-size:21.5px;font-weight:600;">
         <span>${esc(defaultStatLine)}</span>
       </div>
       <div class="pick-list">
@@ -1599,12 +1597,12 @@ export function generateXhsLifePack(
       ${card4VisualHtml}
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
         <div class="kpi-cell" style="padding:18px 20px;">
-          <div style="font-size:22px;font-weight:700;margin-bottom:6px;">${esc(c4P1Title)}</div>
-          <div style="font-size:19px;line-height:1.48;color:#4A4647;">${esc(c4P1Body)}</div>
+          <div style="font-size:25px;font-weight:800;margin-bottom:6px;">${esc(c4P1Title)}</div>
+          <div style="font-size:22px;line-height:1.45;color:#2E2B2C;">${esc(c4P1Body)}</div>
         </div>
         <div class="kpi-cell" style="padding:18px 20px;">
-          <div style="font-size:22px;font-weight:700;margin-bottom:6px;">${esc(c4P2Title)}</div>
-          <div style="font-size:19px;line-height:1.48;color:#4A4647;">${esc(c4P2Body)}</div>
+          <div style="font-size:25px;font-weight:800;margin-bottom:6px;">${esc(c4P2Title)}</div>
+          <div style="font-size:22px;line-height:1.45;color:#2E2B2C;">${esc(c4P2Body)}</div>
         </div>
       </div>
     `,
@@ -1677,13 +1675,13 @@ export function generateXhsLifePack(
 
       <div class="qr-cta-box">
         <div style="flex:1;display:flex;flex-direction:column;gap:10px;">
-          <div style="font-size:25px;font-weight:800;letter-spacing:-0.3px;">扫码直达网站 · 欢迎关注「人在坡岛」</div>
-          <div style="font-family:'SF Mono',Menlo,Consolas,monospace;font-size:21px;font-weight:700;color:#231F20;">https://${esc(cleanSiteUrl)}</div>
+          <div style="font-size:28px;font-weight:800;letter-spacing:-0.3px;">扫码直达网站 · 欢迎关注「人在坡岛」</div>
+          <div style="font-family:'SF Mono',Menlo,Consolas,monospace;font-size:23px;font-weight:700;color:#231F20;">https://${esc(cleanSiteUrl)}</div>
           <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
-            <span style="font-size:17px;color:#616161;">搜索关键词：</span>
+            <span style="font-size:20px;font-weight:600;color:#4A4647;">搜索关键词：</span>
             ${keywordsList.map((k) => `<span class="tag-pill">${esc(k)}</span>`).join('')}
           </div>
-          <div style="font-size:18px;color:#616161;line-height:1.45;">每周持续整理新加坡 AI 活动与岗位观察；如果你或朋友在坡办活动，欢迎评论或私信补录。</div>
+          <div style="font-size:20.5px;color:#3A3738;line-height:1.45;">每周持续整理新加坡 AI 活动与岗位观察；如果你在坡办活动，欢迎评论或私信补录。</div>
         </div>
         ${qrSvg}
       </div>
@@ -1744,22 +1742,41 @@ export function generateXhsLifePack(
 
   const packSlug = `xhs-life-${config.startDate}_to_${config.endDate}`;
 
-  // Caption strictly aligned with tone-and-caption.md & the story arc (no public "朋友主办" disclosure)
-  const pickSummary = `挑出了 ${pickEvents.length} 场信号最强的重点主推`;
+  // Mobile-scannable Xiaohongshu post caption (aligned with tone-and-caption.md: natural, restrained, zero hype)
+  const overviewSlideRange = overviewPagesData.length > 1 ? `图 2–${1 + overviewPagesData.length}` : '图 2';
+  const pickSlideNum = 2 + overviewPagesData.length;
+  const siteSlideNum = 3 + overviewPagesData.length;
+  const guideSlideNum = 4 + overviewPagesData.length;
+  const topPickNames = pickEvents.slice(0, 3).map((e) => `· ${e.title}`).join('\n');
 
   const captionMd = [
-    `新加坡这周的 AI 活动分散在 Luma、GDG、SGInnovate 和本地社群里，想下班去听一场，光翻链接查地址就挺耗精力。`,
+    `【标题建议】新加坡 ${dateRangeText} 共 ${selectedEvents.length} 场 AI 活动｜全岛地图＋怎么选`,
     ``,
-    `我用自己维护的开源小站 SG AI Oasis 整理了 ${dateRangeText} 共 ${selectedEvents.length} 场活动，顺手把网站刚更新的功能也放在 ${cards.length} 张图里：`,
-    `1. 图 1：按本期选出的 ${selectedEvents.length} 场活动生成全岛 2D 位置图，先看清都在哪几个片区、顺不顺路。`,
-    `2. ${overviewPagesData.length > 1 ? `图 2–${1 + overviewPagesData.length}` : '图 2'}：完整活动总览，覆盖本期全部 ${selectedEvents.length} 场活动并按适合人群与兴趣归类，不用挨个点开猜内容。`,
-    `3. 图 ${2 + overviewPagesData.length}：本期热度与关键统计，加上带官方展板的重点主推——${pickSummary}。`,
-    `4. 图 ${3 + overviewPagesData.length}：去现场前可以在网站上直接点进主办方看新加坡在招岗位，也能用新加的 GO/NOGO 小工具按学习、人脉、职业 30 秒判断值不值得去。`,
-    `5. 图 ${4 + overviewPagesData.length}：整理了网站四个免费功能（机会地图、近期活动、在招岗位、GO/NOGO）和直达二维码，浏览器搜「SG AI Oasis」或打开 https://${cleanSiteUrl} 就能直接用，不用登录。`,
+    `新加坡这周的 AI 活动散在 Luma、GDG、SGInnovate 和本地社群里，下班想挑一场顺路的听，光翻链接查地址就挺耗精力。`,
     ``,
-    `边界说明：部分活动需主办方审核或报名后才公布具体地址，席位和状态以官方报名页为准；参加活动也不代表内推或面试承诺。`,
+    `我用自己维护的开源小站 SG AI Oasis 整理好了这 ${selectedEvents.length} 场活动（${freeTotal} 场免费公开 · ${hiringTotal} 场主办方在招 · 覆盖 ${uniqueDayCount} 天），按路上刷手机的习惯排成了 ${cards.length} 张图：`,
     ``,
-    `你这周准备去哪一场，或者身边有朋友在新加坡办 AI 活动想一起收进地图吗？`,
+    `📍 图 1｜全岛 2D 联动地图`,
+    `先看活动集中在哪些片区和地铁站，挑下班顺路的。`,
+    ``,
+    `📋 ${overviewSlideRange}｜完整活动总览`,
+    `按时间顺序和适合人群整理，不用挨个点链接猜内容。`,
+    ``,
+    `⭐ 图 ${pickSlideNum}｜本期重点主推（${pickEvents.length} 场）`,
+    topPickNames || `· 挑出本期信号最强的重点场次，附展板与行前信息。`,
+    ``,
+    `🧭 图 ${siteSlideNum}｜去前先查两件事`,
+    `活动页可直接点进主办方看新加坡在招岗位；新加的 GO/NOGO 小工具 30 秒按学习、人脉、职业帮你判断值不值得花通勤时间。`,
+    ``,
+    `🔗 图 ${guideSlideNum}｜网站 4 个免费工具＋直达二维码`,
+    `浏览器搜「SG AI Oasis」或直接访问 https://${cleanSiteUrl} 就能用，不用注册登录。`,
+    ``,
+    `—`,
+    `边界说明：部分活动需要审核或报名后才公布详细地址，实时席位以官方报名页为准；参加活动也不代表内推或面试承诺。`,
+    ``,
+    `你这周准备去哪一场？如果有漏掉的新加坡 AI 活动，欢迎评论区补充。`,
+    ``,
+    `#新加坡AI #人在坡岛 #新加坡生活 #新加坡活动 #新加坡科技 #SGAI`,
   ].join('\n');
 
   const autoException = matchesTarget
