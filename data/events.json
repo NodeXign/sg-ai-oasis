@@ -1,75 +1,5 @@
 [
  {
-  "id": "evt-Nk3vp9NqdNijRjv",
-  "title": "Generalizing Embodied AI Beyond the Lab: Commonsense, Affordances, Steering and Safety",
-  "startAt": "2026-11-27T07:00:00.000Z",
-  "endAt": "2026-11-27T09:00:00.000Z",
-  "venue": "Lorong AI @ One-North",
-  "address": "Lorong AI @ One-North, 69 Ayer Rajah Cres., Singapore 139961",
-  "lat": 1.296139,
-  "lng": 103.786991,
-  "url": "https://luma.com/5vene8pt",
-  "coverImageUrl": "https://images.lumacdn.com/uploads/uk/147ac7cd-a923-4c11-a1f0-f3ecddb24a94.jpg",
-  "organiser": "Lorong AI",
-  "isFree": true,
-  "price": null,
-  "status": "open",
-  "isOnline": false,
-  "tags": [],
-  "sourceIds": [
-   "ai-at-singapore",
-   "lorong-ai"
-  ],
-  "companyIds": [],
-  "firstSeen": "2026-11-24"
- },
- {
-  "id": "evt-dbrhIgKrA1knrH0",
-  "title": "Singapore AI Communities Unite: The Future of Work",
-  "startAt": "2026-11-27T09:00:00.000Z",
-  "endAt": "2026-11-27T14:30:00.000Z",
-  "venue": "",
-  "address": "",
-  "lat": null,
-  "lng": null,
-  "url": "https://luma.com/j74qk3fy",
-  "coverImageUrl": "https://images.lumacdn.com/uploads/ws/12d9a194-7187-47b9-a319-fa64752c6112.png",
-  "organiser": "",
-  "isFree": true,
-  "price": null,
-  "status": "approval",
-  "isOnline": false,
-  "tags": [],
-  "sourceIds": [
-   "ai-at-singapore"
-  ],
-  "companyIds": [],
-  "firstSeen": "2026-11-22"
- },
- {
-  "id": "evt-JDp0CvEF5s7n3Iu",
-  "title": "AI Morning Walk",
-  "startAt": "2026-11-27T23:00:00.000Z",
-  "endAt": "2026-11-28T02:00:00.000Z",
-  "venue": "McDonald's Marine Cove",
-  "address": "McDonald's Marine Cove, 1000 ECP, #01-05 Marine Cove, Singapore 449876",
-  "lat": 1.3016529,
-  "lng": 103.9128854,
-  "url": "https://luma.com/145mm9ne",
-  "coverImageUrl": "https://images.lumacdn.com/uploads/m2/8c16f5b7-bc46-41d6-8653-1abfb1027ee2.png",
-  "organiser": "Electric Minds",
-  "isFree": true,
-  "price": null,
-  "status": "open",
-  "isOnline": false,
-  "tags": [],
-  "sourceIds": [
-   "ai-at-singapore"
-  ],
-  "companyIds": [],
-  "firstSeen": "2026-11-24"
- },
- {
   "id": "bevy-132036",
   "title": "DevFest Singapore 2026: Architecting for the Agentic Era",
   "startAt": "2026-11-28T01:00:00.000Z",
@@ -261,6 +191,29 @@
   ],
   "companyIds": [],
   "firstSeen": "2026-11-22"
+ },
+ {
+  "id": "evt-BOlBGC1ImDztsiF",
+  "title": "Bring Your Own Personal Agent",
+  "startAt": "2026-12-01T10:30:00.000Z",
+  "endAt": "2026-12-01T13:00:00.000Z",
+  "venue": "SQ Collective x Gen-AI Labs",
+  "address": "SQ Collective x Gen-AI Labs, 65 Mohamed Sultan Rd, Level 4! Go to, Singapore 239003",
+  "lat": 1.2913588,
+  "lng": 103.83943819999999,
+  "url": "https://luma.com/ljhaabl2",
+  "coverImageUrl": "https://images.lumacdn.com/uploads/rw/36639937-833b-41b1-9dc2-5a18dd3cfbfe.png",
+  "organiser": "/the-new-gtm",
+  "isFree": true,
+  "price": null,
+  "status": "approval",
+  "isOnline": false,
+  "tags": [],
+  "sourceIds": [
+   "ai-at-singapore"
+  ],
+  "companyIds": [],
+  "firstSeen": "2026-11-28"
  },
  {
   "id": "evt-YbcwgbdhkqK0vf9",
@@ -552,7 +505,7 @@
   "organiser": "",
   "isFree": false,
   "price": "SGD 20",
-  "status": "approval",
+  "status": "sold_out",
   "isOnline": false,
   "tags": [],
   "sourceIds": [

@@ -1,14 +1,14 @@
 {
-  "lastRun": "2026-11-27T15:24:14+08:00",
-  "events": 26,
+  "lastRun": "2026-11-28T12:29:32+08:00",
+  "events": 24,
   "linkedToCompanies": 9,
   "sources": {
     "ai-at-singapore": {
-      "listed": 17,
-      "kept": 14
+      "listed": 15,
+      "kept": 12
     },
     "luma-singapore": {
-      "listed": 29,
+      "listed": 25,
       "kept": 3
     },
     "gdg-singapore": {
@@ -24,7 +24,7 @@
       "kept": 0
     },
     "lorong-ai": {
-      "listed": 6,
+      "listed": 5,
       "kept": 2
     },
     "claude-sg": {
