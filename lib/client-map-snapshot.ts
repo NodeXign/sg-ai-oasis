@@ -349,7 +349,7 @@ export async function renderClientMapSnapshot(
             hiring: it.hiring,
             friend: it.friend,
             isArea: it.precision === 'area',
-            extraTag: it.friend ? '朋友' : it.hiring ? '招人' : undefined,
+            extraTag: it.hiring ? '招人' : undefined,
           });
         }
       }
@@ -378,7 +378,7 @@ export async function renderClientMapSnapshot(
           hiring: h.hasHiring,
           friend: h.hasFriend,
           isArea: h.isAreaOnly,
-          extraTag: h.hasFriend ? '朋友' : h.hasHiring ? '招人' : undefined,
+          extraTag: h.hasHiring ? '招人' : undefined,
         });
       }
     }
@@ -549,7 +549,7 @@ export async function renderClientMapSnapshot(
       ctx.save();
       drawRoundedRect(ctx, c.x, c.y, c.w, c.h, 8);
       ctx.lineWidth = 1.3;
-      ctx.strokeStyle = c.isArea ? '#94a3b8' : c.friend ? '#141414' : '#d4d4d8';
+      ctx.strokeStyle = c.isArea ? '#94a3b8' : '#d4d4d8';
       if (c.isArea) ctx.setLineDash([4, 3]);
       ctx.stroke();
       ctx.restore();
@@ -572,10 +572,10 @@ export async function renderClientMapSnapshot(
       ctx.fillStyle = c.hiring ? '#1257fd' : '#334155';
       ctx.fillText(c.dateText, bx + bw + 6, by + 12.5);
 
-      // Right extra tag (招人 / 朋友)
+      // Right extra tag (招人)
       if (c.extraTag) {
         ctx.font = `700 10px ${fontStack}`;
-        ctx.fillStyle = c.friend ? '#141414' : '#1257fd';
+        ctx.fillStyle = '#1257fd';
         ctx.textAlign = 'right';
         ctx.fillText(c.extraTag, c.x + c.w - 9, by + 12.5);
         ctx.textAlign = 'left';

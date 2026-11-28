@@ -271,10 +271,10 @@ function shortVenue(e: XhsEventItem): string {
 export function inferAudienceFit(e: XhsEventItem): { audience: string; interest: string } {
   const text = `${e.title} ${e.organiser} ${e.tags.join(' ')}`.toLowerCase();
 
-  if (e.isFriendEvent) {
+  if (/职场|求职|职业|career/.test(text) && /创业|founder|startup/.test(text)) {
     return {
-      audience: '想深入交流的同行 / 社区朋友',
-      interest: '朋友局 · 一手实战分享',
+      audience: '探索 AI 职场进阶与创业路径的人',
+      interest: 'AI 职场 · 创业对话',
     };
   }
   if (/robotics|embodied|physical ai|hardware/.test(text)) {
@@ -301,10 +301,16 @@ export function inferAudienceFit(e: XhsEventItem): { audience: string; interest:
       interest: '轻量社交 · 跨界连接',
     };
   }
-  if (/founder|startup|vc|investor|pitch|demo day/.test(text)) {
+  if (/founder|startup|vc|investor|pitch|demo day|创业|路演|投资/.test(text)) {
     return {
       audience: '创业者 / 早期项目观察者',
       interest: 'AI 创业 · 投资与路演',
+    };
+  }
+  if (/职场|求职|职业|career/.test(text)) {
+    return {
+      audience: '关注 AI 时代职场转型与发展的从业者',
+      interest: '职场转型 · 实战分享',
     };
   }
   if ((e.hiringCompanyNames?.length ?? 0) > 0) {
@@ -854,7 +860,7 @@ function buildLinkedSgMapSvg(events: XhsEventItem[]): {
     if (!geo) continue;
     mappedCount += 1;
     const pt = proj(geo.lat, geo.lng);
-    const isPriority = Boolean(e.isFriendEvent || (e.hiringCompanyNames?.length ?? 0) > 0);
+    const isPriority = (e.hiringCompanyNames?.length ?? 0) > 0;
     const existing = clusters.find((c) => Math.hypot(c.x - pt.x, c.y - pt.y) < 34);
     if (existing) {
       existing.events.push(e);
@@ -977,7 +983,7 @@ function buildLinkedSgMapSvg(events: XhsEventItem[]): {
       <!-- Bottom-left & bottom-right crisp map legend -->
       <rect x="20" y="${H - 46}" width="470" height="32" rx="16" fill="#FFFFFF" stroke="#D4D4D4" stroke-width="1.2"/>
       <circle cx="40" cy="${H - 30}" r="6" fill="#231F20"/>
-      <text x="54" y="${H - 25}" font-size="14" font-weight="600" fill="#231F20">在招公司 / 朋友主办</text>
+      <text x="54" y="${H - 25}" font-size="14" font-weight="600" fill="#231F20">主办方在招公司</text>
       <circle cx="212" cy="${H - 30}" r="6" fill="#FFFFFF" stroke="#231F20" stroke-width="2"/>
       <text x="226" y="${H - 25}" font-size="14" font-weight="600" fill="#231F20">社区活动</text>
       <text x="312" y="${H - 25}" font-size="14" fill="#616161">· 按所选活动实时联动</text>
@@ -1148,6 +1154,7 @@ export function generateXhsLifePack(
   const freeTotal = selectedEvents.filter((e) => e.isFree === true).length;
   const hotTotal = selectedEvents.filter((e) => e.status === 'sold_out' || e.status === 'waitlist').length;
   const approvalTotal = selectedEvents.filter((e) => e.status === 'approval').length;
+  const uniqueDayCount = new Set(selectedEvents.map((e) => sgDateKey(e.startAt))).size;
 
   // District counts for Page 01 bottom strip
   const districtCounts: Record<DistrictKey, number> = {
@@ -1167,17 +1174,24 @@ export function generateXhsLifePack(
     districtCounts.other_online ? `其他/线上/待公布 ${districtCounts.other_online}` : '',
   ].filter(Boolean);
 
-  // Paginate Card 02 so ALL selected dates & events appear on posters when includeOverflowChecklist is enabled.
-  // 1-8 events -> 1 page (exact 5-card 40/20/40 deck). > 8 events -> chronological 7-per-page overview cards!
+  // Balanced pagination for Card 02 so ALL selected dates & events appear with even visual density:
+  // - 1–8 events -> 1 page (exact 5-card 40/20/40 deck)
+  // - 9–20 events -> 2 balanced pages (e.g. 19 -> 10 + 9 across Page 02 & 03, no sparse Page 04!)
+  // - > 20 events -> Math.ceil(n / 10) evenly balanced pages (never a sparse tail page)
   const overviewPagesData: XhsEventItem[][] = [];
   let overviewHiddenCount = 0;
 
   if (selectedEvents.length <= 8) {
     overviewPagesData.push(selectedEvents);
   } else if (config.includeOverflowChecklist) {
-    const perPage = 7;
-    for (let i = 0; i < selectedEvents.length; i += perPage) {
-      overviewPagesData.push(selectedEvents.slice(i, i + perPage));
+    const pageCount = Math.ceil(selectedEvents.length / 10);
+    let cursor = 0;
+    for (let p = 0; p < pageCount; p++) {
+      const remaining = selectedEvents.length - cursor;
+      const pagesLeft = pageCount - p;
+      const take = Math.ceil(remaining / pagesLeft);
+      overviewPagesData.push(selectedEvents.slice(cursor, cursor + take));
+      cursor += take;
     }
   } else {
     const balanced = selectBalancedOverview(selectedEvents, 8);
@@ -1247,8 +1261,8 @@ export function generateXhsLifePack(
           <div class="kpi-lbl">主办方在招公司场</div>
         </div>
         <div class="kpi-cell">
-          <div class="kpi-num">${friendTotal > 0 ? friendTotal : freeTotal}</div>
-          <div class="kpi-lbl">${friendTotal > 0 ? '朋友/本地社群主办' : '免费公开场次'}</div>
+          <div class="kpi-num">${freeTotal}</div>
+          <div class="kpi-lbl">免费公开场次</div>
         </div>
       </div>
       <div class="district-bar">
@@ -1261,7 +1275,7 @@ export function generateXhsLifePack(
 
   // ═══════════════════════════════════════════════════════════════════════════
   // PAGE 02 (+ auto-paginated continuations) — ALL SELECTED EVENTS BY AUDIENCE & INTEREST
-  // Dynamic 3-tier density: 1-5 spacious, 6 standard, 7-8 compact (zero footer overlap)
+  // Dynamic 4-tier density: 1-5 spacious, 6 standard, 7-8 compact, 9-10 dense (zero footer overlap)
   // ═══════════════════════════════════════════════════════════════════════════
   let globalOvIndex = 0;
   overviewPagesData.forEach((pageEvents, pageIdx) => {
@@ -1269,18 +1283,26 @@ export function generateXhsLifePack(
     const ovCount = pageEvents.length;
     const isCompactOv = ovCount >= 7;
     const isUltraCompactOv = ovCount >= 8;
+    const isDenseOv = ovCount >= 9;
 
-    const ovRowStyle = isUltraCompactOv
-      ? 'padding:8px 14px;gap:2px;border-radius:8px;'
+    const ovRowStyle = isDenseOv
+      ? 'padding:6px 14px;gap:2px;border-radius:8px;'
+      : isUltraCompactOv
+        ? 'padding:8px 14px;gap:2px;border-radius:8px;'
+        : isCompactOv
+          ? 'padding:9px 15px;gap:3px;border-radius:9px;'
+          : ovCount <= 5
+            ? 'padding:15px 18px;gap:6px;'
+            : 'padding:11px 16px;gap:4px;';
+    const ovTitleSize = isDenseOv ? 18 : isUltraCompactOv ? 19 : isCompactOv ? 20 : ovCount <= 5 ? 23 : 21;
+    const ovMetaSize = isDenseOv ? 14.5 : isUltraCompactOv ? 15.5 : isCompactOv ? 16 : 17.5;
+    const ovPillPad = isDenseOv
+      ? 'padding:1px 7px;font-size:12.5px;'
       : isCompactOv
-        ? 'padding:9px 15px;gap:3px;border-radius:9px;'
-        : ovCount <= 5
-          ? 'padding:15px 18px;gap:6px;'
-          : 'padding:11px 16px;gap:4px;';
-    const ovTitleSize = isUltraCompactOv ? 19 : isCompactOv ? 20 : ovCount <= 5 ? 23 : 21;
-    const ovMetaSize = isUltraCompactOv ? 15.5 : isCompactOv ? 16 : 17.5;
-    const ovPillPad = isCompactOv ? 'padding:2px 8px;font-size:13.5px;' : '';
-    const ovListGap = isUltraCompactOv ? 6 : isCompactOv ? 7 : 10;
+        ? 'padding:2px 8px;font-size:13.5px;'
+        : '';
+    const ovListGap = isDenseOv ? 6 : isUltraCompactOv ? 6 : isCompactOv ? 7 : ovCount <= 5 ? 16 : 10;
+    const ovListJustify = ovCount <= 5 ? 'justify-content:flex-start;' : '';
 
     const firstDayMd = pageEvents.length ? fmtShortDate(sgDateKey(pageEvents[0].startAt)) : '';
     const lastDayMd = pageEvents.length ? fmtShortDate(sgDateKey(pageEvents[pageEvents.length - 1].startAt)) : '';
@@ -1295,20 +1317,19 @@ export function generateXhsLifePack(
               const inferred = inferAudienceFit(e);
               const customNote = (config.audienceNotes[e.id] ?? e.friendNote ?? '').trim();
               const fitText = customNote
-                ? `适合 / 亮点：${truncate(customNote, isCompactOv ? 36 : 42)}`
+                ? `适合 / 亮点：${truncate(customNote, isDenseOv ? 34 : isCompactOv ? 36 : 42)}`
                 : `适合：${inferred.audience}`;
               const pills: string[] = [];
-              if (e.isFriendEvent) pills.push(`<span class="tag-pill tag-pill--dark" style="${ovPillPad}">朋友主办</span>`);
               if (e.hiringCompanyNames?.length) pills.push(`<span class="tag-pill tag-pill--dark" style="${ovPillPad}">在招</span>`);
               pills.push(`<span class="tag-pill tag-pill--soft" style="${ovPillPad}">${esc(inferred.interest)}</span>`);
-              if (e.isFree === true && !isUltraCompactOv) pills.push(`<span class="tag-pill" style="${ovPillPad}">免费</span>`);
+              if (e.isFree === true && !isDenseOv) pills.push(`<span class="tag-pill" style="${ovPillPad}">免费</span>`);
 
-              return `<div class="ov-row${e.isFriendEvent ? ' ov-row--friend' : ''}" style="${ovRowStyle}">
+              return `<div class="ov-row" style="${ovRowStyle}">
                 <div class="ov-top">
                   <span style="font-size:${ovMetaSize}px;font-weight:700;color:#231F20;">${String(globalOvIndex).padStart(2, '0')} · ${esc(fmtEventDateTime(e.startAt))} · ${esc(shortVenue(e))}</span>
                   <span style="display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end;">${pills.join('')}</span>
                 </div>
-                <div class="ov-title" style="font-size:${ovTitleSize}px;">${esc(truncate(e.title, isCompactOv ? 56 : 62))}</div>
+                <div class="ov-title" style="font-size:${ovTitleSize}px;line-height:1.22;">${esc(truncate(e.title, isDenseOv ? 58 : isCompactOv ? 56 : 62))}</div>
                 <div class="ov-fit" style="font-size:${ovMetaSize}px;">
                   <span style="color:#231F20;">${esc(fitText)}</span>
                   ${e.organiser ? `<span style="flex-shrink:0;">${esc(truncate(e.organiser, 18))}</span>` : ''}
@@ -1317,7 +1338,11 @@ export function generateXhsLifePack(
             })
             .join('');
 
-    const ovArtScale = isCompactOv ? 'transform:scale(0.76);transform-origin:right center;margin:-18px 0 -18px -24px;' : '';
+    const ovArtScale = isDenseOv
+      ? 'transform:scale(0.56);transform-origin:right center;margin:-32px 0 -32px -56px;'
+      : isCompactOv
+        ? 'transform:scale(0.76);transform-origin:right center;margin:-18px 0 -18px -24px;'
+        : '';
     const pageTitlePlain = isMultiOv
       ? `本期活动总览（${pageIdx + 1}/${overviewPagesData.length}）：${pageSpan}`
       : '本期活动总览：按人群与兴趣对号入座。';
@@ -1336,17 +1361,17 @@ export function generateXhsLifePack(
       titleHtml: pageTitleHtml,
       bodyHtml: `
         <div style="display:flex;justify-content:space-between;align-items:center;gap:14px;">
-          <p style="flex:1;font-size:${isCompactOv ? 22 : 26}px;line-height:1.45;">${
+          <p style="flex:1;font-size:${isDenseOv ? 20 : isCompactOv ? 22 : 26}px;line-height:1.4;">${
             pageIdx === 0
               ? '不按时间死翻列表，直接按<b>适合人群与兴趣方向</b>快速扫一眼，找出最贴近你当下阶段的场次。'
               : `承接上页，完整覆盖 <b>${esc(pageSpan)}</b> 共 ${pageEvents.length} 场已选活动，确保所选日期无遗漏。`
           }</p>
           ${pageIdx === 0 ? `<div style="${ovArtScale}">${buildNotionalySorterSvg()}</div>` : ''}
         </div>
-        <div class="overview-list" style="gap:${ovListGap}px;">
+        <div class="overview-list" style="gap:${ovListGap}px;${ovListJustify}">
           ${overviewRowsHtml}
         </div>
-        <p class="small" style="font-size:${isCompactOv ? 18 : 20}px;">${
+        <p class="small" style="font-size:${isDenseOv ? 16.5 : isCompactOv ? 18 : 20}px;">${
           overviewHiddenCount > 0
             ? `以上按日期均衡展示 ${pageEvents.length} 场；其余 ${overviewHiddenCount} 场见 ${esc(config.siteUrl || 'sgaioasis.vercel.app/zh')}（或在后台勾选“自动分页展示全部活动”）。`
             : isMultiOv
@@ -1385,7 +1410,6 @@ export function generateXhsLifePack(
 
   const buildPickBadges = (e: XhsEventItem, idx: number): string => {
     const pills: string[] = [`<span class="tag-pill tag-pill--dark">主推 0${idx + 1}</span>`];
-    if (e.isFriendEvent) pills.push(`<span class="tag-pill tag-pill--dark">朋友主办</span>`);
     if (e.hiringCompanyNames?.length) {
       pills.push(
         `<span class="tag-pill tag-pill--dark">在招${e.hiringRolesTotal ? ` ${e.hiringRolesTotal} 岗` : ''}</span>`,
@@ -1453,7 +1477,7 @@ export function generateXhsLifePack(
         const customNote = (config.audienceNotes[e.id] ?? e.friendNote ?? '').trim();
         const reason = customNote || `${inferred.interest} · 适合${inferred.audience}`;
         const shortLink = shortDisplayUrl(e.url);
-        return `<div class="pick-card${idx === 0 || e.isFriendEvent ? ' pick-card--hero' : ''}" style="flex-direction:row;gap:20px;align-items:stretch;padding:18px 20px;">
+        return `<div class="pick-card${idx === 0 ? ' pick-card--hero' : ''}" style="flex-direction:row;gap:20px;align-items:stretch;padding:18px 20px;">
           ${renderPosterVisual(e, posterOf(e), { width: '250px', height: '250px', radius: 10 })}
           <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:space-between;gap:8px;">
             <div style="display:flex;flex-wrap:wrap;gap:6px;">${buildPickBadges(e, idx)}</div>
@@ -1475,7 +1499,7 @@ export function generateXhsLifePack(
         const inferred = inferAudienceFit(e);
         const customNote = (config.audienceNotes[e.id] ?? e.friendNote ?? '').trim();
         const reason = customNote || `${inferred.interest} · 适合${inferred.audience}`;
-        return `<div class="pick-card${idx === 0 || e.isFriendEvent ? ' pick-card--hero' : ''}" style="flex-direction:row;gap:18px;align-items:center;padding:14px 18px;">
+        return `<div class="pick-card${idx === 0 ? ' pick-card--hero' : ''}" style="flex-direction:row;gap:18px;align-items:center;padding:14px 18px;">
           ${renderPosterVisual(e, posterOf(e), { width: '164px', height: '164px', radius: 9 })}
           <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:space-between;gap:6px;">
             <div class="pick-top">
@@ -1511,8 +1535,8 @@ export function generateXhsLifePack(
           <div class="kpi-lbl">免费公开场次</div>
         </div>
         <div class="kpi-cell">
-          <div class="kpi-num">${friendTotal > 0 ? friendTotal : pickEvents.length}</div>
-          <div class="kpi-lbl">${friendTotal > 0 ? '朋友主办场' : '本期主推数'}</div>
+          <div class="kpi-num">${uniqueDayCount}</div>
+          <div class="kpi-lbl">覆盖活动天数</div>
         </div>
       </div>
       <div class="district-bar" style="font-size:19px;">
@@ -1720,18 +1744,11 @@ export function generateXhsLifePack(
 
   const packSlug = `xhs-life-${config.startDate}_to_${config.endDate}`;
 
-  // Caption strictly aligned with tone-and-caption.md & the new 5-page story arc
-  const friendNames = selectedEvents
-    .filter((e) => e.isFriendEvent)
-    .slice(0, 2)
-    .map((e) => e.title);
-  const pickSummary =
-    friendTotal > 0
-      ? `挑出了 ${pickEvents.length} 场主推（包含 ${friendTotal} 场朋友/本地社群主办：${friendNames.join('、')}）`
-      : `挑出了 ${pickEvents.length} 场信号最强的重点主推`;
+  // Caption strictly aligned with tone-and-caption.md & the story arc (no public "朋友主办" disclosure)
+  const pickSummary = `挑出了 ${pickEvents.length} 场信号最强的重点主推`;
 
   const captionMd = [
-    `新加坡这周的 AI 活动分散在 Luma、GDG、SGInnovate 和各种朋友群里，想下班去听一场，光翻链接查地址就挺耗精力。`,
+    `新加坡这周的 AI 活动分散在 Luma、GDG、SGInnovate 和本地社群里，想下班去听一场，光翻链接查地址就挺耗精力。`,
     ``,
     `我用自己维护的开源小站 SG AI Oasis 整理了 ${dateRangeText} 共 ${selectedEvents.length} 场活动，顺手把网站刚更新的功能也放在 ${cards.length} 张图里：`,
     `1. 图 1：按本期选出的 ${selectedEvents.length} 场活动生成全岛 2D 位置图，先看清都在哪几个片区、顺不顺路。`,
